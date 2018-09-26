@@ -12,38 +12,26 @@ class Percolation {
      * boolean string 2d array.
      */
     private boolean[][] grid;
-    /**
-     * unionfind object.
-     */
     private Uf uf;
-    /**
-     * size of elements.
-     */
     private int size;
-    /**
-     * Constructs the object.
-     *
-     * @param      n     { parameter_description }
-     */
-    Percolation(final int n) { // create n-by-n grid, with all sites blocked.
+    public Percolation(final int n) { // create n-by-n grid, with all sites blocked.
         grid = new boolean[n][n];
         uf = new Uf(n * n + 2);  // to create the one dimension array of size +
         size = n;
     }
     /**
-     * {opening sites}.
+     * { function_description }
      *
      * @param      row   The row
      * @param      col   The col
      */
-    public void open(final int row, final int col) { 
-    // open site (row, col) if it is not open already
-        if (grid[row][col]) {
+    public void open(final int row, final int col) { // open site (row, col) if it is not open already
+        if (grid[row][col] == false) {
             grid[row][col] = true;
         }
         if (row == 0) {
             uf.union(convert1D(row, col), size * size);
-        }
+        } 
         if (row == size - 1) {
             uf.union(convert1D(row, col), size * size + 1);
         }
@@ -61,20 +49,20 @@ class Percolation {
         }
     }
     /**
-     * {converting 2D array into 1D array}.
+     * { function_description }.
      *
      * @param      row   The row
      * @param      col   The col
      *
-     * @return     {boolean value}.
+     * @return     { description_of_the_return_value }
      */
     public int convert1D(final int row, final int col) {
         return row * size + col;
     }
     /**
-     * {checking if percolated or not}.
+     * {}.
      *
-     * @return     {boolean value}.
+     * @return     { description_of_the_return_value }
      */
     public boolean percolates() {             // does the system percolate?
         return uf.connected(size * size, size * size + 1);
@@ -89,15 +77,10 @@ class Uf {
      */
     private int[] id; //parent link
     private int[] size; //size of elements for roots
-    /**
-     * {count the number of elements}.
-     */
     private int count; //number of elements
-    /**
-     * Constructs the object.
-     *
-     * @param      n     { parameter_description }
-     */
+    //
+    // @param      n     { parameter_description }
+    //
     Uf(final int n) {
         /**
          * constructs object.
@@ -136,7 +119,7 @@ class Uf {
      *
      * @return     { description_of_the_return_value }
      */
-    public  int root(int p) {
+    private int root(int p) {
         while (p != id[p]) {
             id[p] = id[id[p]];
             p = id[p];
@@ -168,12 +151,11 @@ class Uf {
 /**
  * Class for solution.
  */
-public final class Solution {
+public class Solution {
     /**
      * Constructs the object.
      */
-    private Solution() {
-    }
+    private Solution(){}
 
     /**
      * creating main method.
