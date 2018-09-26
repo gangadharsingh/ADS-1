@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 /**
  * Class for percolation.
  * @author: gangadharsingh.
@@ -6,12 +6,12 @@ import java.util.*;
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){}
-
+    private Solution() {
+    }
     /**
      * creating main method.
      *
