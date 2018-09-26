@@ -12,21 +12,33 @@ class Percolation {
      * boolean string 2d array.
      */
     private boolean[][] grid;
+    /**
+     * unionfind object.
+     */
     private Uf uf;
+    /**
+     * size of elements.
+     */
     private int size;
-    public Percolation(final int n) { // create n-by-n grid, with all sites blocked.
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     */
+    Percolation(final int n) { // create n-by-n grid, with all sites blocked.
         grid = new boolean[n][n];
         uf = new Uf(n * n + 2);  // to create the one dimension array of size +
         size = n;
     }
     /**
-     * {opening sites}
+     * {opening sites}.
      *
      * @param      row   The row
      * @param      col   The col
      */
-    public void open(final int row, final int col) { // open site (row, col) if it is not open already
-        if (grid[row][col] == false) {
+    public void open(final int row, final int col) { 
+    // open site (row, col) if it is not open already
+        if (grid[row][col]) {
             grid[row][col] = true;
         }
         if (row == 0) {
@@ -77,10 +89,15 @@ class Uf {
      */
     private int[] id; //parent link
     private int[] size; //size of elements for roots
+    /**
+     * {count the number of elements}.
+     */
     private int count; //number of elements
-    //
-    // @param      n     { parameter_description }
-    //
+    /**
+     * Constructs the object.
+     *
+     * @param      n     { parameter_description }
+     */
     Uf(final int n) {
         /**
          * constructs object.
@@ -151,11 +168,12 @@ class Uf {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution(){}
+    private Solution() {
+    }
 
     /**
      * creating main method.
