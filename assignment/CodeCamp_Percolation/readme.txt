@@ -1,3 +1,4 @@
+
 Input:
 First line of the input denotes size of the grid
 from second line to last line of input denotes indexes of grid that are open
