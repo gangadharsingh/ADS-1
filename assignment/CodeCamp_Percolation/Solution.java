@@ -14,24 +14,24 @@ class Percolation {
     private boolean[][] grid;
     private Uf uf;
     private int size;
-    public Percolation(int n) { // create n-by-n grid, with all sites blocked.
+    public Percolation(final int n) { // create n-by-n grid, with all sites blocked.
         grid = new boolean[n][n];
         uf = new Uf(n * n + 2);  // to create the one dimension array of size +
         size = n;
     }
     /**
-     * { function_description }
+     * {opening sites}
      *
      * @param      row   The row
      * @param      col   The col
      */
-    public void open(int row, int col) { // open site (row, col) if it is not open already
+    public void open(final int row, final int col) { // open site (row, col) if it is not open already
         if (grid[row][col] == false) {
             grid[row][col] = true;
         }
         if (row == 0) {
             uf.union(convert1D(row, col), size * size);
-        } 
+        }
         if (row == size - 1) {
             uf.union(convert1D(row, col), size * size + 1);
         }
@@ -49,20 +49,20 @@ class Percolation {
         }
     }
     /**
-     * { function_description }.
+     * {converting 2D array into 1D array}.
      *
      * @param      row   The row
      * @param      col   The col
      *
-     * @return     { description_of_the_return_value }
+     * @return     {boolean value}.
      */
-    public int convert1D(int row, int col) {
+    public int convert1D(final int row, final int col) {
         return row * size + col;
     }
     /**
-     * { function_description }
+     * {checking if percolated or not}.
      *
-     * @return     { description_of_the_return_value }
+     * @return     {boolean value}.
      */
     public boolean percolates() {             // does the system percolate?
         return uf.connected(size * size, size * size + 1);
@@ -72,14 +72,19 @@ class Percolation {
  * Class for uf.
  */
 class Uf {
+    /**
+     * initializing fields.
+     */
     private int[] id; //parent link
     private int[] size; //size of elements for roots
-    private int count; //
-    // number of elements
+    private int count; //number of elements
     //
     // @param      n     { parameter_description }
     //
-    public Uf(int n) {
+    Uf(final int n) {
+        /**
+         * constructs object.
+         */
         count = n;
         id = new int[n];
         size = new int[n];
@@ -89,7 +94,7 @@ class Uf {
         }
     }
     /**
-     * { function_description }
+     * {returning count of elements}.
      *
      * @return     { description_of_the_return_value }
      */
@@ -97,24 +102,24 @@ class Uf {
         return count;
     }
     /**
-     * { function_description }
+     * {checking if connected or not}.
      *
      * @param      p     { parameter_description }
      * @param      q     The quarter
      *
      * @return     { description_of_the_return_value }
      */
-    public boolean connected(int p, int q) {
+    public boolean connected(final int p, final int q) {
         return root(p) == root(q);
     }
     /**
-     * { function_description }
+     * {checking for root of elements}.
      *
      * @param      p     { parameter_description }
      *
      * @return     { description_of_the_return_value }
      */
-    private int root(int p) {
+    public  int root(int p) {
         while (p != id[p]) {
             id[p] = id[id[p]];
             p = id[p];
@@ -122,12 +127,12 @@ class Uf {
         return p;
     }
     /**
-     * { function_description }
+     * {making union of two inputs}.
      *
      * @param      p     { parameter_description }
      * @param      q     The quarter
      */
-    public void union(int p, int q) {
+    public void union(final int p, final int q) {
         int i = root(p);
         int j = root(q);
         if (i == j) {
@@ -147,13 +152,27 @@ class Uf {
  * Class for solution.
  */
 public class Solution {
-    public static void main(String[] args) {
+    /**
+     * Constructs the object.
+     */
+    private Solution(){}
+
+    /**
+     * creating main method.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        /**
+         * checking if percolates or not
+         */
         Scanner scan = new Scanner(System.in);
         int n = Integer.parseInt(scan.nextLine());
         Percolation percolate = new Percolation(n);
         while (scan.hasNextLine()) {
             String[] input = scan.nextLine().split(" ");
-            percolate.open(Integer.parseInt(input[0]) - 1, Integer.parseInt(input[1]) - 1);
+            percolate.open(Integer.parseInt(input[0]) - 1,
+                Integer.parseInt(input[1]) - 1);
         }
         System.out.println(percolate.percolates());
     }
