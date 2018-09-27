@@ -1,10 +1,10 @@
-import java.util.*;
+import java.util.Scanner;
 import java.util.Arrays;
 /**
  * Class for solution.
  * @author: gangadharsingh.
  */
-public class Solution {
+public final class Solution {
     /**
     *constructor.
     */
