@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.Arrays;
 /**
  * Class for solution.
  * @author: gangadharsingh.
@@ -20,6 +21,7 @@ public class Solution {
 		for (int i = 0;  i < num; i++) {
 			arr1[i] = scan.nextInt();
 		}
+		Arrays.sort(arr1);
 		Threesum three = new Threesum(arr1);
 		System.out.println(three.tSum());
 	}
@@ -50,7 +52,7 @@ class Threesum {
 						} else if (total > complement) {
 							last--;
 						} else {
-							System.out.println("first:"+array[i]+", low:"+array[low]+", last:"+array[last]);
+							/*System.out.println("first:"+array[i]+", low:"+array[low]+", last:"+array[last]);*/
 							count++;
 							break;
 						}
