@@ -26,33 +26,43 @@ public class Solution {
 		System.out.println(three.tSum());
 	}
 }
+/**
+ * Class for threesum.
+ */
 class Threesum {
+	/**
+	 * { var_description }.
+	 */
 	private int[] array;
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      arrthreesum  The arrthreesum
+	 */
 	Threesum(int[] arrthreesum) {
 		array = arrthreesum;
-		/*System.out.println("constructor");*/
 	}
+	/**
+	 * { function_description }.
+	 *
+	 * @return     { description_of_the_return_value }.
+	 */
 	int tSum() {
-		/*System.out.println("tSum");*/
+	
 			int low, last;
 			int count = 0;
 			for (int s: array) {
-				/*System.out.println("array:"+s);*/
 			}
 			for (int i = 0; i < array.length-2; i++) {
-				/*int complement = array[i];*/
-				/*System.out.println("complement:"+complement);*/
 				low = i+1;
 				last = array.length-1;
 				while (low < last) {
-					/*System.out.println("while");*/
 						int total = array[low] +array[last];
 						if (array[low] +array[last]+ array[i] < 0) {
 							low++;
 						} else if (array[low] +array[last]+ array[i] > 0) {
 							last--;
 						} else {
-							/*System.out.println("first:"+array[i]+", low:"+array[low]+", last:"+array[last]);*/
 							count++;
 							low++;
 							last--;
