@@ -3,11 +3,15 @@ import java.util.Scanner;
  * Class for solution.
  * @author: gangadharsingh
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
-    private Solution() {}
+    private Solution() {
+        /**
+         * empty constructor.
+         */
+    }
     /**
      * { main class }.
      *
