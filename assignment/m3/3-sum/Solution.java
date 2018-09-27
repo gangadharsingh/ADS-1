@@ -52,7 +52,7 @@ class Threesum {
 						} else if (total > complement) {
 							last--;
 						} else {
-							System.out.println("first:"+array[i]+", low:"+array[low]+", last:"+array[last]);
+							/*System.out.println("first:"+array[i]+", low:"+array[low]+", last:"+array[last]);*/
 							count++;
 							low++;
 							last++;
