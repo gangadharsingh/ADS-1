@@ -40,23 +40,22 @@ class Threesum {
 				/*System.out.println("array:"+s);*/
 			}
 			for (int i = 0; i < array.length-2; i++) {
-				int complement = 0 - array[i];
+				/*int complement = array[i];*/
 				/*System.out.println("complement:"+complement);*/
 				low = i+1;
 				last = array.length-1;
 				while (low < last) {
 					/*System.out.println("while");*/
 						int total = array[low] +array[last];
-						if (total < complement) {
+						if (array[low] +array[last]+ array[i] < 0) {
 							low++;
-						} else if (total > complement) {
+						} else if (array[low] +array[last]+ array[i] > 0) {
 							last--;
 						} else {
 							/*System.out.println("first:"+array[i]+", low:"+array[low]+", last:"+array[last]);*/
 							count++;
 							low++;
-							last++;
-							break;
+							last--;
 						}
 				}
 			}
