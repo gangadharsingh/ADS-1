@@ -1,58 +1,62 @@
 import java.util.Scanner;
-import java.util.Arrays;
-class LinkList{
-	private Node firstelem = null;
-	LinkList() {
+class Linkedlist {
+	private Node firstelement = null;
+	private class Node {
+		char item;
+		Node nextAddress;
 	}
-	class Node{
-		String element;
-		Node nextaddress;
+	public char topelement() {
+		return firstelement.item;
 	}
-	boolean isempty(){
-		return firstelem == null;
+
+	public boolean isEmpty() {
+		return firstelement == null;
 	}
-	void push(String item) {
-		Node oldfirst = firstelem;
-		firstelem = new Node();
-		firstelem.element = item;
-		firstelem.nextaddress = oldfirst;
+	public void push(char item) {
+		Node oldfirst = firstelement;
+		firstelement = new Node();
+		firstelement.item = item;
+		firstelement.nextAddress = oldfirst;
 	}
-	String pop(String str) {
-		if (isempty() || str != firstelem.element) {
-			return null;
-		}
-		String popitem = firstelem.element;
-		firstelem = firstelem.nextaddress;
-		return popitem;
+	public char pop() {
+		char item = firstelement.item;
+		firstelement = firstelement.nextAddress;
+		return item;
 	}
 }
-public class Solution{
+public class Solution {
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		LinkList ll = new LinkList();
-		while(scan.hasNext()) {
-			String[] s = scan.nextLine().split("\n");
-			int a = 0;
-			int b = 0;
-			String[] newstring = new String[s.length];
-			for (String str: s) {
-				String[] semp = str.split("");
-				for (String se: semp) {
-					if (semp.equals(")") || semp.equals("}") || semp.equals("]")) {
-						a++;
-					} else if (semp.equals("(") || semp.equals("{") || semp.equals("[")) {
-						b++;
-					}
-					if (a == b) {
-						if (semp.equals(")") || semp.equals("}") || semp.equals("]")) {
-							ll.pop(se); 
-						} else if(semp.equals("(") || semp.equals("{") || semp.equals("[")) {
-							ll.push(se);
-						}
-					}
-					}
+		Scanner sc = new Scanner(System.in);
+		int size = Integer.parseInt(sc.nextLine());
+		while (size > 0) {
+			String input = sc.next();
+			if(checkParanthesis(input)){
+				System.out.println("YES");
+			} else {
+				System.out.println("NO");
 			}
+			size--;
 		}
-		System.out.println(ll.isempty());
 	}
+	public static boolean checkParanthesis(String str) {
+		Linkedlist obj = new Linkedlist();
+		int strLength = str.length();
+		for (int i = 0; i < strLength; i++) {
+			char character = str.charAt(i);
+			if (character == '(' || character == '{' || character == '[') {
+				obj.push(character);
+			}
+			else {
+				if(obj.isEmpty()) return false;
+				if (character == ')' && obj.topelement() == '(') {
+				obj.pop();
+			} else if (character == '}' && obj.topelement() == '{') {
+				obj.pop();
+			} else if (character == ']' && obj.topelement() == '[') {
+				obj.pop();
+			} else return false;
+		}
+	}
+	return obj.isEmpty();
+}
 }
