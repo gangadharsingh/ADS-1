@@ -15,7 +15,7 @@ class Sortedarray {
     /**
      * Constructs the object.
      *
-     * @param      n     { parameter_description }
+     * @param      n     { integer value }
      */
     Sortedarray(final int n) {
         size = 0;
@@ -24,7 +24,7 @@ class Sortedarray {
     /**
      * add.
      *
-     * @param      x     { parameter_description }
+     * @param      x     { integer value }
      */
     public void add(final int x) {
         pairs[size++] = x;
@@ -53,12 +53,6 @@ class Sortedarray {
         String s = ((Arrays.toString(pairs).
             replace("[", "")).replace("]", "")).replace(" ", "");
         System.out.println(s);
-        /**String s = "";
-        for (int j : pairs) {
-            s += j + ",";
-        }
-        s = s.substring(0, s.length() - 1);
-        System.out.println(s);*/
     }
 }
 /**
