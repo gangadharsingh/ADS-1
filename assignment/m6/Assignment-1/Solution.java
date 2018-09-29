@@ -5,6 +5,10 @@ import java.util.Scanner;
  */
 class AddLargeNumbers {
     /**
+     * Constructs the object.
+     */
+    private AddLargeNumbers() { }
+    /**
      * appending to linkedlist.
      *
      * @param      number  The number
@@ -40,10 +44,10 @@ class AddLargeNumbers {
      *
      * @param      list1  The list 1
      * @param      list2  The list 2
-     *
      * @return     { LinkedList }.
      */
-    public static LinkedList addLargeNumbers(final LinkedList list1, final LinkedList list2) {
+    public static LinkedList addLargeNumbers(final LinkedList list1,
+        final LinkedList list2) {
         LinkedList result = new LinkedList();
         int count1 = list1.getsize();
         int count2 = list2.getsize();
@@ -87,11 +91,11 @@ public class Solution {
     /**
      * Constructs the object.
      */
-    Solution() { }
+    private Solution() { }
     /**
-     * main function
+     * main function.
      *
-     * @param      args  The arguments
+     * @param      args  The arguments.
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -109,8 +113,11 @@ public class Solution {
         case "addLargeNumbers":
             pDigits = AddLargeNumbers.numberToDigits(p);
             qDigits = AddLargeNumbers.numberToDigits(q);
-            LinkedList result = AddLargeNumbers.addLargeNumbers(pDigits, qDigits);
+            LinkedList result = AddLargeNumbers.addLargeNumbers(
+                pDigits, qDigits);
             System.out.println(AddLargeNumbers.digitsToNumber(result));
+            break;
+        default:
             break;
         }
     }
