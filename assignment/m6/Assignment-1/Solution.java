@@ -3,11 +3,15 @@ import java.util.Scanner;
  * Class for add large numbers.
  * @author     :gangadharsingh.
  */
-class AddLargeNumbers {
+final class AddLargeNumbers {
     /**
      * Constructs the object.
      */
     private AddLargeNumbers() { }
+    /**
+     * magic number.
+     */
+    public static final int NUM = 10;
     /**
      * appending to linkedlist.
      *
@@ -41,7 +45,6 @@ class AddLargeNumbers {
 
     /**
      * Adds large numbers.
-     *
      * @param      list1  The list 1
      * @param      list2  The list 2
      * @return     { LinkedList }.
@@ -56,8 +59,8 @@ class AddLargeNumbers {
         while (count1 > 1 && count2 > 1) {
             num = Integer.parseInt(list1.popend()) + carry;
             num += Integer.parseInt(list2.popend());
-            carry = num / 10;
-            result.pushstart(Integer.toString(num % 10));
+            carry = num / NUM;
+            result.pushstart(Integer.toString(num % NUM));
             count1--;
             count2--;
         }
@@ -70,7 +73,7 @@ class AddLargeNumbers {
                     while (list1.getsize() > 1) {
                         num = Integer.parseInt(list1.popend()) + carry;
                         num += Integer.parseInt(list2.popstart());
-                        result.pushstart(Integer.toString(num % 10));
+                        result.pushstart(Integer.toString(num % NUM));
                     }
                     num = Integer.parseInt(list1.popstart());
                 } else {
@@ -87,7 +90,7 @@ class AddLargeNumbers {
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
