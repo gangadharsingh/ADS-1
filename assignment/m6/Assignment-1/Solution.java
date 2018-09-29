@@ -20,7 +20,7 @@ final class AddLargeNumbers {
      * @return     { LinkedList }
      */
     public static LinkedList numberToDigits(final String number) {
-        LinkedList link = new LinkedList();;
+        LinkedList link = new LinkedList();
         String[] arr = number.split("");
         for (String a : arr) {
             link.pushend(a);
