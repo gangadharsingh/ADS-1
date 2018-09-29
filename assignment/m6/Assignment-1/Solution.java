@@ -1,18 +1,33 @@
 import java.util.Scanner;
+/**
+ * Class for add large numbers.
+ * @author     :gangadharsingh.
+ */
 class AddLargeNumbers {
-    public static LinkedList numberToDigits(String number) {
+    /**
+     * appending to linkedlist.
+     *
+     * @param      number  The number
+     *
+     * @return     { LinkedList }
+     */
+    public static LinkedList numberToDigits(final String number) {
         LinkedList link = new LinkedList();;
         String[] arr = number.split("");
         for (String a : arr) {
-            // System.out.println("numberToDigits");
             link.pushend(a);
-            // System.out.println(link.print());
         }
         return link;
     }
 
-    public static String digitsToNumber(LinkedList list) {
-        // System.out.println("digitsToNumber");
+    /**
+     * { appending value of each node to linked list }.
+     *
+     * @param      list  The list
+     *
+     * @return     { String }
+     */
+    public static String digitsToNumber(final LinkedList list) {
         if (list.print() != null) {
             String empt = list.print();
             return empt;
@@ -20,12 +35,16 @@ class AddLargeNumbers {
         return null;
     }
 
-    public static LinkedList addLargeNumbers(LinkedList list1, LinkedList list2) {
-        // System.out.println("addLargeNumbers");
+    /**
+     * Adds large numbers.
+     *
+     * @param      list1  The list 1
+     * @param      list2  The list 2
+     *
+     * @return     { LinkedList }.
+     */
+    public static LinkedList addLargeNumbers(final LinkedList list1, final LinkedList list2) {
         LinkedList result = new LinkedList();
-        // int list1elem = Integer.parseInt(list1.print().replaceAll("\\D", ""));
-        // int list2elem = Integer.parseInt(list2.print());
-        // int sum = list1elem+list2elem;
         int count1 = list1.getsize();
         int count2 = list2.getsize();
         int num = 0;
@@ -34,10 +53,7 @@ class AddLargeNumbers {
             num = Integer.parseInt(list1.popend()) + carry;
             num += Integer.parseInt(list2.popend());
             carry = num / 10;
-            // System.out.println("num:"+num);
-            // System.out.println("carry:"+carry);
             result.pushstart(Integer.toString(num % 10));
-            // System.out.println(result.print()+":::print");
             count1--;
             count2--;
         }
@@ -50,31 +66,34 @@ class AddLargeNumbers {
                     while (list1.getsize() > 1) {
                         num = Integer.parseInt(list1.popend()) + carry;
                         num += Integer.parseInt(list2.popstart());
-                        // System.out.println("carry:"+carry);
                         result.pushstart(Integer.toString(num % 10));
                     }
                     num = Integer.parseInt(list1.popstart());
-                    // result.pushstart(Integer.toString(num));
                 } else {
-                        num = Integer.parseInt(list1.popstart()) + carry;
-                        num += Integer.parseInt(list2.popend());
-                        // System.out.println("carry:"+carry);
-                        // result.pushstart(Integer.toString(num % 10));
-                    // }
-                    // num = Integer.parseInt(list2.popstart());
+                    num = Integer.parseInt(list1.popstart()) + carry;
+                    num += Integer.parseInt(list2.popend());
                 }
             }
-            // System.out.println("num:"+num);
-            // System.out.println("carry:"+carry);
             result.pushstart(Integer.toString(num));
-            // System.out.println(result.print()+":::print");
         }
         return result;
     }
 }
 
+/**
+ * Class for solution.
+ */
 public class Solution {
-    public static void main(String[] args) {
+    /**
+     * Constructs the object.
+     */
+    Solution() { }
+    /**
+     * main function
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         String p = sc.nextLine();
