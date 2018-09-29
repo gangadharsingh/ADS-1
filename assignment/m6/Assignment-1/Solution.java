@@ -73,9 +73,10 @@ final class AddLargeNumbers {
                     while (list1.getsize() > 1) {
                         num = Integer.parseInt(list1.popend()) + carry;
                         num += Integer.parseInt(list2.popstart());
+                        carry = num/NUM;
                         result.pushstart(Integer.toString(num % NUM));
                     }
-                    num = Integer.parseInt(list1.popstart());
+                    num = Integer.parseInt(list1.popstart())+carry;
                 } else {
                     num = Integer.parseInt(list1.popstart()) + carry;
                     num += Integer.parseInt(list2.popend());
