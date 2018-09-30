@@ -96,12 +96,15 @@ public class Solution {
             switch(command[0]) {
                 case "push":
                     st.push(command[1]);
+                    System.out.println(st);
                     break;
                 case "enqueue":
                     st.enqueue(command[1]);
+                    System.out.println(st);
                     break;
                 case "pop":
                     st.pop();
+                    System.out.println(st);
                     break;
                 default:
                     break;
