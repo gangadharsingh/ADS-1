@@ -52,20 +52,21 @@ public class LinkedList {
 		return popitem;
 	}
 	String popend() {
-		// System.out.println("popend");
+		//System.out.println("popend");
 		if (isempty()) {
 			return null;
-		}
-		String popitem = last.value;
-		Node temp = first;
-		while (temp.address.address != null) {
-			temp = temp.address;
-		}
-		temp.address = null;
-		last = temp;
-		size--;
+		} else {
+			String popitem = last.value;
+			Node temp = first;
+			while (temp != last) {
+				temp = temp.address;
+			}
+			temp.address = null;
+			last = temp;
+			size--;
 		// System.out.println("popitem"+popitem);
-		return popitem;
+			return popitem;
+		}
 	}
 	public Node getfirst() {
 		return first;
@@ -74,16 +75,16 @@ public class LinkedList {
 		first = frst;
 	}
 
-	 public int getsize(){
-	  return size;
-	 }
-	 
-	 public void setsize(int sz){
-	  size = sz;
-	 }
+	public int getsize() {
+		return size;
+	}
+
+	public void setsize(int sz) {
+		size = sz;
+	}
 	String print() {
 		// System.out.println("print");
-		if(first == null){
+		if (first == null) {
 			// System.out.println("empty linkedlist");
 			return null;
 		}
@@ -92,16 +93,16 @@ public class LinkedList {
 		// System.out.println("2");
 		String str = "";
 		// System.out.println("3");
-	 	while(temp.address != null){
-	 		// System.out.println("4");
-	 		str += temp.value;
-	 		// System.out.println("5");
-	 		temp = temp.address;
-	 		// System.out.println("6");
-	 	}
-	 	// System.out.println("7");
-	 	str += temp.value;
-	 	// System.out.println("8");
+		while (temp.address != null) {
+			// System.out.println("4");
+			str += temp.value;
+			// System.out.println("5");
+			temp = temp.address;
+			// System.out.println("6");
+		}
+		// System.out.println("7");
+		str += temp.value;
+		// System.out.println("8");
 		return str;
 	}
 }

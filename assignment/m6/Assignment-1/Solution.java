@@ -52,36 +52,25 @@ final class AddLargeNumbers {
     public static LinkedList addLargeNumbers(final LinkedList list1,
         final LinkedList list2) {
         LinkedList result = new LinkedList();
-        int count1 = list1.getsize();
-        int count2 = list2.getsize();
         int num = 0;
         int carry = 0;
-        while (count1 > 1 && count2 > 1) {
-            num = Integer.parseInt(list1.popend()) + carry;
-            num += Integer.parseInt(list2.popend());
+        while (list1.getsize() > 0 || list2.getsize() > 0) {
+            if (list1.getsize() == 0) {
+                num = Integer.parseInt(list2.popend())+carry;
+                carry = num / NUM;
+                result.pushstart(Integer.toString(num % NUM));
+            } else if (list2.getsize() == 0) {
+                num = Integer.parseInt(list1.popend())+carry; 
+                carry = num / NUM;
+                result.pushstart(Integer.toString(num % NUM));
+            } else {
+            num = Integer.parseInt(list1.popend()) + carry +Integer.parseInt(list2.popend());
             carry = num / NUM;
             result.pushstart(Integer.toString(num % NUM));
-            count1--;
-            count2--;
+            }   
         }
-        if (count1 <= list1.getsize() && count2 <= list2.getsize()) {
-            if (list1.getsize() == list2.getsize()) {
-                num = Integer.parseInt(list1.popstart()) + carry;
-                num += Integer.parseInt(list2.popstart());
-            } else {
-                if (list1.getsize() > list2.getsize()) {
-                    while (list1.getsize() > 1) {
-                        num = Integer.parseInt(list1.popend()) + carry;
-                        num += Integer.parseInt(list2.popstart());
-                        result.pushstart(Integer.toString(num % NUM));
-                    }
-                    num = Integer.parseInt(list1.popstart());
-                } else {
-                    num = Integer.parseInt(list1.popstart()) + carry;
-                    num += Integer.parseInt(list2.popend());
-                }
-            }
-            result.pushstart(Integer.toString(num));
+        if (carry != 0) {
+            result.pushstart(Integer.toString(carry));
         }
         return result;
     }
