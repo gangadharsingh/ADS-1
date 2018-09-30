@@ -1,7 +1,5 @@
 import java.util.Scanner;
-/**
- * Class for deque.
- */
+
 class Deque {
     /**
      * {Variable first of type node}.
@@ -12,7 +10,7 @@ class Deque {
      */
     private Node last;
     /**
-     * {Variable size of type integer}.
+     * {Variable size of type integer}
      */
     private int size;
     /**
@@ -20,9 +18,9 @@ class Deque {
      */
     private class Node {
         /**
-         * {Variable name of type int}.
+         * {Variable nm of type int}.
          */
-        private int name;
+        private int nm;
         /**
          * {Variable next of type node}.
          */
@@ -51,27 +49,27 @@ class Deque {
      */
     public int popFront() {
         if (first != null) {
-            int item = first.name;
+            int item = first.nm;
             first = first.next;
             return item;
         }
-        return last.name;
+        return last.nm;
     }
     /**
-     * Method to push back an element.
+     * Method to push back an element
      *
-     * @param      name  The name
+     * @param      nm  The nm
      */
-    public void pushBack(final int name) {
+    public void pushBack(final int nm) {
         if (last == null) {
             last = new Node();
-            last.name = name;
+            last.nm = nm;
             last.next = null;
             first = last;
         } else {
             Node temp = last;
             last = new Node();
-            last.name = name;
+            last.nm = nm;
             last.next = null;
             temp.next = last;
         }
