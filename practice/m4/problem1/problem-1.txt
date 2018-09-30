@@ -1,0 +1,41 @@
+inp it was - the best - of times - - - it was - the - -
+out=[]
+stack=[]
+
+inp it -> push(it) -> stack[it]
+
+inp was -> push(was) -> stack[was, it]
+
+inp-> pop() -> stack[it] -> out=[was]
+
+inp the -> push(the) -> stack[the,it]
+
+inp best -> push(best) -> stack[best, the, it]
+
+inp-> pop() -> stack[the, it] -> out=[was, best]
+
+inp of -> push(of) -> stack[of, the, it]
+
+inp times -> push(times) -> stack[times, of, the, it]
+
+inp-> pop() -> stack[of, the, it] -> out=[was, best, times]
+
+inp-> pop() -> stack[the, it] -> out=[was, best, times, of]
+
+inp-> pop() -> stack[it] -> out=[was, best, times, of, the]
+
+inp it -> push(it) -> stack[it, it]
+
+inp was -> push(was) -> stack[was, it, it]
+
+inp-> pop() -> stack[it, it] -> out=[was, best, times, of, the, was]
+
+inp the -> push(the) -> stack[the, it, it]
+
+inp-> pop() -> stack[it, it] -> out=[was, best, times, of, the, was, the]
+
+inp-> pop() -> stack[it] -> out=[was, best, times, of, the, was, the, it]
+
+
+
+the out is [was, best, times, of, the, was, the, it].
