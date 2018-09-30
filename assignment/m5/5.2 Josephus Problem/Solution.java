@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+/**
+ * Class for deque.
+ */
 class Deque {
     /**
      * {Variable first of type node}.
@@ -10,7 +12,7 @@ class Deque {
      */
     private Node last;
     /**
-     * {Variable size of type integer}
+     * {Variable size of type integer}.
      */
     private int size;
     /**
@@ -56,7 +58,7 @@ class Deque {
         return last.nm;
     }
     /**
-     * Method to push back an element
+     * Method to push back an element.
      *
      * @param      nm  The nm
      */
