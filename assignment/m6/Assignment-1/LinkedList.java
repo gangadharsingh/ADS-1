@@ -1,4 +1,3 @@
-import java.util.Scanner;
 class Node {
 	String value;
 	Node address;
@@ -13,7 +12,7 @@ public class LinkedList {
 		return first == null;
 	}
 	void pushstart(String item) {
-		System.out.println("pushstart");
+		// System.out.println("pushstart");
 		Node oldfirst = first;
 
 		first = new Node();
@@ -22,7 +21,6 @@ public class LinkedList {
 		if (first.address == null) {
 			last = first;
 		}
-		// System.out.println("first.value:"+first.value);
 		size++;
 	}
 	void pushend(String item) {
