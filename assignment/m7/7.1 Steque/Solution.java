@@ -29,6 +29,10 @@ class Steque {
     public boolean isEmpty() { //complexity is of 1 as it will run only for 1 time.
         return (size == 0);
     }
+    public void makeEmpty() {
+        first.next = null;;
+        last.next = null;
+    }
     /**
      * Gets the size.
      *
@@ -116,14 +120,19 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int num1 = scan.nextInt();
-        Steque st = new Steque();
         boolean flag = true;
         while (num1 > 0) {
+            Steque st = new Steque();
+            String line = scan.nextLine();
+            String empty = null;
+            // System.out.println("1while");
             while(scan.hasNextLine()) {
+                // System.out.println("2while");
                 String[] command = scan.nextLine().split(" ");
                 // if (scan.nextLine().equals("")) { flag = false; }
                 switch (command[0]) {
                 case "push":
+                    // System.out.println("push");
                     st.push(command[1]);
                     System.out.println(st.print());
                     break;
@@ -142,8 +151,8 @@ public class Solution {
                 default:
                     break;
                 }
-
             }
+            // st.makeEmpty();
             System.out.println();
             num1--;
         }
