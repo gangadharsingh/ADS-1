@@ -1,118 +1,148 @@
 import java.util.Scanner;
+/**
+ * Class for steque.
+ */
 class Steque {
-    private Node start, end;
+    private Node first, last;
     private int size;
+    /**
+     * Class for node.
+     */
     private class Node {
         private String item;
         private Node next;
-        }
+    }
 
+    /**
+     * Constructs the object.
+     */
     Steque() {
-        start = null;
-        end = null;
+        first = null;
+        last = null;
         size = 0;
     }
-    public boolean isEmpty() {
+    /**
+     * Determines if empty.
+     *
+     * @return     True if empty, False otherwise.
+     */
+    public boolean isEmpty() { //complexity is of 1 as it will run only for 1 time.
         return (size == 0);
     }
-    public int getSize() {
-
+    /**
+     * Gets the size.
+     *
+     * @return     The size.
+     */
+    public int getSize() { //complexity is of 1 as it will run only for 1 time.
         return size;
     }
-    public void enqueue(final String int1) {
-        if (start == null) {
-            start = new Node();
-            start.item = int1;
-            start.next = null;
-            end = start;
-        } else {
-            Node oldstart = start;
-            start = new Node();
-            start.item = int1;
-            start.next = oldstart;
+    /**
+     * pushing at the front.
+     *
+     * @param      int1  The int 1
+     */
+    public void push(final String int1) { //complexity is of 1 as if loop will run only for 1 time.
+        Node oldfirst = first;
+        first = new Node();
+        first.item = int1;
+        first.next = oldfirst;
+        if (first.next == null) {
+            last = first;
         }
         size++;
     }
-
-    public void push(final String item1) {
-
-        if (end == null) {
-            end = new Node();
-            end.item = item1;
-            end.next = null;
+    /**
+     * pushing at last by enqueue method.
+     *
+     * @param      item1  The item 1
+     */
+    public void enqueue(final String item1) { // complexity is of 1 as if loop will run only for 1 time.
+        if (last == null && first == null) {
+            first = new Node();
+            first.item = item1;
+            first.next = null;
+            last = first;
         } else {
-            Node oldend = end;
-            end = new Node();
-            end.item = item1;
-            end.next = null;
-            oldend.next = end;
+            Node temp = new Node();
+            temp.item = item1;
+            temp.next = null;
+            last.next = temp;
+            last = temp;
+            size++;
         }
-        size++;
     }
 
-    public void pop() {
-        if (start != null) {
-            start = start.next;
+    /**
+     * popping elements from the end.
+     */
+    public void pop() { // complexity is of 1 as if loop will run only for 1 time.
+        if (first != null) {
+            first = first.next;
             size--;
         }
     }
+    /**
+     * printing elements of Stqueue.
+     *
+     * @return     { String form of Stqueue }.
+     */
+    public String print() { // comlexity is N as while loop run for N times.
+        if (first == null) {
 
-    // public void popBack() {
-    //     if (end != null) {
-    //         Node old = start;
-    //         while (old.next.next != null) {
-    //             old = old.next;
-    //         }
-    //         old.next = null;
-    //         end = old;
-    //         size--;
-    //     }
-    // }
-    public String toString() {
-
-        if (size == 0) {
-            return "";
-        } else {
-            String s = "";
-            Node old1 = start;
-            while (old1 != null) {
-                s += old1.item;
-                old1 = old1.next;
-            }
-            return s;
+            return null;
         }
+        Node temp = first;
+        String str = "";
+        while (temp.next != null) { // it will run for N times.
+            str += temp.item + ", ";
+            temp = temp.next;
+        }
+        str += temp.item;
+        return str;
     }
 }
+/**
+ * Class for solution.
+ */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
     private Solution() { }
+
+    /**
+     * main function.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int num1 = scan.nextInt();
         Steque st = new Steque();
-        // int num2 = scan.nextInt();
-        // StqueueOperation squeue = new StqueueOperation();
-        while (num1 > 0) {
+        while (num1 > 0 || scan.hasNext()) {
             String[] command = scan.nextLine().split(" ");
-            switch(command[0]) {
-                case "push":
-                    st.push(command[1]);
-                    System.out.println(st);
-                    break;
-                case "enqueue":
-                    st.enqueue(command[1]);
-                    System.out.println(st);
-                    break;
-                case "pop":
-                    st.pop();
-                    System.out.println(st);
-                    break;
-                default:
-                    break;
+            switch (command[0]) {
+            case "push":
+                st.push(command[1]);
+                System.out.println(st.print());
+                break;
+            case "enqueue":
+                st.enqueue(command[1]);
+                System.out.println(st.print());
+                break;
+            case "pop":
+                st.pop();
+                if (st.print() != null) {
+                    System.out.println(st.print());
+                } else {
+                    System.out.println("Steque is empty.");
+                }
+                break;
+            default:
+                break;
             }
             num1--;
         }
     }
 }
-// class StqueueOperation {
-
-// }
