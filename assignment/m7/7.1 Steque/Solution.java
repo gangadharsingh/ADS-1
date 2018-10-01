@@ -125,7 +125,7 @@ public class Solution {
             while(scan.hasNextLine()) {
                 String[] command = scan.nextLine().split(" ");
                 if (command[0].equals("")) {
-                    System.out.println();
+                    // System.out.println();
                     break;
                 }
                 switch (command[0]) {
@@ -153,7 +153,7 @@ public class Solution {
                 //     break;
                 // }
             }
-
+            
             num1--;
         }
     }
