@@ -119,7 +119,7 @@ public class Solution {
      */
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int num1 = scan.nextInt();
+        int num1 = Integer.parseInt(scan.nextLine());
         while (num1 >= 0) {
             Steque st = new Steque();
             while(scan.hasNextLine()) {
@@ -147,7 +147,6 @@ public class Solution {
                     }
                 }
             }
-            System.out.println();
             num1--;
         }
     }
