@@ -150,15 +150,10 @@ public class Solution {
                     break;
                 default:
                     break;
-
-                }
-                if (command[0].equals("")) {
-                    System.out.println();
-                    break;
                 }
             }
             // st.makeEmpty();
-            
+            System.out.println("print::::::::::");
             num1--;
         }
     }
