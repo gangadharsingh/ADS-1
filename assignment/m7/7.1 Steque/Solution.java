@@ -125,7 +125,7 @@ public class Solution {
             while(scan.hasNextLine()) {
                 String line =  scan.nextLine();
                 if (line.equals("")) {
-                    // System.out.println();
+                    System.out.println();
                     break;
                 } else {
                     String[] command = line.split(" ");
