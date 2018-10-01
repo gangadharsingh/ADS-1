@@ -124,6 +124,10 @@ public class Solution {
             Steque st = new Steque();
             while(scan.hasNextLine()) {
                 String[] command = scan.nextLine().split(" ");
+                if (command[0].equals("")) {
+                    System.out.println();
+                    break;
+                }
                 switch (command[0]) {
                 case "push":
                     st.push(command[1]);
