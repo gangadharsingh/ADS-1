@@ -153,7 +153,6 @@ public class Solution {
                 }
             }
             // st.makeEmpty();
-            System.out.println("print::::::::::");
             num1--;
         }
     }
