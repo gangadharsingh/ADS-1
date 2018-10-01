@@ -120,11 +120,11 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int num1 = scan.nextInt();
-        boolean flag = true;
+        // boolean flag = true;
         while (num1 > 0) {
             Steque st = new Steque();
-            String line = scan.nextLine();
-            String empty = null;
+            // String line = scan.nextLine();
+            // String empty = null;
             // System.out.println("1while");
             while(scan.hasNextLine()) {
                 // System.out.println("2while");
@@ -150,10 +150,15 @@ public class Solution {
                     break;
                 default:
                     break;
+
+                }
+                if (command[0].equals("")) {
+                    System.out.println();
+                    break;
                 }
             }
             // st.makeEmpty();
-            System.out.println();
+            
             num1--;
         }
     }
