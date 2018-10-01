@@ -58,11 +58,8 @@ class Steque {
      * @param      item1  The item 1
      */
     public void enqueue(final String item1) { // complexity is of 1 as if loop will run only for 1 time.
-        if (last == null && first == null) {
-            first = new Node();
-            first.item = item1;
-            first.next = null;
-            last = first;
+        if (last == null || first == null) {
+            push(item1);
         } else {
             Node temp = new Node();
             temp.item = item1;
@@ -120,28 +117,34 @@ public class Solution {
         Scanner scan = new Scanner(System.in);
         int num1 = scan.nextInt();
         Steque st = new Steque();
-        while (num1 > 0 || scan.hasNext()) {
-            String[] command = scan.nextLine().split(" ");
-            switch (command[0]) {
-            case "push":
-                st.push(command[1]);
-                System.out.println(st.print());
-                break;
-            case "enqueue":
-                st.enqueue(command[1]);
-                System.out.println(st.print());
-                break;
-            case "pop":
-                st.pop();
-                if (st.print() != null) {
+        boolean flag = true;
+        while (num1 > 0) {
+            while(scan.hasNextLine()) {
+                String[] command = scan.nextLine().split(" ");
+                // if (scan.nextLine().equals("")) { flag = false; }
+                switch (command[0]) {
+                case "push":
+                    st.push(command[1]);
                     System.out.println(st.print());
-                } else {
-                    System.out.println("Steque is empty.");
+                    break;
+                case "enqueue":
+                    st.enqueue(command[1]);
+                    System.out.println(st.print());
+                    break;
+                case "pop":
+                    st.pop();
+                    if (st.print() != null) {
+                        System.out.println(st.print());
+                    } else {
+                        System.out.println("Steque is empty.");
+                    }
+                    break;
+                default:
+                    break;
                 }
-                break;
-            default:
-                break;
+
             }
+            System.out.println();
             num1--;
         }
     }
