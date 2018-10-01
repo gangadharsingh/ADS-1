@@ -129,12 +129,8 @@ public class Solution {
             while(scan.hasNextLine()) {
                 // System.out.println("2while");
                 String[] command = scan.nextLine().split(" ");
-                 if (command[0].equals("")) {
-                    System.out.println();
-                    break;
-                }
                 // if (scan.nextLine().equals("")) { flag = false; }
-                else {switch (command[0]) {
+                switch (command[0]) {
                 case "push":
                     // System.out.println("push");
                     st.push(command[1]);
@@ -157,7 +153,10 @@ public class Solution {
                 }
 
             }
-        }
+            // if (command[0].equals("")) {
+            //         System.out.println();
+            //         break;
+            //     }
             // st.makeEmpty();
             num1--;
         }
