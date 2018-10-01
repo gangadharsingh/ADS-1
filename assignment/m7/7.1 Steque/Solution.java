@@ -123,37 +123,31 @@ public class Solution {
         while (num1 >= 0) {
             Steque st = new Steque();
             while(scan.hasNextLine()) {
-                String[] command = scan.nextLine().split(" ");
-                if (command[0].equals("")) {
-                    // System.out.println();
+                String line =  scan.nextLine();
+                if (line.equals("")) {
+                    System.out.println();
                     break;
-                }
-                switch (command[0]) {
-                case "push":
-                    st.push(command[1]);
-                    System.out.println(st.print());
-                    break;
-                case "enqueue":
-                    st.enqueue(command[1]);
-                    System.out.println(st.print());
-                    break;
-                case "pop":
-                    st.pop();
-                    /*if (st.print() != null) {*/
+                } else {
+                    String[] command = line.split(" ");
+                    switch (command[0]) {
+                    case "push":
+                        st.push(command[1]);
                         System.out.println(st.print());
-                    // } else {
-                    //     System.out.println("Steque is empty.");
-                    // }
-                    break;
-                default:
-                    break;
+                        break;
+                    case "enqueue":
+                        st.enqueue(command[1]);
+                        System.out.println(st.print());
+                        break;
+                    case "pop":
+                        st.pop();
+                            System.out.println(st.print());
+                        break;
+                    default:
+                        break;
+                    }
                 }
-                // if (command[0].equals("")) {
-                //     System.out.println();
-                //     break;
-                // }
             }
-            
+
             num1--;
         }
     }
