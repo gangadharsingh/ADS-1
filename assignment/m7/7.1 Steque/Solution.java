@@ -120,12 +120,12 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int num1 = scan.nextInt();
-        while (num1 > 0) {
+        while (num1 >= 0) {
             Steque st = new Steque();
             while(scan.hasNextLine()) {
                 String line =  scan.nextLine();
                 if (line.equals("")) {
-                    System.out.println("hs");
+                    System.out.println();
                     break;
                 } else {
                     String[] command = line.split(" ");
