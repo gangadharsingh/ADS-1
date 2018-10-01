@@ -151,6 +151,10 @@ public class Solution {
                 default:
                     break;
                 }
+                if (command[0].equals("")) {
+                    System.out.println();
+                    break;
+                }
             }
             // st.makeEmpty();
             num1--;
