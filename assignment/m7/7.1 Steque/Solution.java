@@ -89,9 +89,9 @@ class Steque {
      * @return     { String form of Stqueue }.
      */
     public String print() { // comlexity is N as while loop run for N times.
-        if (first == null) {
+        if (size == 0) {
 
-            return null;
+            return "Steque is empty.";
         }
         Node temp = first;
         String str = "";
@@ -120,19 +120,12 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int num1 = scan.nextInt();
-        // boolean flag = true;
-        while (num1 > 0) {
+        while (num1 >= 0) {
             Steque st = new Steque();
-            // String line = scan.nextLine();
-            // String empty = null;
-            // System.out.println("1while");
             while(scan.hasNextLine()) {
-                // System.out.println("2while");
                 String[] command = scan.nextLine().split(" ");
-                // if (scan.nextLine().equals("")) { flag = false; }
                 switch (command[0]) {
                 case "push":
-                    // System.out.println("push");
                     st.push(command[1]);
                     System.out.println(st.print());
                     break;
@@ -142,22 +135,21 @@ public class Solution {
                     break;
                 case "pop":
                     st.pop();
-                    if (st.print() != null) {
+                    /*if (st.print() != null) {*/
                         System.out.println(st.print());
-                    } else {
-                        System.out.println("Steque is empty.");
-                    }
+                    // } else {
+                    //     System.out.println("Steque is empty.");
+                    // }
                     break;
                 default:
                     break;
                 }
-
+                if (command[0].equals("")) {
+                    System.out.println();
+                    break;
+                }
             }
-            // if (command[0].equals("")) {
-            //         System.out.println();
-            //         break;
-            //     }
-            // st.makeEmpty();
+
             num1--;
         }
     }
