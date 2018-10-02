@@ -16,9 +16,7 @@ class Insertionsort {
 	 					max = j-1;
 	 				}
 	 				if (team[j].getloses() == team[j-1].getloses()) {
-	 					// System.out.println(team[max].geteam()+":team[max]----------------team[j]:"+team[j].geteam());
 		 				if (team[j].getdraw() > team[j-1].getdraw()) {
-		 					// System.out.println("****");
 		 					max = j-1;
 		 					}
 		 				}

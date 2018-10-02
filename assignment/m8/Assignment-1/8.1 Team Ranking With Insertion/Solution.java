@@ -1,8 +1,21 @@
 import java.util.Scanner;
+/**
+ * Class for solution.
+ */
 class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() { }
+    public static final int NUM = 10;
+    /**
+     * { main function }
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
         Scanner scan =  new Scanner(System.in);
-        Team[] team = new Team[10];
+        Team[] team = new Team[NUM];
         int size = 0;
         while (scan.hasNextLine()) {
             String line =  scan.nextLine();
