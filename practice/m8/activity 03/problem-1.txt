@@ -1,0 +1,12 @@
+E A S Y Q U E S T I O N
+Selection sort:
+step 1: A E S Y Q U E S T I O N
+step 2: A E S Y Q U E S T I O N
+step 3: A E E Y Q U S S T I O N
+step 4: A E E I Q U S S T Y O N
+step 5: A E E I N U S S T Y O Q
+step 6: A E E I N O S S T Y U Q
+step 7: A E E I N O Q S T Y U S
+step 8: A E E I N O Q S S Y U T
+step 9: A E E I N O Q S S T U Y
+step 10: A E E I N O Q S S T U Y
