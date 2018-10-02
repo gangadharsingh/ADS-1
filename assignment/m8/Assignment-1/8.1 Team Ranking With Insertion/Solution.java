@@ -7,9 +7,12 @@ class Solution {
      * Constructs the object.
      */
     private Solution() { }
+    /**
+     * magic number.
+     */
     public static final int NUM = 10;
     /**
-     * { main function }
+     * { main function }.
      *
      * @param      args  The arguments
      */
