@@ -39,7 +39,7 @@ class Team {
 	}
 	public String toString() {
 		String str = "";
-		str = geteam()+"**TEAM";
+		str = geteam();
 		return str;
 	}
 }

@@ -6,15 +6,25 @@ class Insertionsort {
 		size = len;
 	}
 	Team[] insertsort() {
-		for (int i = 1; i > size-1; i++) {
-			// int max = i;
-			for (int j = i; j > 0; j--) {
-				System.out.println(team);
-				System.out.println(team[j].getwins()+":team[j], team[j-1]:"+team[j-1].getwins());
-				if (team[j].getwins() < team[j-1].getwins()) {
-					swap(team, j, j-1);
-					System.out.println(team[j]+":team[j], team[j-1]:"+team[j-1]);
-				}
+		for (int i = 1; i < size; i++) {
+ 			for (int j = i; j > 0; j--) {
+ 				int max = j;
+	 			if (team[j-1].getwins() < team[j].getwins()) {
+	 				max = j-1;
+				} else if (team[j].getwins() == team[j-1].getwins()) {
+	 				if (team[j].getloses() < team[j-1].getloses()) {
+	 					max = j-1;
+	 				}
+	 				if (team[j].getloses() == team[j-1].getloses()) {
+	 					// System.out.println(team[max].geteam()+":team[max]----------------team[j]:"+team[j].geteam());
+		 				if (team[j].getdraw() > team[j-1].getdraw()) {
+		 					// System.out.println("****");
+		 					max = j-1;
+		 					}
+		 				}
+	 			}
+				swap(team, j, max);
+
 			}
 		}
 		return team;
