@@ -1,11 +1,13 @@
-class Insertionsort {
-	Team[] team;
+package insertion;
+import team.Team;
+public class Insertionsort {
+	public Team[] team;
 	int size;
-	Insertionsort(final Team[] inp, final int len) {
+	public Insertionsort(final Team[] inp, final int len) {
 		team = inp;
 		size = len;
 	}
-	Team[] insertsort() {
+	public Team[] insertsort() {
 		for (int i = 1; i < size; i++) {
  			for (int j = i; j > 0; j--) {
  				int max = j;
@@ -27,7 +29,7 @@ class Insertionsort {
 		}
 		return team;
 	}
-	void swap(final Team[] tm, final int i, final int j) {
+	public void swap(final Team[] tm, final int i, final int j) {
 		Team temp = tm[i];
 		tm[i] = tm[j];
 		tm[j] = temp;
