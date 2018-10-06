@@ -40,7 +40,7 @@ Exception in thread "main" java.lang.NullPointerException
 	at Mergesort.sort(Mergesort.java:24)
 	at Mergesort.sort(Mergesort.java:24)
 	at Mergesort.sort(Mergesort.java:29)
-	at Solution.main(Solution.java:22)
+	at Solution.main(Solution.java:24)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -141,7 +141,7 @@ Exception in thread "main" java.lang.NullPointerException
 	at Mergesort.sort(Mergesort.java:24)
 	at Mergesort.sort(Mergesort.java:23)
 	at Mergesort.sort(Mergesort.java:29)
-	at Solution.main(Solution.java:22)
+	at Solution.main(Solution.java:24)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -172,7 +172,7 @@ Exception in thread "main" java.lang.NullPointerException
 	at Mergesort.sort(Mergesort.java:24)
 	at Mergesort.sort(Mergesort.java:23)
 	at Mergesort.sort(Mergesort.java:29)
-	at Solution.main(Solution.java:22)
+	at Solution.main(Solution.java:24)
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 

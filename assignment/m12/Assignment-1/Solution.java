@@ -15,11 +15,13 @@ class Solution {
 		while(noOfStudqual >0) {
 			line = scan.next();
 			String[] token = line.split(",");
-			stud[size] = new Student(token);
-			size++;
+			if (!line.equals("")) {
+				stud[size] = new Student(token);
+				size++;
+			}
 			noOfStudqual--;
 		}
-		Mergesort.sort(stud);
+			Mergesort.sort(stud);
 		for (int i = 0; i < size-1; i++) {
 			System.out.print(stud[i].print()+"\n");
 		}
