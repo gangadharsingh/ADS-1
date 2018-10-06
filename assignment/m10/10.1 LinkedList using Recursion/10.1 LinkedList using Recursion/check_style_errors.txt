@@ -2,14 +2,10 @@ Starting audit...
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:6:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:13:21: Variable 'value' must be private and have accessor methods. [VisibilityModifier]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:17:22: Variable 'address' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:30:10: Variable 'head' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:34:9: Variable 'size' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:35:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:47:72: '{' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:101:30: '+' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:101:31: '+' is not followed by whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:104:44: ',' is not followed by whitespace. [WhitespaceAfter]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:104:56: '-' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:104:57: '-' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:30:14: Variable 'head' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:34:13: Variable 'size' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:35:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:133: Line is longer than 80 characters (found 93). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m10/10.1 LinkedList using Recursion/10.1 LinkedList using Recursion/Solution.java:141: Line is longer than 80 characters (found 86). [LineLength]
 Audit done.
-Checkstyle ends with 12 errors.
+Checkstyle ends with 8 errors.
