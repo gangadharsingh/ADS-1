@@ -18,7 +18,7 @@ class Mergesrt {
                 aux[k] = a[i++];
             }
         }
-        // assert isSorted(dst, lo, hi);
+        assert isSorted(aux, lo, hi);
     }
     public static void sort(Comparable[] a, Comparable[] aux,
         int lo, int hi) {
@@ -41,6 +41,7 @@ class Mergesrt {
     }
     public static void insertionsort(Comparable[] a,
         int lo, int hi) {
+        System.out.println("Insertion sort method invoked...");
         for (int i = lo; i < hi; i++) {
             for (int j = i; j > lo && less(a[j], a[j-1]); j--) {
                 swap(a, j, j-1);
@@ -54,6 +55,12 @@ class Mergesrt {
         Comparable swap = a[i];
         a[i] = a[j];
         a[j] = swap;
+    }
+    public static boolean isSorted(Comparable[] a, int lo, int hi) {
+        for (int i = 0; i <= hi; i++) {
+            if (less(a[i], a[i - 1])) { return false; }
+        }
+        return true;
     }
     public static void show(Object[] a) {
         System.out.print("[");
