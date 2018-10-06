@@ -76,9 +76,13 @@ public class Solution {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String line  = scan.nextLine();
-        String[] a = line.split(" ");
+        while(!line.equals("")) {
+            line  = scan.nextLine();
+            // String line = "";
+            String[] a = line.split(" ");
+            Mergesrt.sort(a);
+            Mergesrt.show(a);
+        }
         // Mergesrt mergesrt = new Mergesrt();
-        Mergesrt.sort(a);
-        Mergesrt.show(a);
     }
 }

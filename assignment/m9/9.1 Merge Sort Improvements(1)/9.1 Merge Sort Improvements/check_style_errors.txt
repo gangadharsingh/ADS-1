@@ -58,5 +58,6 @@ Starting audit...
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m9/9.1 Merge Sort Improvements(1)/9.1 Merge Sort Improvements/Solution.java:75:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m9/9.1 Merge Sort Improvements(1)/9.1 Merge Sort Improvements/Solution.java:76:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m9/9.1 Merge Sort Improvements(1)/9.1 Merge Sort Improvements/Solution.java:76:29: Parameter args should be final. [FinalParameters]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m9/9.1 Merge Sort Improvements(1)/9.1 Merge Sort Improvements/Solution.java:79:14: 'while' is not followed by whitespace. [WhitespaceAround]
 Audit done.
-Checkstyle ends with 59 errors.
+Checkstyle ends with 60 errors.
