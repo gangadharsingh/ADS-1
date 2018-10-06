@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.lang.*;
 class Mergesrt {
     public Mergesrt() { }
-    public static final int CUTOFF = 10;
+    public static final int CUTOFF = 7;
     public static void merge(Comparable[] a, Comparable[] aux, int lo,
         int mid, int hi) {
         int i = lo, j = mid + 1;
@@ -23,6 +23,7 @@ class Mergesrt {
     public static void sort(Comparable[] a, Comparable[] aux,
         int lo, int hi) {
         if (hi <= lo + CUTOFF) {
+            System.out.println("Insertion sort method invoked...");
             insertionsort(aux, lo, hi);
             return ;
         }
@@ -41,7 +42,6 @@ class Mergesrt {
     }
     public static void insertionsort(Comparable[] a,
         int lo, int hi) {
-        System.out.println("Insertion sort method invoked...");
         for (int i = lo; i < hi; i++) {
             for (int j = i; j > lo && less(a[j], a[j-1]); j--) {
                 swap(a, j, j-1);
@@ -51,13 +51,13 @@ class Mergesrt {
     public static boolean less(Comparable a, Comparable b) {
         return a.compareTo(b) < 0;
     }
-    public static void swap(Comparable[] a, int i, int j) {
-        Comparable swap = a[i];
+    public static void swap(Object[] a, int i, int j) {
+        Object swap = a[i];
         a[i] = a[j];
         a[j] = swap;
     }
     public static boolean isSorted(Comparable[] a, int lo, int hi) {
-        for (int i = 0; i <= hi; i++) {
+        for (int i = lo+1; i <= hi; i++) {
             if (less(a[i], a[i - 1])) { return false; }
         }
         return true;
@@ -77,11 +77,11 @@ public class Solution {
         Scanner scan = new Scanner(System.in);
         String line  = scan.nextLine();
         while(!line.equals("")) {
-            line  = scan.nextLine();
             // String line = "";
             String[] a = line.split(" ");
             Mergesrt.sort(a);
             Mergesrt.show(a);
+            line  = scan.nextLine();
         }
         // Mergesrt mergesrt = new Mergesrt();
     }
