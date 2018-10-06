@@ -32,14 +32,11 @@ Aditya,80,ST
 priya,72,SC
 Your Output: 
 Exception in thread "main" java.lang.NullPointerException
-	at Mergesort.less(Mergesort.java:36)
-	at Mergesort.mergesort(Mergesort.java:14)
-	at Mergesort.sort(Mergesort.java:25)
-	at Mergesort.sort(Mergesort.java:23)
-	at Mergesort.sort(Mergesort.java:23)
-	at Mergesort.sort(Mergesort.java:24)
-	at Mergesort.sort(Mergesort.java:24)
-	at Mergesort.sort(Mergesort.java:29)
+	at Mergesort.less(Mergesort.java:39)
+	at Mergesort.mergesort(Mergesort.java:17)
+	at Mergesort.sort(Mergesort.java:28)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:32)
 	at Solution.main(Solution.java:24)
 ----------------------------------------
 ########## Testcase 1: Failed ##########
@@ -133,14 +130,13 @@ Aditya,80,ST
 priya,76,SC
 Your Output: 
 Exception in thread "main" java.lang.NullPointerException
-	at Mergesort.less(Mergesort.java:36)
-	at Mergesort.mergesort(Mergesort.java:14)
-	at Mergesort.sort(Mergesort.java:25)
-	at Mergesort.sort(Mergesort.java:24)
-	at Mergesort.sort(Mergesort.java:23)
-	at Mergesort.sort(Mergesort.java:24)
-	at Mergesort.sort(Mergesort.java:23)
-	at Mergesort.sort(Mergesort.java:29)
+	at Mergesort.less(Mergesort.java:39)
+	at Mergesort.mergesort(Mergesort.java:17)
+	at Mergesort.sort(Mergesort.java:28)
+	at Mergesort.sort(Mergesort.java:26)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:26)
+	at Mergesort.sort(Mergesort.java:32)
 	at Solution.main(Solution.java:24)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
@@ -164,14 +160,13 @@ Ajay,76,Open
 Tanya,66,BC
 Your Output: 
 Exception in thread "main" java.lang.NullPointerException
-	at Mergesort.less(Mergesort.java:36)
-	at Mergesort.mergesort(Mergesort.java:14)
-	at Mergesort.sort(Mergesort.java:25)
-	at Mergesort.sort(Mergesort.java:24)
-	at Mergesort.sort(Mergesort.java:23)
-	at Mergesort.sort(Mergesort.java:24)
-	at Mergesort.sort(Mergesort.java:23)
-	at Mergesort.sort(Mergesort.java:29)
+	at Mergesort.less(Mergesort.java:39)
+	at Mergesort.mergesort(Mergesort.java:17)
+	at Mergesort.sort(Mergesort.java:28)
+	at Mergesort.sort(Mergesort.java:26)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:26)
+	at Mergesort.sort(Mergesort.java:32)
 	at Solution.main(Solution.java:24)
 ----------------------------------------
 ########## Testcase 4: Failed ##########
