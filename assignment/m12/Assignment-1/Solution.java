@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+import java.util.ArrayList;
 class Solution {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
@@ -9,22 +9,17 @@ class Solution {
 		int noOfBCVac = scan.nextInt();
 		int noOfSCVac = scan.nextInt();
 		int noOfSTVac = scan.nextInt();
-		Student[] stud = new Student[10];
-		int i = 0;
-		while(scan.hasNextLine()) {
-			String line = scan.nextLine();
-			if (line.equals("")) {
-				break;
-			}
+		Student[] stud = new Student[30];
+		int size = 0;
+		String line = "";
+		while(scan.hasNext() && scan.next().equals(null)) {
+			line = scan.next();
 			String[] token = line.split(",");
-			// System.out.println(i);
-			stud[i++] = new Student(token);
-			// i++;
-			System.out.println(i+"..");
+			stud[size] = new Student(token);
+			size++;
 		}
-		Mergesort.sort(stud);
-		for (Student st: stud) {
-			System.out.println(st);
+		for (int i = 0; i < size; i++) {
+			System.out.print(stud);
 		}
 	}
 }

@@ -3,22 +3,21 @@ public class Mergesort {
     public Mergesort() { }
 
     public static void mergesort(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
-        assert isSorted(a, lo, mid);
-        assert isSorted(a, mid+1, hi);
-
+        System.out.println(lo+"::"+mid+"::"+hi);
         for (int k = lo; k <= hi; k++) {
             aux[k] = a[k]; 
         }
-
         int i = lo, j = mid+1;
         for (int k = lo; k <= hi; k++) {
+            if (aux[i] == null || aux[j] == null) {
+                break;
+            }
             if      (i > mid)              a[k] = aux[j++];
             else if (j > hi)               a[k] = aux[i++];
             else if (less(aux[j], aux[i])) a[k] = aux[j++];
             else                           a[k] = aux[i++];
         }
 
-        assert isSorted(a, lo, hi);
     }
 
     public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
@@ -88,7 +87,7 @@ public class Mergesort {
 
     public static void show(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
+            System.out.print(a[i]+" ");
         }
     }
 }
