@@ -1,26 +1,68 @@
 import java.util.Scanner;
+/**
+ * List of linkeds.
+ */
 class LinkedList {
+	/**
+	 * Class for node.
+	 */
 	class Node {
+		/**
+		 * value of node.
+		 */
 		int value;
+		/**
+		 * address fo node.
+		 */
 		Node address;
-		Node(int val) {
+		/**
+		 * Constructs the object.
+		 *
+		 * @param      val   The value
+		 */
+		Node(final int val) {
 			value = val;
 		}
 	}
+	/**
+	 * head of Node.
+	 */
     Node head;
+    /**
+     * size.
+     */
     int size;
     LinkedList() {
         head = null;
         size = 0;
     }
-    public void insertAt(int pos, int ele) throws Exception{
+    /**
+     * insert at any position.
+     *
+     * @param      pos        The position.
+     * @param      ele        The ele.
+     *
+     * @throws     Exception  { handling exception }.
+     */
+    public void insertAt(final int pos, final int ele) throws Exception{
         Node newNode = new Node(ele);
         if (pos < 0 || pos > size) {
             throw new Exception();
         }
         head = insertAt(pos, head, newNode, 0);
     }
-    public Node insertAt(int pos, Node first, Node obj, int count) {
+    /**
+     * insert at any position having overiding.
+     *
+     * @param      pos    The position
+     * @param      first  The first
+     * @param      obj    The object
+     * @param      count  The count
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public Node insertAt(final int pos, final Node first,
+    	final Node obj, final int count) {
         if (pos == count) {
             obj.address = first;
             size++;
@@ -29,10 +71,19 @@ class LinkedList {
         first.address = insertAt(pos, first.address, obj, count + 1);
         return first;
     }
+    /**
+     * reverse.
+     */
     public void reverse() {
         reverse(null, head);
     }
-    void reverse(Node previous, Node current) {
+    /**
+     * reverse the node.
+     *
+     * @param      previous  The previous.
+     * @param      current   The current.
+     */
+    void reverse(final Node previous, final Node current) {
         if (current != null) {
             reverse(current, current.address);
             current.address = previous;
@@ -40,6 +91,9 @@ class LinkedList {
             head = previous;
         }
     }
+    /**
+     * display the node.
+     */
     void display() {
         Node temp = head;
         String str = "";
@@ -50,9 +104,20 @@ class LinkedList {
         System.out.println(str.substring(0,str.length()-2));
     }
 }
+/**
+ * { main class }.
+ */
 public final class Solution {
+	/**
+	 * Constructs the object.
+	 */
 	private Solution() { }
-	public static void main(String[] args) {
+	/**
+	 * main class.
+	 *
+	 * @param      args  The arguments.
+	 */
+	public static void main(final String[] args) {
 		Scanner sc = new Scanner(System.in);
         LinkedList l = new LinkedList();
         while (sc.hasNext()) {
