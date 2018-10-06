@@ -31,7 +31,29 @@ tanvi,90,BC
 Aditya,80,ST
 priya,72,SC
 Your Output: 
-
+divya,99,ST
+Deepak,98,Open
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+shyam,71,ST
+riya,83,Open
+Ankit,58,BC
+riya,83,Open
+shyam,71,ST
+riya,83,Open
+Deepak,98,Open
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
+Ira,93,ST
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -75,7 +97,14 @@ Raj,87,BC
 Aditya,80,ST
 priya,72,SC
 Your Output: 
-
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 30
+	at Mergesort.mergesort(Mergesort.java:12)
+	at Mergesort.sort(Mergesort.java:28)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:32)
+	at Solution.main(Solution.java:22)
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -94,7 +123,16 @@ divya,99,Open
 Aditya,80,ST
 priya,76,SC
 Your Output: 
-
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+tanvi,90,Open
+tanvi,90,Open
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -116,7 +154,16 @@ priya,76,SC
 Ajay,76,Open
 Tanya,66,BC
 Your Output: 
-
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+divya,99,Open
+tanvi,90,ST
+tanvi,90,ST
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -165,7 +212,14 @@ Ajay,76,Open
 Amit,76,Open
 Arjun,75,Open
 Your Output: 
-
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 30
+	at Mergesort.mergesort(Mergesort.java:12)
+	at Mergesort.sort(Mergesort.java:28)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:32)
+	at Solution.main(Solution.java:22)
 ----------------------------------------
 ########## Testcase 5: Failed ##########
 Expected Output: 
@@ -216,5 +270,12 @@ rahul,73,Open
 priya,72,SC
 varsha,66,BC
 Your Output: 
-
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 30
+	at Mergesort.mergesort(Mergesort.java:12)
+	at Mergesort.sort(Mergesort.java:28)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:27)
+	at Mergesort.sort(Mergesort.java:32)
+	at Solution.main(Solution.java:22)
 ----------------------------------------

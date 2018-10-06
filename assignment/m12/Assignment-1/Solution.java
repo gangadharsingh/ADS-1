@@ -12,15 +12,18 @@ class Solution {
 		Student[] stud = new Student[30];
 		int size = 0;
 		String line = "";
-		while(scan.hasNext() && scan.next().equals(null)) {
+		while(noOfStudqual >0) {
 			line = scan.next();
 			String[] token = line.split(",");
 			stud[size] = new Student(token);
 			size++;
+			noOfStudqual--;
 		}
-		for (int i = 0; i < size; i++) {
-			System.out.print(stud);
+		Mergesort.sort(stud);
+		for (int i = 0; i < size-1; i++) {
+			System.out.print(stud[i].print()+"\n");
 		}
+		System.out.print(stud[size-1].print());
 	}
 }
 class Student implements Comparable<Student>{
@@ -112,7 +115,7 @@ class Student implements Comparable<Student>{
 	 public void setresCast(String resCast){
 	  this.resCast = resCast;
 	 }
-	public String toString() {
+	public String print() {
 		return getstudname() + "," + gettotalmark() + ","+getresCast();
 	}
 }

@@ -3,7 +3,7 @@ public class Mergesort {
     public Mergesort() { }
 
     public static void mergesort(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
-        System.out.println(lo+"::"+mid+"::"+hi);
+        // System.out.println(lo+"::"+mid+"::"+hi);
         for (int k = lo; k <= hi; k++) {
             aux[k] = a[k]; 
         }
