@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.lang.*;
 class Mergesrt {
     public Mergesrt() { }
-    public static final int CUTOFF = 7;
+    public static final int CUTOFF = 2+2+2+1;
     public static void merge(Comparable[] a, Comparable[] aux, int lo,
         int mid, int hi) {
         int i = lo, j = mid + 1;
@@ -20,11 +20,11 @@ class Mergesrt {
         }
         assert isSorted(aux, lo, hi);
     }
-    public static void sort(Comparable[] a, Comparable[] aux,
-        int lo, int hi) {
+    public static void sort(final Comparable[] a, final Comparable[] aux,
+        final int lo, final int hi) {
         if (hi <= lo + CUTOFF) {
-            System.out.println("Insertion sort method invoked...");
             insertionsort(aux, lo, hi);
+            System.out.println("Insertion sort method invoked...");
             return ;
         }
         int mid = lo + (hi - lo) / 2;
@@ -32,17 +32,19 @@ class Mergesrt {
         sort(aux, a, mid + 1, hi);
         if (!less(a[mid + 1], a[mid])) {
             System.arraycopy(a, lo, aux, lo, hi-lo+1);
+            System.out.println(
+            "Array is already sorted. So, skipped the call to merge...");
             return ;
         }
         merge(a, aux, lo, mid, hi);
     }
-    public static void sort(Comparable[] a) {
+    public static void sort(final Comparable[] a) {
         Comparable[] aux = a.clone();
         sort(aux, a, 0, a.length - 1);
     }
     public static void insertionsort(Comparable[] a,
         int lo, int hi) {
-        for (int i = lo; i < hi; i++) {
+        for (int i = lo; i <= hi; i++) {
             for (int j = i; j > lo && less(a[j], a[j-1]); j--) {
                 swap(a, j, j-1);
             }
@@ -75,13 +77,19 @@ public class Solution {
     public Solution() { }
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String line  = scan.nextLine();
-        while(!line.equals("")) {
+        while(scan.hasNext()) {
+            String line  = scan.nextLine();
             // String line = "";
             String[] a = line.split(" ");
             Mergesrt.sort(a);
-            Mergesrt.show(a);
-            line  = scan.nextLine();
+            String str = "[";
+            int i;
+            for (i = 0; i < a.length - 1; i++) {
+                str += a[i] + ", ";
+            }
+            str += a[i] + "]";
+            System.out.println(str);
+            System.out.println();
         }
         // Mergesrt mergesrt = new Mergesrt();
     }
