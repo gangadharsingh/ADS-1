@@ -14,16 +14,16 @@ public final class Solution {
      */
     public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
-        MergeSort st = new MergeSort();
+        MergeSort sort = new MergeSort();
         while (sc.hasNext()) {
-            String[] tokens = sc.nextLine().split(",");
-            st.sort(tokens);
+            String[] line = sc.nextLine().split(",");
+            sort.sort(line);
             String str = "[";
             int i;
-            for (i = 0; i < tokens.length - 1; i++) {
-                str += tokens[i] + ", ";
+            for (i = 0; i < line.length - 1; i++) {
+                str += line[i] + ", ";
             }
-            str += tokens[i] + "]";
+            str += line[i] + "]";
             System.out.println(str);
             System.out.println();
         }
@@ -62,45 +62,45 @@ final class MergeSort {
      * sort method to divide in to equals.
      *  halves using the recursion.
      *complexity for this method is O(N)
-     * @param      arr   The arr
+     * @param      a   The a
      */
-    public void sort(final Comparable[] arr) {
-        Comparable[] aux = new Comparable[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            aux[i] = arr[i];
+    public void sort(final Comparable[] a) {
+        Comparable[] aux = new Comparable[a.length];
+        for (int i = 0; i < a.length; i++) {
+            aux[i] = a[i];
         }
-        sort(aux, arr, 0, arr.length - 1);
+        sort(aux, a, 0, a.length - 1);
     }
     /**
      * helper sort method for above sort method where.
      * actual division takes place.
      * complexity is O(log(N))
      *
-     * @param      arr   The arr
+     * @param      a   The a
      * @param      aux   The auxiliary
      * @param      lo    The lower
-     * @param      high  The high
+     * @param      hi  The hi
      */
     public void sort(
-final Comparable[] arr, final Comparable[] aux,
- final int lo, final int high) {
-        if (high <= lo + getcutoff()) {
-            insertionSort(aux, lo, high);
+final Comparable[] a, final Comparable[] aux,
+ final int lo, final int hi) {
+        if (hi <= lo + getcutoff()) {
+            insertionSort(aux, lo, hi);
             System.out.println("Insertion sort method invoked...");
             return;
         }
-        int mid =  lo + (high - lo) / 2;
-        sort(aux, arr, lo, mid);
-        sort(aux, arr, mid + 1, high);
-        if (!less(arr[mid + 1], arr[mid])) {
-            for (int i = lo; i <= high; i++) {
-                aux[i] = arr[i];
+        int mid =  lo + (hi - lo) / 2;
+        sort(aux, a, lo, mid);
+        sort(aux, a, mid + 1, hi);
+        if (!less(a[mid + 1], a[mid])) {
+            for (int i = lo; i <= hi; i++) {
+                aux[i] = a[i];
             }
             System.out.println(
-"Array is already sorted. So, skipped the call to merge...");
+            "array is already sorted. So, skipped the call to merge...");
             return;
         }
-        merge(arr, aux, lo, mid, high);
+        merge(a, aux, lo, mid, hi);
     }
     /**
      * issorted helper method it will call.
@@ -119,13 +119,13 @@ final Comparable[] arr, final Comparable[] aux,
      *
      * @param      a     { parameter_description }
      * @param      lo    The lower
-     * @param      high  The high
+     * @param      hi  The hi
      *
      * @return     True if sorted, False otherwise.
      */
     public boolean isSorted(final Comparable[] a,
-                            final int lo, final int high) {
-        for (int i = lo + 1; i <= high; i++) {
+                            final int lo, final int hi) {
+        for (int i = lo + 1; i <= hi; i++) {
             if (less(a[i], a[i - 1])) {
                 return false;
             }
@@ -133,34 +133,34 @@ final Comparable[] arr, final Comparable[] aux,
         return true;
     }
     /**
-     * this method helps to merge the two arrays.
+     * this method helps to merge the two aays.
      * complexity is O(N).
      *
-     * @param      arr   The arr
+     * @param      a   The a
      * @param      aux   The auxiliary
      * @param      lo    The lower
      * @param      mid   The middle
-     * @param      high  The high
+     * @param      hi  The hi
      */
-    public void merge(final Comparable[] arr, final Comparable[] aux,
-                      final int lo, final int mid, final int high) {
+    public void merge(final Comparable[] a, final Comparable[] aux,
+                      final int lo, final int mid, final int hi) {
         int i = lo;
         int j = mid + 1;
-        for (int k = lo; k <= high; k++) {
+        for (int k = lo; k <= hi; k++) {
             if (i > mid) {
-                aux[k] = arr[j++];
-            } else if (j > high) {
-                aux[k] = arr[i++];
-            } else if (less(arr[j], arr[i])) {
-                aux[k] = arr[j++];
+                aux[k] = a[j++];
+            } else if (j > hi) {
+                aux[k] = a[i++];
+            } else if (less(a[j], a[i])) {
+                aux[k] = a[j++];
             } else {
-                aux[k] = arr[i++];
+                aux[k] = a[i++];
             }
         }
     }
     /**
      * this method helps to determine weather the given.
-     * array is sorted o not.
+     * aay is sorted o not.
      * complexity is O(1)
      *
      * @param      a     { parameter_description }
@@ -178,11 +178,11 @@ final Comparable[] arr, final Comparable[] aux,
      *
      * @param      a     { parameter_description }
      * @param      lo    The lower
-     * @param      high  The high
+     * @param      hi  The hi
      */
     public void insertionSort(final Comparable[] a,
-                              final int lo, final int high) {
-        for (int i = lo; i <= high; i++) {
+                              final int lo, final int hi) {
+        for (int i = lo; i <= hi; i++) {
             for (int j = i; j > lo; j--) {
                 if (less(a[j], a[j - 1])) {
                     swap(a, j, j - 1);
