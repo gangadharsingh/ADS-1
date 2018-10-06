@@ -97,7 +97,7 @@ final Comparable[] a, final Comparable[] aux,
                 aux[i] = a[i];
             }
             System.out.println(
-            "array is already sorted. So, skipped the call to merge...");
+            "Array is already sorted. So, skipped the call to merge...");
             return;
         }
         merge(a, aux, lo, mid, hi);
