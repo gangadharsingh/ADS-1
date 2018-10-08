@@ -106,7 +106,8 @@ public class Solution {
 						integerarray[k] = Integer.parseInt(token[k]);
 						pqInteger.insert(integerarray[k]);
 						str += integerarray[k];
-					}	
+					}
+					System.out.println(compare(pqInteger.show(), str));
 				} else {
 					System.out.println("false");
 				}
