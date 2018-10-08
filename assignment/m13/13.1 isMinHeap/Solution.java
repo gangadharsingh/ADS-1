@@ -25,11 +25,11 @@ public class Solution {
 						pq.insert(token[j]);
 						str += token[j];
 					}
-					if (str.length() != 0) {
+				}
+				if (str.length() != 0) {
 					System.out.println(compare(pq.show(), str));
-					} else {
-						System.out.println("false");
-					}
+				} else {
+					System.out.println("false");
 				}
 			}
 			break;
@@ -48,11 +48,9 @@ public class Solution {
 						pqFloat.insert(floatarray[k]);
 						str += floatarray[k];
 					}
-					if (str.length() != 0) {
 					System.out.println(compare(pqFloat.show(), str));
-					} else {
-						System.out.println("false");
-					}
+				} else {
+					System.out.println("false");
 				}
 			}
 			break;
@@ -71,11 +69,11 @@ public class Solution {
 						pqDouble.insert(Doublearray[k]);
 						str += Doublearray[k];
 						}
-					if (str.length() != 0) {
+				}
+				if (str.length() != 0) {
 					System.out.println(compare(pqDouble.show(), str));
-					} else {
-						System.out.println("false");
-					}
+				} else {
+					System.out.println("false");
 				}
 			}
 			break;
@@ -93,12 +91,12 @@ public class Solution {
 						integerarray[k] = Integer.parseInt(token[k]);
 						pqInteger.insert(integerarray[k]);
 						str += integerarray[k];
-					}
-					if (str.length() != 0) {
-						System.out.println(compare(pqInteger.show(), str));
-					} else {
-						System.out.println("false");
-					}
+					}	
+				}
+				if (str.length() != 0) {
+					System.out.println(compare(pqInteger.show(), str));
+				} else {
+					System.out.println("false");
 				}
 			}
 			break;
@@ -107,7 +105,7 @@ public class Solution {
 		}
 	}
 }
-class MinPQ<Key> {
+class  MinPQ<Key> {
 	private Key[] pq;
 	private int n;
 	private Comparator<Key> comparator;
