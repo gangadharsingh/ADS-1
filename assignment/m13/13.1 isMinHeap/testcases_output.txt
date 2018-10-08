@@ -1,0 +1,69 @@
+########## Testcase 0: Passed ##########
+Expected Output: 
+true
+false
+true
+false
+Your Output: 
+true
+false
+true
+false
+----------------------------------------
+########## Testcase 1: Passed ##########
+Expected Output: 
+false
+false
+false
+false
+false
+false
+Your Output: 
+false
+false
+false
+false
+false
+false
+----------------------------------------
+########## Testcase 2: Failed ##########
+Expected Output: 
+true
+true
+true
+false
+false
+false
+true
+false
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at MinPQ.greater(Solution.java:167)
+	at MinPQ.swim(Solution.java:160)
+	at MinPQ.insert(Solution.java:146)
+	at Solution.main(Solution.java:85)
+----------------------------------------
+########## Testcase 3: Failed ##########
+Expected Output: 
+true
+false
+false
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at MinPQ.greater(Solution.java:167)
+	at MinPQ.swim(Solution.java:160)
+	at MinPQ.insert(Solution.java:146)
+	at Solution.main(Solution.java:68)
+----------------------------------------
+########## Testcase 4: Failed ##########
+Expected Output: 
+true
+true
+false
+Your Output: 
+Exception in thread "main" java.lang.NullPointerException
+	at MinPQ.greater(Solution.java:167)
+	at MinPQ.swim(Solution.java:160)
+	at MinPQ.insert(Solution.java:146)
+	at Solution.main(Solution.java:46)
+----------------------------------------
