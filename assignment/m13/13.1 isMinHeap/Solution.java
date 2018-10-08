@@ -63,13 +63,15 @@ public class Solution {
 				String line = scan.nextLine();
 				String str = "";
 				MinPQ<Double> pqDouble = new MinPQ<Double>();
-				if (line.length() == 0) {
+				if (line.length() != 0) {
 					String[] token = line.split(",");
 					Double[] Doublearray = new Double[token.length];
+					// System.out.println("BATMAN");
 					for (int k = 0; k< token.length; k++) {
 						Doublearray[k] = Double.parseDouble(token[k]);
 						pqDouble.insert(Doublearray[k]);
 						str += Doublearray[k];
+						// System.out.println(pqDouble.show());
 						}
 				}
 				if (str.length() != 0) {
