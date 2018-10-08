@@ -25,11 +25,6 @@ public class Solution {
 					str += token[j];
 				}
 				System.out.println(compare(pq.show(), str));
-				// if (pq.show().equals(str)) {
-				// 	System.out.println("true");
-				// } else {
-				// 	System.out.println("false");
-				// }
 			}
 			break;
 		case "Float":
@@ -40,18 +35,13 @@ public class Solution {
 				String[] token = line.split(",");
 				Float[] floatarray = new Float[token.length];
 				String str = "";
-				MinPQ<Float> pqFloat = new MinPQ<Float>(floatarray);
+				MinPQ<Float> pqFloat = new MinPQ<Float>();
 				for (int k = 0; k< token.length; k++) {
 					floatarray[k] = Float.parseFloat(token[k]);
 					pqFloat.insert(floatarray[k]);
 					str += floatarray[k];
 				}
 				System.out.println(compare(pqFloat.show(), str));
-				// if (pqFloat.show().equals(str)) {
-				// 	System.out.println("true");
-				// } else {
-				// 	System.out.println("false");
-				// }
 			}
 			break;
 		case "Double":
@@ -62,8 +52,10 @@ public class Solution {
 				String[] token = line.split(",");
 				Double[] Doublearray = new Double[token.length];
 				String str = "";
-				MinPQ<Double> pqDouble = new MinPQ<Double>(Doublearray);
+				MinPQ<Double> pqDouble = new MinPQ<Double>();
 				for (int k = 0; k< token.length; k++) {
+					// System.out.println("BATMAN");
+					// System.out.println(Double.parseDouble(token[k]));
 					Doublearray[k] = Double.parseDouble(token[k]);
 					pqDouble.insert(Doublearray[k]);
 					str += Doublearray[k];
@@ -77,13 +69,15 @@ public class Solution {
 			for (int l = 0; l < numInteger; l++) {
 				String line = scan.nextLine();
 				String[] token = line.split(",");
-				Integer[] Integerarray = new Integer[token.length];
+				Integer[] integerarray = new Integer[token.length];
 				String str = "";
-				MinPQ<Integer> pqInteger = new MinPQ<Integer>(Integerarray);
+				MinPQ<Integer> pqInteger = new MinPQ<Integer>();
 				for (int k = 0; k< token.length; k++) {
-					Integerarray[k] = Integer.parseInt(token[k]);
-					pqInteger.insert(Integerarray[k]);
-					str += Integerarray[k];
+					// System.out.println("WonderWoMAN");
+					// System.out.println(Integer.parseInt(token[k]));
+					integerarray[k] = Integer.parseInt(token[k]);
+					pqInteger.insert(integerarray[k]);
+					str += integerarray[k];
 				}
 				System.out.println(compare(pqInteger.show(), str));
 			}
@@ -104,14 +98,6 @@ class  MinPQ<Key> {
 	public  MinPQ() {
 		this(1);
 	}
-	public  MinPQ(int initCapacity, Comparator<Key> comparator) {
-		this.comparator = comparator;
-		pq = (Key[]) new Object[initCapacity + 1];
-		n = 0;
-	}
-	public  MinPQ(Comparator<Key> comparator) {
-		this(1, comparator);
-	}
 	public  MinPQ(Key[] keys) {
 		n = keys.length;
 		pq = (Key[]) new Object[keys.length + 1];
@@ -126,11 +112,6 @@ class  MinPQ<Key> {
 	public int size() {
 		return n;
 	}
-	public Key min() {
-		if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
-		return pq[1];
-	}
-
 	private void resize(int capacity) {
 		assert capacity > n;
 		Key[] temp = (Key[]) new Object[capacity];
