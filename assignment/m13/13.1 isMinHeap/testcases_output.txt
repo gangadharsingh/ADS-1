@@ -56,7 +56,7 @@ true
 false
 false
 ----------------------------------------
-########## Testcase 4: Passed ##########
+########## Testcase 4: Failed ##########
 Expected Output: 
 true
 true
@@ -64,5 +64,4 @@ false
 Your Output: 
 true
 true
-false
 ----------------------------------------
