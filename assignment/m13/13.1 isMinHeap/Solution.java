@@ -1,12 +1,31 @@
 import java.util.Scanner;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import Priority.MinPQ;
+/**
+ * Class for solution.
+ */
 public class Solution {
+	/**
+	 * Constructs the object.
+	 */
 	private Solution() { }
+	/**
+	 * compare.
+	 *
+	 * @param      pq    priority queue.
+	 * @param      str   The string.
+	 *
+	 * @return     {compare it}.
+	 */
 	public static boolean compare(String pq, String str) {
 		return pq.equals(str);
 	}
+	/**
+	 * main.
+	 *
+	 * @param      args  The arguments
+	 */
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String check = scan.nextLine();
@@ -25,8 +44,6 @@ public class Solution {
 						pq.insert(token[j]);
 						str += token[j];
 					}
-				}
-				if (str.length() != 0) {
 					System.out.println(compare(pq.show(), str));
 				} else {
 					System.out.println("false");
@@ -69,8 +86,6 @@ public class Solution {
 						pqDouble.insert(Doublearray[k]);
 						str += Doublearray[k];
 						}
-				}
-				if (str.length() != 0) {
 					System.out.println(compare(pqDouble.show(), str));
 				} else {
 					System.out.println("false");
@@ -92,9 +107,6 @@ public class Solution {
 						pqInteger.insert(integerarray[k]);
 						str += integerarray[k];
 					}	
-				}
-				if (str.length() != 0) {
-					System.out.println(compare(pqInteger.show(), str));
 				} else {
 					System.out.println("false");
 				}
@@ -103,88 +115,5 @@ public class Solution {
 		default:
 			break;
 		}
-	}
-}
-class  MinPQ<Key> {
-	private Key[] pq;
-	private int n;
-	private Comparator<Key> comparator;
-	public  MinPQ(int initCapacity) {
-		pq = (Key[]) new Object[initCapacity + 1];
-		n = 0;
-	}
-	public  MinPQ() {
-		this(1);
-	}
-	public  MinPQ(Key[] keys) {
-		n = keys.length;
-		pq = (Key[]) new Object[keys.length + 1];
-		for (int i = 0; i < n; i++)
-			pq[i + 1] = keys[i];
-		assert isMinHeap();
-	}
-	public boolean isEmpty() {
-		return n == 0;
-	}
-
-	public int size() {
-		return n;
-	}
-	private void resize(int capacity) {
-		assert capacity > n;
-		Key[] temp = (Key[]) new Object[capacity];
-		for (int i = 1; i <= n; i++) {
-			temp[i] = pq[i];
-		}
-		pq = temp;
-	}
-	public void insert(Key x) {
-		if (n == pq.length - 1) resize(2 * pq.length);
-
-		pq[++n] = x;
-		swim(n);
-		assert isMinHeap();
-	}
-	public String show() {
-		String str = "";
-		for (int i = 0; i < pq.length; i++) {
-			if (pq[i] != null) {
-				str += pq[i];
-			}
-		}
-		return str;
-	}
-
-	private void swim(int k) {
-		while (k > 1 && greater(k / 2, k)) {
-			exch(k, k / 2);
-			k = k / 2;
-		}
-	}
-	private boolean greater(int i, int j) {
-		if (comparator == null) {
-			return ((Comparable<Key>) pq[i]).compareTo(pq[j]) > 0;
-		} else {
-			return comparator.compare(pq[i], pq[j]) > 0;
-		}
-	}
-
-	private void exch(int i, int j) {
-		Key swap = pq[i];
-		pq[i] = pq[j];
-		pq[j] = swap;
-	}
-
-	private boolean isMinHeap() {
-		return isMinHeap(1);
-	}
-
-	private boolean isMinHeap(int k) {
-		if (k > n) return true;
-		int left = 2 * k;
-		int right = 2 * k + 1;
-		if (left  <= n && greater(k, left))  return false;
-		if (right <= n && greater(k, right)) return false;
-		return isMinHeap(left) && isMinHeap(right);
 	}
 }

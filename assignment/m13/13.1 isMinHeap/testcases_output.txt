@@ -26,7 +26,7 @@ false
 false
 false
 ----------------------------------------
-########## Testcase 2: Passed ##########
+########## Testcase 2: Failed ##########
 Expected Output: 
 true
 true
@@ -37,14 +37,7 @@ false
 true
 false
 Your Output: 
-true
-true
-true
-false
-false
-false
-true
-false
+
 ----------------------------------------
 ########## Testcase 3: Passed ##########
 Expected Output: 
