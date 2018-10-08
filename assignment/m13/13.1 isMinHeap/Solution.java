@@ -17,14 +17,20 @@ public class Solution {
 			int count = 0;
 			for (int i = 0; i < numString; i++) {
 				String line = scan.nextLine();
-				String[] token = line.split(",");
-				MinPQ<String> pq = new MinPQ<String>();
 				String str = "";
-				for (int j = 0; j < token.length; j++) {
-					pq.insert(token[j]);
-					str += token[j];
+				MinPQ<String> pq = new MinPQ<String>();
+				if (line.length() != 0) {
+					String[] token = line.split(",");
+					for (int j = 0; j < token.length; j++) {
+						pq.insert(token[j]);
+						str += token[j];
+					}
 				}
-				System.out.println(compare(pq.show(), str));
+				if (str.length() != 0) {
+					System.out.println(compare(pq.show(), str));
+				} else {
+					System.out.println("false");
+				}
 			}
 			break;
 		case "Float":
@@ -32,16 +38,22 @@ public class Solution {
 			scan.nextLine();
 			for (int l = 0; l < numFloat; l++) {
 				String line = scan.nextLine();
-				String[] token = line.split(",");
-				Float[] floatarray = new Float[token.length];
 				String str = "";
 				MinPQ<Float> pqFloat = new MinPQ<Float>();
-				for (int k = 0; k< token.length; k++) {
-					floatarray[k] = Float.parseFloat(token[k]);
-					pqFloat.insert(floatarray[k]);
-					str += floatarray[k];
+				if (line.length() != 0) {
+					String[] token = line.split(",");
+					Float[] floatarray = new Float[token.length];
+					for (int k = 0; k< token.length; k++) {
+						floatarray[k] = Float.parseFloat(token[k]);
+						pqFloat.insert(floatarray[k]);
+						str += floatarray[k];
+					}
 				}
-				System.out.println(compare(pqFloat.show(), str));
+				if (str.length() != 0) {
+					System.out.println(compare(pqFloat.show(), str));
+				} else {
+					System.out.println("false");
+				}
 			}
 			break;
 		case "Double":
@@ -49,18 +61,22 @@ public class Solution {
 			scan.nextLine();
 			for (int l = 0; l < numDouble; l++) {
 				String line = scan.nextLine();
-				String[] token = line.split(",");
-				Double[] Doublearray = new Double[token.length];
 				String str = "";
 				MinPQ<Double> pqDouble = new MinPQ<Double>();
-				for (int k = 0; k< token.length; k++) {
-					// System.out.println("BATMAN");
-					// System.out.println(Double.parseDouble(token[k]));
-					Doublearray[k] = Double.parseDouble(token[k]);
-					pqDouble.insert(Doublearray[k]);
-					str += Doublearray[k];
+				if (line.length() == 0) {
+					String[] token = line.split(",");
+					Double[] Doublearray = new Double[token.length];
+					for (int k = 0; k< token.length; k++) {
+						Doublearray[k] = Double.parseDouble(token[k]);
+						pqDouble.insert(Doublearray[k]);
+						str += Doublearray[k];
+						}
 				}
-				System.out.println(compare(pqDouble.show(), str));
+				if (str.length() != 0) {
+					System.out.println(compare(pqDouble.show(), str));
+				} else {
+					System.out.println("false");
+				}
 			}
 			break;
 		case "Integer":
@@ -68,18 +84,22 @@ public class Solution {
 			scan.nextLine();
 			for (int l = 0; l < numInteger; l++) {
 				String line = scan.nextLine();
-				String[] token = line.split(",");
-				Integer[] integerarray = new Integer[token.length];
 				String str = "";
 				MinPQ<Integer> pqInteger = new MinPQ<Integer>();
-				for (int k = 0; k< token.length; k++) {
-					// System.out.println("WonderWoMAN");
-					// System.out.println(Integer.parseInt(token[k]));
-					integerarray[k] = Integer.parseInt(token[k]);
-					pqInteger.insert(integerarray[k]);
-					str += integerarray[k];
+				if (line.length() != 0) {
+					String[] token = line.split(",");
+					Integer[] integerarray = new Integer[token.length];
+					for (int k = 0; k< token.length; k++) {
+						integerarray[k] = Integer.parseInt(token[k]);
+						pqInteger.insert(integerarray[k]);
+						str += integerarray[k];
+					}	
 				}
-				System.out.println(compare(pqInteger.show(), str));
+				if (str.length() != 0) {
+					System.out.println(compare(pqInteger.show(), str));
+				} else {
+					System.out.println("false");
+				}
 			}
 			break;
 		default:
