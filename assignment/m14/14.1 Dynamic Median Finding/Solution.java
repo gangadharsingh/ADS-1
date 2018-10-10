@@ -10,7 +10,7 @@ public class Solution{
 		while(token > 0) {
 			// System.out.println(token+"::BATin token");
 			double key = Double.parseDouble(scan.nextLine());
-			heapMin.insert(key);
+			
 			if (key < median) {
 				heapMax.insertMax(key);
 				// heapMax.show();
@@ -32,6 +32,7 @@ public class Solution{
 				// heapMin.show();
 			}
 			if (heapMin.getsize() == heapMax.getsize()) {
+				System.out.println(heapMax.getsize() + "  "+heapMin.getsize());
 				median = (heapMin.getMin() + heapMax.getMax() ) / 2;
 			} else if (heapMin.getsize() > heapMax.getsize()) {
 				median = heapMin.getMin();
