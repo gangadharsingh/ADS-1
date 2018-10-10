@@ -14,7 +14,7 @@ public class Solution{
 			if (key < median) {
 				heapMax.insertMax(key);
 				// heapMax.show();
-			} else if (key > median) {
+			} else if (key >= median) {
 				heapMin.insert(key);
 				// heapMin.show();
 			}
