@@ -3,13 +3,13 @@ public class Solution{
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int token = Integer.parseInt(scan.nextLine());
-		MinHeap<Integer> heapMin = new MinHeap<Integer>();
-		MaxHeap<Integer> heapMax = new MaxHeap<Integer>();
+		MinHeap<Double> heapMin = new MinHeap<Double>();
+		MaxHeap<Double> heapMax = new MaxHeap<Double>();
 		double median = 0;
 		// int s = token;
 		while(token > 0) {
 			// System.out.println(token+"::BATin token");
-			int key = Integer.parseInt(scan.nextLine());
+			double key = Double.parseDouble(scan.nextLine());
 			heapMin.insert(key);
 			if (key < median) {
 				heapMax.insertMax(key);
@@ -19,13 +19,13 @@ public class Solution{
 				// heapMin.show();
 			}
 			if ((heapMin.getsize() - heapMax.getsize() == 2)) {
-				int temp = heapMin.delMin();
+				double temp = heapMin.delMin();
 				heapMax.insertMax(temp);
 				// median = heapMin.delMin();
 				// heapMax.insertMax(median);
 				// heapMax.show();
 			} else if ((heapMin.getsize() - heapMax.getsize() == -2)) {
-				int temp = heapMax.delMax();
+				double temp = heapMax.delMax();
 				heapMin.insert(temp);
 				// median = heapMax.delMax();
 				// heapMin.insert(median);
