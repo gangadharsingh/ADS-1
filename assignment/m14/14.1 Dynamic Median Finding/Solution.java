@@ -3,13 +3,14 @@ public class Solution{
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int token = Integer.parseInt(scan.nextLine());
-		MinHeap<Double> heapMin = new MinHeap<Double>();
-		MaxHeap<Double> heapMax = new MaxHeap<Double>();
+		MinHeap<Integer> heapMin = new MinHeap<Integer>();
+		MaxHeap<Integer> heapMax = new MaxHeap<Integer>();
 		double median = 0;
-		// int s = token;
+		int s = token;
 		while(token > 0) {
 			// System.out.println(token+"::BATin token");
-			double key = Double.parseDouble(scan.nextLine());
+			int key = Integer.parseInt(scan.nextLine());
+			// heapMin.insert(key);
 			if (key < median) {
 				heapMax.insertMax(key);
 				// heapMax.show();
@@ -18,21 +19,20 @@ public class Solution{
 				// heapMin.show();
 			}
 			if ((heapMin.getsize() - heapMax.getsize() == 2)) {
-				double temp = heapMin.delMin();
+				int temp = heapMin.delMin();
 				heapMax.insertMax(temp);
 				// median = heapMin.delMin();
 				// heapMax.insertMax(median);
 				// heapMax.show();
 			} else if ((heapMin.getsize() - heapMax.getsize() == -2)) {
-				double temp = heapMax.delMax();
+				int temp = heapMax.delMax();
 				heapMin.insert(temp);
 				// median = heapMax.delMax();
 				// heapMin.insert(median);
 				// heapMin.show();
 			}
 			if (heapMin.getsize() == heapMax.getsize()) {
-				// System.out.println(heapMax.getsize() + "  "+heapMin.getsize());
-				median = (heapMin.getMin() + heapMax.getMax() ) / 2;
+				median = (heapMin.getMin() + heapMax.getMax() ) / 2.0;
 			} else if (heapMin.getsize() > heapMax.getsize()) {
 				median = heapMin.getMin();
 			} else if (heapMin.getsize() < heapMax.getsize()) {
