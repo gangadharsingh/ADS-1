@@ -5,8 +5,8 @@ public class Solution{
 		int token = Integer.parseInt(scan.nextLine());
 		MinHeap<Integer> heapMin = new MinHeap<Integer>();
 		MaxHeap<Integer> heapMax = new MaxHeap<Integer>();
-		int median = 0;
-		int s = token;
+		double median = 0;
+		// int s = token;
 		while(token > 0) {
 			// System.out.println(token+"::BATin token");
 			int key = Integer.parseInt(scan.nextLine());
