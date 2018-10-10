@@ -10,7 +10,6 @@ public class Solution{
 		while(token > 0) {
 			// System.out.println(token+"::BATin token");
 			double key = Double.parseDouble(scan.nextLine());
-			
 			if (key < median) {
 				heapMax.insertMax(key);
 				// heapMax.show();
