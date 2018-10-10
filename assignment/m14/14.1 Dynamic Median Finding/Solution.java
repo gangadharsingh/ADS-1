@@ -2,11 +2,11 @@ import java.util.Scanner;
 public class Solution{
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		int token = Integer.parseInt(scan.nextLine());
+		long token = Integer.parseInt(scan.nextLine());
 		MinHeap<Integer> heapMin = new MinHeap<Integer>();
 		MaxHeap<Integer> heapMax = new MaxHeap<Integer>();
 		double median = 0;
-		int s = token;
+		// int s = token;
 		while(token > 0) {
 			// System.out.println(token+"::BATin token");
 			int key = Integer.parseInt(scan.nextLine());
