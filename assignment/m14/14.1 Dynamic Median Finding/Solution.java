@@ -32,7 +32,7 @@ public class Solution{
 				// heapMin.show();
 			}
 			if (heapMin.getsize() == heapMax.getsize()) {
-				System.out.println(heapMax.getsize() + "  "+heapMin.getsize());
+				// System.out.println(heapMax.getsize() + "  "+heapMin.getsize());
 				median = (heapMin.getMin() + heapMax.getMax() ) / 2;
 			} else if (heapMin.getsize() > heapMax.getsize()) {
 				median = heapMin.getMin();
