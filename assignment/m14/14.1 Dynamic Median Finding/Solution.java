@@ -40,12 +40,12 @@ public class Solution{
 			}
 			
 		// System.out.println(median+":BATout");
-		token--;
+			token--;
+			System.out.println(median);
 		}
 		// System.out.println();
 		// heapMax.show();
 		// System.out.println();
 		// heapMin.show();
-		System.out.println(median);
 	}
 }
