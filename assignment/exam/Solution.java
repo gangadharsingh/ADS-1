@@ -290,18 +290,16 @@ final class Solution {
             if (students[k].getcategory().equals("BC") && bc > 0) {
                 indices[i++] = k;
                 bc--;
-            } else if (students[k].getcategory().
-                equals("SC") && sc > 0) {
+            } else if (students[k].getcategory().equals("SC") && sc > 0) {
                 indices[i++] = k;
                 sc--;
-            } else if (students[k].getcategory().
-                equals("ST") && st > 0) {
+            } else if (students[k].getcategory().equals("ST") && st > 0) {
                 indices[i++] = k;
                 st--;
             }
         }
 
-/*        if (bc > 0) {
+        if (bc > 0) {
             for (int k = open; k < n; k++) {
             if (students[k].getcategory().equals("Open") && bc > 0) {
                     if (!contains(indices, k)) {
@@ -332,7 +330,7 @@ final class Solution {
                     }
                 }
             }
-        }*/
+        }
         Arrays.sort(indices);
         for (int k = 0; k < indices.length; k++) {
             System.out.println(students[indices[k]].print());
