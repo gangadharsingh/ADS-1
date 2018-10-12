@@ -140,7 +140,7 @@ class Details {
         age += (year - Integer.parseInt(token[2])) * days;
         age += (ten - Integer.parseInt(token[1])) * month;
         age += Integer.parseInt(token[0]);
-        System.out.println(age);
+        // System.out.println(age);
         return age;
     }
     /**

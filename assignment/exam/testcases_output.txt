@@ -144,7 +144,7 @@ Raj,87,BC
 Aditya,80,ST
 priya,72,SC
 ----------------------------------------
-########## Testcase 2: Failed ##########
+########## Testcase 2: Passed ##########
 Expected Output: 
 divya,99,Open
 tanvi,90,Open
@@ -161,10 +161,6 @@ divya,99,Open
 Aditya,80,ST
 priya,76,SC
 Your Output: 
-9198
-9257
-9198
-9257
 divya,99,Open
 tanvi,90,Open
 Aditya,80,ST
@@ -200,10 +196,6 @@ priya,76,SC
 Ajay,76,Open
 Tanya,66,BC
 Your Output: 
-9198
-9257
-9198
-9257
 divya,99,Open
 tanvi,90,ST
 Aditya,80,Open
@@ -269,14 +261,6 @@ Ajay,76,Open
 Amit,76,Open
 Arjun,75,Open
 Your Output: 
-9294
-9052
-9116
-9384
-9116
-9384
-9384
-9116
 divya,99,Open
 tanvi,99,Open
 Ishita,99,Open
@@ -371,12 +355,6 @@ rahul,73,Open
 priya,72,SC
 varsha,66,BC
 Your Output: 
-8778
-9294
-9425
-9257
-9257
-9425
 divya,99,ST
 Deepak,99,Open
 Ishita,99,Open
