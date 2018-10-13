@@ -12,7 +12,7 @@ class Solution {
 	 *
 	 * @param      args  The arguments
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int numStock = Integer.parseInt(scan.nextLine());
 		int run = numStock*(2+2+2);
@@ -138,6 +138,10 @@ class Stockdata {
  */
 class Querydata {
 	/**
+	 * Constructs the object.
+	 */
+	Querydata() { }
+	/**
 	 * { var_description }
 	 */
 	SymbolTable<String, Integer> stock;
@@ -148,21 +152,5 @@ class Querydata {
 	 */
 	Querydata(SymbolTable<String, Integer> st) {
 		stock = st;
-	}
-	/**
-	 * { function_description }
-	 *
-	 * @param      s     { parameter_description }
-	 * @param      name  The name
-	 */
-	void get(String s, String name) {
-		String str = s.substring(0,2);
-		if (str.equals("max")) {
-			for (int i = 0; i < stock.size();i++ ) {
-				
-			}
-		} else if (str.equals("min")) {
-			
-		}
 	}
 }

@@ -1,7 +1,11 @@
 /**
  * Class for maximum heap.
  */
-class MaxHeap {
+public class MaxHeap {
+	/**
+	 * Constructs the object.
+	 */
+	private MaxHeap() { }
 	/**
 	 * array.
 	 */
@@ -29,11 +33,11 @@ class MaxHeap {
 	 */
 	Stockdata[] sort() {
 		for (int i = (size / 2) - 1; i >= 0; i--) {
-			heapifyUp(i);
+			heapify(size, i);
 		}
 		for (int i = size - 1; i >= 0; i--) {
 			swap(0, i);
-			heapifyUp(0);
+			heapify(i, 0);
 		}
 		return array;
 	}
@@ -58,29 +62,21 @@ class MaxHeap {
 	 * @param      n     { parameter_description }
 	 * @param      i     { parameter_description }
 	 */
-	// void heapify(final int n, final int i) {
-	// 	int min = i;
-	// 	int l = 2 * i + 1;
-	// 	int r = 2 * i + 2;
-	// 	if (l < n && array[l].compareTo(array[min]) < 0) {
-	// 		min = l;
-	// 	}
-	// 	if (r < n && array[r].compareTo(array[min]) < 0) {
-	// 		min = r;
-	// 	}
-	// 	if (min != i) {
-	// 		swap(min, i);
-	// 		heapify(min, n);
-	// 	}
-	// }
-	public void heapifyUp(int i) {
-        Stockdata temp = array[i];
-        while(i>0 && temp.compareTo(array[(i-1)/2]) > 0){
-            array[i] = array[(i-1)/2];
-            i = (i-1)/2;
-        }
-        array[i] = temp;
-    }
+	void heapify(final int n, final int i) {
+		int min = i;
+		int l = 2 * i + 1;
+		int r = 2 * i + 2;
+		if (l < n && array[l].compareTo(array[min]) < 0) {
+			min = l;
+		}
+		if (r < n && array[r].compareTo(array[min]) < 0) {
+			min = r;
+		}
+		if (min != i) {
+			swap(min, i);
+			heapify(min, n);
+		}
+	}
 	/**
 	 * gets item.
 	 *

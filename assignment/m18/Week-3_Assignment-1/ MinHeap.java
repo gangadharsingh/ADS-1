@@ -2,7 +2,17 @@
  * Class for minimum heap.
  */
 class MinHeap {
+	/**
+	 * Constructs the object.
+	 */
+	private MinHeap() { }
+	/**
+	 * { var_description }
+	 */
     private Stockdata[] array;
+    /**
+     * { var_description }
+     */
     private int size;
     /**
      * Constructs the object.
