@@ -27,22 +27,16 @@ class Solution {
 			for (int i = 0; i < numStock; i++) {
 				String[] testcase = scan.nextLine().split(",");
 				stdata[i] = new Stockdata(testcase[0], Float.parseFloat(testcase[1]));
-				// minHp(testcase, testcase.size);
-				// System.out.println(stdata[i]);
 			}
 			minHp = new MinHeap(stdata, numStock);
 			maxHp = new MaxHeap(stdata, numStock);
 			minHp.sort();
 			maxHp.sort();
 			bestStock = new SymbolTable<String, Integer>();
-			// minHp.print();
 			for (int i = 0; i < 5; i++) {
 				freqWorst[i] = minHp.getitem(i);
 				freqBest[i] = maxHp.getitem(i);
 			}
-			// maxHp.print();
-			// System.out.println("--------------------------------------");
-	  		//bestStock.put(freqBest[i], i);
 			run--;
 		}
 		int[] bestcount = new int[freqBest.length];
@@ -72,10 +66,6 @@ class Solution {
 			}
 			System.out.println();
 		}
-		// for (int i = 0; i < freqBest.length; i++) {
-		// 	bestStock.put(beststock[i], bestcount[i]);
-		// 	worstStock.put(worststock[i], worstcount[i]);
-		// }
 		int query = Integer.parseInt(scan.nextLine());
 		stdata = new Stockdata[numStock];
 	}
