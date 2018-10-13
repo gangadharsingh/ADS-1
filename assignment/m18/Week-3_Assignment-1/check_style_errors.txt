@@ -1,0 +1,8 @@
+Starting audit...
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m18/Week-3_Assignment-1/ MinHeap.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m18/Week-3_Assignment-1/ MinHeap.java:8:4: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m18/Week-3_Assignment-1/ MinHeap.java:61: Line is longer than 80 characters (found 94). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m18/Week-3_Assignment-1/ MinHeap.java:62: Line is longer than 80 characters (found 104). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m18/Week-3_Assignment-1/ MinHeap.java:152: Missing a Javadoc comment. [JavadocType]
+Audit done.
+Checkstyle ends with 5 errors.
