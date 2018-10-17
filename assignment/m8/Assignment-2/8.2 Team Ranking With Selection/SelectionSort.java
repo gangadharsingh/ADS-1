@@ -1,12 +1,15 @@
+/**
+ * Class for selection sort.
+ */
 public class SelectionSort {
     /**
      * { field }.
      */
-    Team[] team;
+    private Team[] team;
     /**
      * { field }.
      */
-    int size;
+    private int size;
     /**
      * Constructs the object.
      *
