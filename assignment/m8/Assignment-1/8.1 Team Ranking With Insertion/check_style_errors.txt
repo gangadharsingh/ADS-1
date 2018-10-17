@@ -1,21 +1,12 @@
 Starting audit...
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:5:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:8:23: Variable 'teamname' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:12:20: Variable 'wins' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:16:20: Variable 'loses' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:20:20: Variable 'draw' must be private and have accessor methods. [VisibilityModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:28:21: Parameter inp should be final. [FinalParameters]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:32:45: '3' is a magic number. [MagicNumber]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:42: First sentence should end with a period. [JavadocStyle]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:47:28: Parameter tm should be final. [FinalParameters]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:50: First sentence should end with a period. [JavadocStyle]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:58: First sentence should end with a period. [JavadocStyle]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:63:28: Parameter win should be final. [FinalParameters]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:67: First sentence should end with a period. [JavadocStyle]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:75: First sentence should end with a period. [JavadocStyle]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:80:29: Parameter lose should be final. [FinalParameters]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:84: First sentence should end with a period. [JavadocStyle]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:92: First sentence should end with a period. [JavadocStyle]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-1/8.1 Team Ranking With Insertion/Team.java:97:28: Parameter dr should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 9 errors.

@@ -5,19 +5,19 @@ public class Team {
 	/**
 	 * teamname field.
 	 */
-	public String teamname;
+	private String teamname;
 	/**
 	 * no of wins.
 	 */
-	public int wins;
+	private int wins;
 	/**
 	 * no of losses.
 	 */
-	public int loses;
+	private int loses;
 	/**
 	 * no of draw.
 	 */
-	public int draw;
+	private int draw;
 	/**
 	 * Constructs the object.
 	 * Best: O(1)
@@ -25,7 +25,7 @@ public class Team {
      * Worst : O(1)
 	 * @param      inp   The inp
 	 */
-	public Team(String[] inp) {
+	public Team(final String[] inp) {
 		teamname = inp[0];
 		wins = Integer.parseInt(inp[1]);
 		loses = Integer.parseInt(inp[2]);
@@ -44,7 +44,7 @@ public class Team {
 	 *
 	 * @param      tm    The time
 	 */
-	public void seteam(String tm) {
+	public void seteam(final String tm) {
 		teamname = tm;
 	}
 	/**
@@ -60,7 +60,7 @@ public class Team {
 	 *
 	 * @param      win   The window
 	 */
-	public void sewins(int win)  {
+	public void sewins(final int win)  {
 		wins = win;
 	}
 
@@ -77,7 +77,7 @@ public class Team {
 	 *
 	 * @param      lose  The lose
 	 */
-	public void seloses(int lose)  {
+	public void seloses(final int lose)  {
 		loses = lose;
 	}
 
@@ -94,7 +94,7 @@ public class Team {
 	 *
 	 * @param      dr    { parameter_description }
 	 */
-	public void sedraw(int dr)  {
+	public void sedraw(final int dr)  {
 		draw = dr;
 	}
 	/**
