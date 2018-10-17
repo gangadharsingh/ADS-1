@@ -19,8 +19,8 @@ class Solution {
 		MinHeap minHp;
 		MaxHeap maxHp;
 		Stockdata[] stdata = new Stockdata[numStock];
-		Stockdata[] freqBest = new Stockdata[(2+2+1)*numStock];;
-		Stockdata[] freqWorst = new Stockdata[(2+2+1)*numStock];
+		Stockdata[] freqBest = new Stockdata[(5)*numStock];;
+		Stockdata[] freqWorst = new Stockdata[(5)*numStock];
 		SymbolTable<String, Integer> bestStock = new SymbolTable<String, Integer>();
 		SymbolTable<String, Integer> worstStock = new SymbolTable<String, Integer>();
 		while(run > 0) {
@@ -57,11 +57,11 @@ class Solution {
 			}
 		}
 		for (int i = 0; i < freqBest.length; i++) {
-			for (int j = 0; j < (2+2+1); j++) {
+			for (int j = 0; j < (5); j++) {
 				System.out.println(freqBest[i].getname()+" "+freqBest[i].getperChange());
 			}
 			System.out.println();
-			for (int j = 0; j < (2+2+1); j++) {
+			for (int j = 0; j < (5); j++) {
 				System.out.println(freqWorst[i].getname()+" "+freqWorst[i].getperChange());
 			}
 			System.out.println();
