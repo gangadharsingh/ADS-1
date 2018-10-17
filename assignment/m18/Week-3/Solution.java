@@ -15,11 +15,13 @@ class Solution {
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         int numStock = Integer.parseInt(scan.nextLine());
-        int run = (2+2+2);
-        
-        Stockdata[] freqBest = new Stockdata[((2+2+1))*numStock];;
-        Stockdata[] freqWorst = new Stockdata[((2+2+1))*numStock];
-        while(run > 0) {
+        int run = (2 + 2 + 2);
+
+        Stockdata[] freqBest = new Stockdata[((2 + 2 + 1)) * numStock];;
+        Stockdata[] freqWorst = new Stockdata[((2 + 2 + 1)) * numStock];
+        SymbolTable<String, Float> bstStock = new SymbolTable<String, Float>((2 + 2 + 1));
+        SymbolTable<String, Float> wstStock = new SymbolTable<String, Float>((2 + 2 + 1));
+        while (run > 0) {
             Stockdata stdata;
             MinHeap<Stockdata> minHp = new MinHeap<Stockdata> ();
             MaxHeap<Stockdata> maxHp = new MaxHeap<Stockdata> ();
@@ -29,33 +31,48 @@ class Solution {
                 minHp.insert(stdata);
                 maxHp.insert(stdata);
             }
-            for(int i=0;i<5;i++) {
+            for (int i = 0; i < 5; i++) {
                 freqBest[i] = maxHp.delMax();
+                bstStock.put(freqBest[i].getname(), freqBest[i].getperChange());
                 System.out.println(freqBest[i]);
-            }System.out.println();
-            for(int i=0;i<5;i++) {
+            } System.out.println();
+            for (int i = 0; i < 5; i++) {
                 freqWorst[i] = minHp.delMin();
+                wstStock.put(freqWorst[i].getname(), freqWorst[i].getperChange());
                 System.out.println(freqWorst[i]);
-            }System.out.println();
-        //  bestStock = new SymbolTable<String, Integer>();
-        //  for (int i = 0; i < (2+2+1); i++) {
-        //      freqWorst[i] = minHp.delMin();
-        //      freqBest[i] = maxHp.delMax();
-        //  }
+            } System.out.println();
             run--;
-        // }
-        // for (int i = 0; i < 5; i++) {
-        //  System.out.println(freqBest[i]);
-        //  System.out.println(freqWorst[i]);
         }
-        
+        int numQuery = Integer.parseInt(scan.nextLine());
+        String[] query = scan.nextLine().split(",");
+        while (numQuery > 0) {
+            switch (query[0]) {
+            case "get":
+                if (query[1].equals("maxST")) {
+                    System.out.println(bstStock.get(query[1]));
+                } else if (query[1].equals("minST")) {
+                    System.out.println(wstStock.get(query[1]));
+                }
+                break;
+            case "intersection":
+                // for (int i = 0; i < bstStock.size(); i++) {
+                //     for (int j = 0; j < wstStock.size(); j++ ) {
+                //         if (bstStock[i]) {
+
+                //         }
+                //     }
+                // }
+                break;
+            }
+            numQuery--;
+        }
     }
 }
 
 /**
  * Class for stockdata.
  */
-class Stockdata implements Comparable<Stockdata>{
+class Stockdata implements Comparable<Stockdata> {
     /**
      * { var_description }
      */
@@ -79,16 +96,16 @@ class Stockdata implements Comparable<Stockdata>{
      *
      * @return     { description_of_the_return_value }
      */
-    public String getname(){
-      return name;
+    public String getname() {
+        return name;
     }
     /**
      * { function_description }
      *
      * @return     { description_of_the_return_value }
      */
-    public Float getperChange(){
-      return perChange;
+    public Float getperChange() {
+        return perChange;
     }
     /**
      * { function_description }
@@ -116,26 +133,5 @@ class Stockdata implements Comparable<Stockdata>{
      */
     public String toString() {
         return name + " " + perChange;
-    }
-}
-/**
- * Class for querydata.
- */
-class Querydata {
-    /**
-     * Constructs the object.
-     */
-    Querydata() { }
-    /**
-     * { var_description }
-     */
-    SymbolTable<String, Integer> stock;
-    /**
-     * Constructs the object.
-     *
-     * @param      st    { parameter_description }
-     */
-    Querydata(SymbolTable<String, Integer> st) {
-        stock = st;
     }
 }

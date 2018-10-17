@@ -1,155 +1,124 @@
-/**
- * class to create a symbol table.
- * it is a generic type.
- *
- * @param      <Key>    The key
- * @param      <Value>  The value
- */
-class SymbolTable<Key extends Comparable<Key>, Value> {
-    /**
-     * initial CAP for the arrays.
-     */
-    private static final int CAP = 2;
-    /**
-     * keys array to store keys of the give.
-     * SYmbolTable
-     */
+import java.util.NoSuchElementException;
+class BinarySearchST<Key extends Comparable<Key>, Value> {
+    private static final int INIT_CAPACITY = 2;
     private Key[] keys;
-    /**
-     * values array to store values of the give.
-     * SYmbolTable
-     */
     private Value[] vals;
-    /**
-     * to track size of the array.
-     */
     private int n = 0;
-    /**
-     * Constructor to initialize.
-     * the SymbolTable.
-     */
-    SymbolTable() {
-        keys = (Key[]) new Comparable[CAP];
-        vals = (Value[]) new Object[CAP];
-    }
-    /**
-     * method to return max value.
-     *complexity O(1)
-     * @return     { it return n-1 index of key array }
-     */
-    public Key max() {
 
-        return keys[n - 1];
-    }
     /**
-     * method to send Key object.
-     *befor the pramater Key
-     *complexity O(1)
-     * @param      key   The key
-     *
-     * @return     {if i=0 return null,
-     * or returns i-1 index of the Key
-     * or return the same Key if the
-     * preveious Key is also same.}
+     * Initializes an empty symbol table.
      */
-    public Key floor(final Key key) {
+    public BinarySearchST() {
+        this(INIT_CAPACITY);
+    }
 
-        int i = rank(key);
-        if (i < n && key.compareTo(keys[i]) == 0) {
-            return keys[i];
+    /**
+     * Initializes an empty symbol table with the specified initial capacity.
+     * @param capacity the maximum capacity
+     */
+    public BinarySearchST(int capacity) { 
+        keys = (Key[]) new Comparable[capacity]; 
+        vals = (Value[]) new Object[capacity]; 
+    }   
+
+    // resize the underlying arrays
+    private void resize(int capacity) {
+        assert capacity >= n;
+        Key[]   tempk = (Key[])   new Comparable[capacity];
+        Value[] tempv = (Value[]) new Object[capacity];
+        for (int i = 0; i < n; i++) {
+            tempk[i] = keys[i];
+            tempv[i] = vals[i];
         }
-        if (i == 0) {
-            return null;
-        }
-        return keys[i - 1];
+        vals = tempv;
+        keys = tempk;
     }
-    /**
-     * returns the index of the @param Key.
-     *complexity O(Logn)
-     * @param      key   The key
-     *
-     * @return returns mid if the lo less than high.
-     * or returns the lo.
-     */
-    public int rank(final Key key) {
-        int lo = 0, hi = n - 1;
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            int cmp = key.compareTo(keys[mid]);
-            if (cmp < 0) {
-                hi = mid - 1;
-            } else if (cmp > 0) {
-                lo = mid + 1;
-            } else {
 
-                return mid;
-            }
-        }
-        return lo;
+    /**
+     * Returns the number of key-value pairs in this symbol table.
+     *
+     * @return the number of key-value pairs in this symbol table
+     */
+    public int size() {
+        return n;
     }
-    /**
-     * return the first element. or the minimum of the ordered keys.
-     *complexity O(1)
-     * @return     keys[0];
-     */
-    public Key min() {
 
-        return keys[0];
+    /**
+     * Returns true if this symbol table is empty.
+     *
+     * @return {@code true} if this symbol table is empty;
+     *         {@code false} otherwise
+     */
+    public boolean isEmpty() {
+        return size() == 0;
     }
-    /**
-     *
-     * deletemin is used to delete.
-     *  the min element of the element and it
-     *  calls the delete function.
-     */
-    public void deleteMin() {
 
-        delete(min());
-    }
-    /**
-     * method to check weather.
-     *  the element is present or not.
-     *
-     *complexity O(1)
-     * @param      key   The key
-     *
-     * @return check for the get()
-     * method is returning null or not
-     */
-    public boolean contains(final Key key) {
 
+    /**
+     * Does this symbol table contain the given key?
+     *
+     * @param  key the key
+     * @return {@code true} if this symbol table contains {@code key} and
+     *         {@code false} otherwise
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public boolean contains(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to contains() is null");
         return get(key) != null;
     }
+
     /**
-     * get method returns the key element.
-     *complexity O(1)
+     * Returns the value associated with the given key in this symbol table.
      *
-     * @param      key   The key
-     *
-     * @return  null if empty.
+     * @param  key the key
+     * @return the value associated with the given key if the key is in the symbol table
+     *         and {@code null} if the key is not in the symbol table
+     * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-
-    public Value get(final Key key) {
-
-        if (isEmpty()) {
-            return null;
-        }
-        int i = rank(key);
-        if (i < n && keys[i].compareTo(key) == 0) {
-            return vals[i];
-        }
+    public Value get(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to get() is null"); 
+        if (isEmpty()) return null;
+        int i = rank(key); 
+        if (i < n && keys[i].compareTo(key) == 0) return vals[i];
         return null;
-    }
+    } 
+
     /**
-     * put is used to insert the element in the.
-     * SYmbolTable.
-     * Best case: O(1)
-     * Worst case: O(N)
-     * Average case: O(N)
-     * @param      key   The key
-     * @param      val   The value
+     * Returns the number of keys in this symbol table strictly less than {@code key}.
+     *
+     * @param  key the key
+     * @return the number of keys in the symbol table strictly less than {@code key}
+     * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public void put(final Key key, final Value val)  {
+    public int rank(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to rank() is null"); 
+
+        int lo = 0, hi = n-1; 
+        while (lo <= hi) { 
+            int mid = lo + (hi - lo) / 2; 
+            int cmp = key.compareTo(keys[mid]);
+            if      (cmp < 0) hi = mid - 1; 
+            else if (cmp > 0) lo = mid + 1; 
+            else return mid; 
+        } 
+        return lo;
+    } 
+
+
+
+    /**
+     * Inserts the specified key-value pair into the symbol table, overwriting the old 
+     * value with the new value if the symbol table already contains the specified key.
+     * Deletes the specified key (and its associated value) from this symbol table
+     * if the specified value is {@code null}.
+     *
+     * @param  key the key
+     * @param  val the value
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public void put(Key key, Value val)  {
+        if (key == null) throw new IllegalArgumentException("first argument to put() is null"); 
+
         if (val == null) {
             delete(key);
             return;
@@ -164,62 +133,28 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
 
         // insert new key-value pair
-        if (n == keys.length) {
-            resize(2 * keys.length);
-        }
-
+        if (n == keys.length) resize(2*keys.length);
         for (int j = n; j > i; j--)  {
-            keys[j] = keys[j - 1];
-            vals[j] = vals[j - 1];
+            keys[j] = keys[j-1];
+            vals[j] = vals[j-1];
         }
         keys[i] = key;
         vals[i] = val;
         n++;
-    }
+
+        assert check();
+    } 
+
     /**
-     * Best case: O(n)
-     * Worst case: O(n)
-     * Average case: O(n)
-     * method to resize the array.
+     * Removes the specified key and associated value from this symbol table
+     * (if the key is in the symbol table).
      *
-     * @param      ind   The ind
+     * @param  key the key
+     * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    private void resize(final int ind) {
-        Key[]   tempk = (Key[])   new Comparable[ind];
-        Value[] tempv = (Value[]) new Object[ind];
-        for (int i = 0; i < n; i++) {
-            tempk[i] = keys[i];
-            tempv[i] = vals[i];
-        }
-        vals = tempv;
-        keys = tempk;
-    }
-    /**
-     *
-     * returns size of ST.
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public int size() {
-        return n;
-    }
-    /**
-     * Determines if empty.
-     *
-     * @return     True if empty, False otherwise.
-     */
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-    /**
-     * method to delete the Key.
-     *
-     * @param      key   The key
-     */
-    public void delete(final Key key) {
-        if (isEmpty()) {
-            return;
-        }
+    public void delete(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to delete() is null"); 
+        if (isEmpty()) return;
 
         // compute rank
         int i = rank(key);
@@ -229,30 +164,152 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
             return;
         }
 
-        for (int j = i; j < n - 1; j++)  {
-            keys[j] = keys[j + 1];
-            vals[j] = vals[j + 1];
+        for (int j = i; j < n-1; j++)  {
+            keys[j] = keys[j+1];
+            vals[j] = vals[j+1];
         }
 
         n--;
         keys[n] = null;  // to avoid loitering
         vals[n] = null;
 
-        if (n > 0 && n == keys.length / (2 + 2)) {
-            resize(keys.length / 2);
+        // resize if 1/4 full
+        if (n > 0 && n == keys.length/4) resize(keys.length/2);
+
+        assert check();
+    } 
+
+    /**
+     * Removes the smallest key and associated value from this symbol table.
+     *
+     * @throws NoSuchElementException if the symbol table is empty
+     */
+    public void deleteMin() {
+        if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
+        delete(min());
+    }
+
+    /**
+     * Removes the largest key and associated value from this symbol table.
+     *
+     * @throws NoSuchElementException if the symbol table is empty
+     */
+    public void deleteMax() {
+        if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
+        delete(max());
+    }
+
+
+   /***************************************************************************
+    *  Ordered symbol table methods.
+    ***************************************************************************/
+
+   /**
+     * Returns the smallest key in this symbol table.
+     *
+     * @return the smallest key in this symbol table
+     * @throws NoSuchElementException if this symbol table is empty
+     */
+    public Key min() {
+        if (isEmpty()) throw new NoSuchElementException("called min() with empty symbol table");
+        return keys[0]; 
+    }
+
+    /**
+     * Returns the largest key in this symbol table.
+     *
+     * @return the largest key in this symbol table
+     * @throws NoSuchElementException if this symbol table is empty
+     */
+    public Key max() {
+        if (isEmpty()) throw new NoSuchElementException("called max() with empty symbol table");
+        return keys[n-1];
+    }
+
+    /**
+     * Return the kth smallest key in this symbol table.
+     *
+     * @param  k the order statistic
+     * @return the {@code k}th smallest key in this symbol table
+     * @throws IllegalArgumentException unless {@code k} is between 0 and
+     *        <em>n</em>–1
+     */
+    public Key select(int k) {
+        if (k < 0 || k >= size()) {
+            throw new IllegalArgumentException("called select() with invalid argument: " + k);
         }
+        return keys[k];
+    }
+
+    /**
+     * Returns the largest key in this symbol table less than or equal to {@code key}.
+     *
+     * @param  key the key
+     * @return the largest key in this symbol table less than or equal to {@code key}
+     * @throws NoSuchElementException if there is no such key
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public Key floor(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to floor() is null"); 
+        int i = rank(key);
+        if (i < n && key.compareTo(keys[i]) == 0) return keys[i];
+        if (i == 0) return null;
+        else return keys[i-1];
+    }
+
+    /**
+     * Returns the smallest key in this symbol table greater than or equal to {@code key}.
+     *
+     * @param  key the key
+     * @return the smallest key in this symbol table greater than or equal to {@code key}
+     * @throws NoSuchElementException if there is no such key
+     * @throws IllegalArgumentException if {@code key} is {@code null}
+     */
+    public Key ceiling(Key key) {
+        if (key == null) throw new IllegalArgumentException("argument to ceiling() is null"); 
+        int i = rank(key);
+        if (i == n) return null; 
+        else return keys[i];
     }
     /**
-     * prints all values.
-     * Best case: O(n)
-     * Worst case: O(N)
-     * Average case: O(N)
+     * Returns the number of keys in this symbol table in the specified range.
+     *
+     * @param lo minimum endpoint
+     * @param hi maximum endpoint
+     * @return the number of keys in this symbol table between {@code lo} 
+     *         (inclusive) and {@code hi} (inclusive)
+     * @throws IllegalArgumentException if either {@code lo} or {@code hi}
+     *         is {@code null}
      */
-    void keys() {
-        for (int i = 0; i < n; i++) {
-            if (vals[i] != null) {
-                System.out.println(keys[i] + " " + vals[i]);
-            }
-        }
+    public int size(Key lo, Key hi) {
+        if (lo == null) throw new IllegalArgumentException("first argument to size() is null"); 
+        if (hi == null) throw new IllegalArgumentException("second argument to size() is null"); 
+
+        if (lo.compareTo(hi) > 0) return 0;
+        if (contains(hi)) return rank(hi) - rank(lo) + 1;
+        else              return rank(hi) - rank(lo);
+    }
+   /***************************************************************************
+    *  Check internal invariants.
+    ***************************************************************************/
+
+    private boolean check() {
+        return isSorted() && rankCheck();
+    }
+
+    // are the items in the array in ascending order?
+    private boolean isSorted() {
+        for (int i = 1; i < size(); i++)
+            if (keys[i].compareTo(keys[i-1]) < 0) return false;
+        return true;
+    }
+
+    // check that rank(select(i)) = i
+    private boolean rankCheck() {
+        for (int i = 0; i < size(); i++)
+            if (i != rank(select(i))) return false;
+        for (int i = 0; i < size(); i++)
+            if (keys[i].compareTo(select(rank(keys[i]))) != 0) return false;
+        return true;
     }
 }
