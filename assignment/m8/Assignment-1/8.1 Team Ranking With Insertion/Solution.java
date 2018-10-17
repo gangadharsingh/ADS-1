@@ -13,10 +13,10 @@ public final class Solution {
     public static final int NUM = 10;
     /**
      * { main function }.
-     * Best: O(N)
-     * Avg: O(N)
-     * Worst : O(N)
-     * @param      args  The arguments
+     * Best: O(N).
+     * Avg: O(N).
+     * Worst : O(N).
+     * @param      args  The arguments.
      */
     public static void main(final String[] args) {
         Scanner scan =  new Scanner(System.in);	

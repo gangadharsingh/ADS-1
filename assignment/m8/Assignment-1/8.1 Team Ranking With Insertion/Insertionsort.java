@@ -13,8 +13,8 @@ public class Insertionsort {
     /**
      * Constructs the object.
      *
-     * @param      inp   The inp
-     * @param      len   The length
+     * @param      inp   The inp.
+     * @param      len   The length.
      */
     public Insertionsort(final Team[] inp, final int len) {
         team = inp;
@@ -22,9 +22,9 @@ public class Insertionsort {
     }
     /**
      * insertion sorting.
-     * Best: O(N)
-     * Avg: O(N^2)
-     * Worst : O(N^2)
+     * Best: O(N).
+     * Avg: O(N^2).
+     * Worst : O(N^2).
      * @return     { sorted Team array }.
      */
     public Team[] insertsort() {
