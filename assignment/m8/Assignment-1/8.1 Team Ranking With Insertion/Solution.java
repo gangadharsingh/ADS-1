@@ -1,5 +1,3 @@
-import insertion.Insertionsort;
-import team.Team;
 import java.util.Scanner;
 /**
  * Class for solution.
