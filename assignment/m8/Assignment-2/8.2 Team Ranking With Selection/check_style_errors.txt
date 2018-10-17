@@ -1,0 +1,6 @@
+Starting audit...
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-2/8.2 Team Ranking With Selection/SelectionSort.java:1: Missing a Javadoc comment. [JavadocType]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-2/8.2 Team Ranking With Selection/SelectionSort.java:5:12: Variable 'team' must be private and have accessor methods. [VisibilityModifier]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m8/Assignment-2/8.2 Team Ranking With Selection/SelectionSort.java:9:9: Variable 'size' must be private and have accessor methods. [VisibilityModifier]
+Audit done.
+Checkstyle ends with 3 errors.
