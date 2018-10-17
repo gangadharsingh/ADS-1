@@ -1,131 +1,239 @@
 import java.util.Comparator;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 /**
- * Class for maximum heap.
+ * Class for maximum pq.
  *
- * @param      <Stockdata>  The Stockdata
+ * @param      <Key>  The Key
  */
-class MaxHeap {
-	/**
-	 * { var_description }
-	 */
-	public Stockdata[] hp;
-	/**
-	 * { var_description }
-	 */
-	public int size;
-	/**
-	 * { var_description }
-	 */
-	public Comparator<Stockdata> comparator;
-	/**
-	 * Constructs the object.
-	 *
-	 * @param      sz    The size
-	 */
-	public MaxHeap(Stockdata[] stdata, int sz) {
-		hp = stdata;
-		size = sz;
-	}
-	/**
-	 * { function_description }
-	 *
-	 * @return     { description_of_the_return_value }
-	 */
-	public int getsize() {
-		return size;
-	}
-	/**
-	 * { function_description }
-	 *
-	 * @param      k     { parameter_description }
-	 */
-	public void insertMax(Stockdata k) {
-		if (size == hp.length - 1) {
-			resize(2 * hp.length);
-		}
-		hp[++size] = k;
-		swimMax(size);
-	}
-	/**
-	 * { function_description }
-	 *
-	 * @param      ind   The ind
-	 */
-	public void swimMax(int ind) {
-		while (ind > 1 && minHP(ind / 2, ind)) { //ind is child and ind/2 is parent.
-			swap(ind, ind / 2); //exchange parent with child when parent is less than child.
-			ind = ind / 2;
-		}
-	}
-	/**
-	 * { function_description }
-	 *
-	 * @param      i     { parameter_description }
-	 * @param      j     { parameter_description }
-	 *
-	 * @return     { description_of_the_return_value }
-	 */
-	public boolean minHP(int i, int j) {
-		if (comparator == null) {
-			return  ((Comparable<Stockdata>) hp[i]).compareTo(hp[j]) < 0;
-		} else {
-			return comparator.compare(hp[i], hp[j]) < 0;
-		}
-	}
-	/**
-	 * Gets the maximum.
-	 *
-	 * @return     The maximum.
-	 */
-	public Stockdata getMax() {
-		return hp[1];
-	}
-	/**
-	 * { function_description }
-	 *
-	 * @return     { description_of_the_return_value }
-	 */
-	public Stockdata delMax() {
-		Stockdata max = hp[1];
-		swap(1, size--);
-		sinkMax(1);
-		hp[size + 1] = null;
-		if ((size > 0) && (size == (hp.length - 1) / 4)) {
-			resize(hp.length / 2);
-		}
-		return max;
-	}
-	/**
-	 * { function_description }
-	 *
-	 * @param      a     { parameter_description }
-	 */
-	public void sinkMax(int a) {
-		while (2 * a <= size) {
-			int j = 2 * a;
-			if (j < size && minHP(j, j + 1)) {
-				j++;
-			}
-			swap(a, j);
-			a = j;
-		}
-	}
-	public void resize(int newsize) {
-		Stockdata[] temp = (Stockdata[]) new Object[newsize];
-		for (int i = 1; i <= size; i++) {
-			temp[i] = hp[i];
-		}
-		hp = temp;
-	}
-	public void swap(int i, int j) {
-		Stockdata temp = hp[i];
-		hp[i] = hp[j];
-		hp[j] = temp;
-	}
-	public void show() {
-		for (int i = 1; i < size + 1; i++) {
-			System.out.print(hp[i] + " ");
-		}
-		System.out.println();
-	}
+public class MaxHeap<Key> implements Iterable<Key> {
+    /**
+     * { var_description }
+     */
+    private Key[] pq;
+    /**
+     * { var_description }
+     */
+    private int n;
+    /**
+     * { var_description }
+     */
+    private Comparator<Key> comparator;
+    /**
+     * Initializes an empty priority queue with the given initial capacity.
+     *
+     * @param      initCapacity  the initial capacity of this priority queue
+     */
+    public MaxHeap(int initCapacity) {
+        pq = (Key[]) new Object[initCapacity + 1];
+        n = 0;
+    }
+    /**
+     * Initializes an empty priority queue.
+     */
+    public MaxHeap() {
+        this(1);
+    }
+    /**
+     * Initializes an empty priority queue with the given initial capacity,
+     * using the given comparator.
+     *
+     * @param      initCapacity  the initial capacity of this priority queue
+     * @param      comparator    the order in which to compare the Keys
+     */
+    public MaxHeap(int initCapacity, Comparator<Key> comparator) {
+        this.comparator = comparator;
+        pq = (Key[]) new Object[initCapacity + 1];
+        n = 0;
+    }
+    /**
+     * Initializes an empty priority queue using the given comparator.
+     *
+     * @param      comparator  the order in which to compare the Keys
+     */
+    public MaxHeap(Comparator<Key> comparator) {
+        this(1, comparator);
+    }
+    /**
+     * Initializes a priority queue from the array of Keys. Takes time
+     * proportional to the number of Keys, using sink-based heap
+     * construction.
+     *
+     * @param      Keys  the array of Keys
+     */
+    public MaxHeap(Key[] Keys) {
+        n = Keys.length;
+        pq = (Key[]) new Object[Keys.length + 1];
+        for (int i = 0; i < n; i++)
+            pq[i+1] = Keys[i];
+        for (int k = n/2; k >= 1; k--)
+            sink(k);
+        assert isMaxHeap();
+    }
+    /**
+     * Returns true if this priority queue is empty.
+     *
+     * @return     { true} if this priority queue is empty; { false} otherwise
+     */
+    public boolean isEmpty() {
+        return n == 0;
+    }
+    /**
+     * Returns the number of Keys on this priority queue.
+     *
+     * @return     the number of Keys on this priority queue
+     */
+    public int size() {
+        return n;
+    }
+    /**
+     * Returns a largest Key on this priority queue.
+     *
+     * @return     a largest Key on this priority queue
+     * @throws     NoSuchElementException  if this priority queue is empty
+     */
+    public Key max() {
+        if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+        return pq[1];
+    }
+    /**
+     * { function_description }
+     *
+     * @param      capacity  The capacity
+     */
+    private void resize(int capacity) {
+        assert capacity > n;
+        Key[] temp = (Key[]) new Object[capacity];
+        for (int i = 1; i <= n; i++) {
+            temp[i] = pq[i];
+        }
+        pq = temp;
+    }
+    /**
+     * Adds a new Key to this priority queue.
+     *
+     * @param      x     the new Key to add to this priority queue
+     */
+    public void insert(Key x) {
+        if (n == pq.length - 1) resize(2 * pq.length);
+        pq[++n] = x;
+        swim(n);
+        assert isMaxHeap();
+    }
+    /**
+     * Removes and returns a largest Key on this priority queue.
+     *
+     * @return     a largest Key on this priority queue
+     * @throws     NoSuchElementException  if this priority queue is empty
+     */
+    public Key delMax() {
+        if (isEmpty()) throw new NoSuchElementException("Priority queue underflow");
+        Key max = pq[1];
+        exch(1, n--);
+        sink(1);
+        pq[n+1] = null;     
+        if ((n > 0) && (n == (pq.length - 1) / 4)) resize(pq.length / 2);
+        assert isMaxHeap();
+        return max;
+    }
+    /**
+     * { function_description }
+     *
+     * @param      k     { parameter_description }
+     */
+    private void swim(int k) {
+        while (k > 1 && less(k/2, k)) {
+            exch(k, k/2);
+            k = k/2;
+        }
+    }
+    /**
+     * { function_description }
+     *
+     * @param      k     { parameter_description }
+     */
+    private void sink(int k) {
+        while (2*k <= n) {
+            int j = 2*k;
+            if (j < n && less(j, j+1)) j++;
+            if (!less(k, j)) break;
+            exch(k, j);
+            k = j;
+        }
+    }
+    /**
+     * { function_description }
+     *
+     * @param      i     { parameter_description }
+     * @param      j     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    private boolean less(int i, int j) {
+        if (comparator == null) {
+            return ((Comparable<Key>) pq[i]).compareTo(pq[j]) < 0;
+        }
+        else {
+            return comparator.compare(pq[i], pq[j]) < 0;
+        }
+    }
+    /**
+     * { function_description }
+     *
+     * @param      i     { parameter_description }
+     * @param      j     { parameter_description }
+     */
+    private void exch(int i, int j) {
+        Key swap = pq[i];
+        pq[i] = pq[j];
+        pq[j] = swap;
+    }
+    /**
+     * Determines if maximum heap.
+     *
+     * @return     True if maximum heap, False otherwise.
+     */
+    private boolean isMaxHeap() {
+        return isMaxHeap(1);
+    }
+    /**
+     * Determines if maximum heap.
+     *
+     * @param      k     { parameter_description }
+     *
+     * @return     True if maximum heap, False otherwise.
+     */
+    private boolean isMaxHeap(int k) {
+        if (k > n) return true;
+        int left = 2*k;
+        int right = 2*k + 1;
+        if (left  <= n && less(k, left))  return false;
+        if (right <= n && less(k, right)) return false;
+        return isMaxHeap(left) && isMaxHeap(right);
+    }
+    /**
+     * Returns an iterator that iterates over the Keys on this priority queue
+     * in descending order.
+     * @return an iterator that iterates over the Keys in descending order
+     */
+    public Iterator<Key> iterator() {
+        return new HeapIterator();
+    }
+
+    private class HeapIterator implements Iterator<Key> {
+        private MaxHeap<Key> copy;
+        public HeapIterator() {
+            if (comparator == null) copy = new MaxHeap<Key>(size());
+            else                    copy = new MaxHeap<Key>(size(), comparator);
+            for (int i = 1; i <= n; i++)
+                copy.insert(pq[i]);
+        }
+        public boolean hasNext()  { return !copy.isEmpty();                     }
+        public void remove()      { throw new UnsupportedOperationException();  }
+
+        public Key next() {
+            if (!hasNext()) throw new NoSuchElementException();
+            return copy.delMax();
+        }
+    }
 }

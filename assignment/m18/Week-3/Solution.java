@@ -15,33 +15,35 @@ class Solution {
 	public static void main(final String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int numStock = Integer.parseInt(scan.nextLine());
-		int run = numStock*(2+2+2);
-		MinHeap minHp;
-		MaxHeap maxHp;
-		Stockdata[] stdata = new Stockdata[numStock];
-		Stockdata[] freqBest = new Stockdata[((2+2+1))*numStock];;
-		Stockdata[] freqWorst = new Stockdata[((2+2+1))*numStock];
-		SymbolTable<String, Integer> bestStock = new SymbolTable<String, Integer>();
-		SymbolTable<String, Integer> worstStock = new SymbolTable<String, Integer>();
+		int run = (2+2+2);
+		MinHeap<Stockdata> minHp = new MinHeap<Stockdata> ();
+		MaxHeap<Stockdata> maxHp = new MaxHeap<Stockdata> ();
+		// Stockdata[] freqBest = new Stockdata[((2+2+1))*numStock];;
+		// Stockdata[] freqWorst = new Stockdata[((2+2+1))*numStock];
 		while(run > 0) {
-			minHp = new MinHeap(stdata, numStock);
-			maxHp = new MaxHeap(stdata, numStock);
+			Stockdata stdata;
 			for (int i = 0; i < numStock; i++) {
 				String[] testcase = scan.nextLine().split(",");
-				stdata[i] = new Stockdata(testcase[0], Float.parseFloat(testcase[1]));
-				maxHp.insertMax(stdata[i]);
-				minHp.insert(stdata[i]);
+				stdata = new Stockdata(testcase[0], Float.parseFloat(testcase[1]));
+				minHp.insert(stdata);
+				maxHp.insert(stdata);
 			}
-			bestStock = new SymbolTable<String, Integer>();
-			for (int i = 0; i < (2+2+1); i++) {
-				freqWorst[i] = minHp.delMin();
-				freqBest[i] = maxHp.delMax();
-			}
+			for(int i=0;i<5;i++) {
+				System.out.println(maxHp.delMax());
+			}System.out.println();
+			for(int i=0;i<5;i++) {
+				System.out.println(minHp.delMin());
+			}System.out.println();
+		// 	bestStock = new SymbolTable<String, Integer>();
+		// 	for (int i = 0; i < (2+2+1); i++) {
+		// 		freqWorst[i] = minHp.delMin();
+		// 		freqBest[i] = maxHp.delMax();
+		// 	}
 			run--;
-		}
-		for (int i = 0; i < 5; i++) {
-			System.out.println(freqBest[i]);
-			System.out.println(freqWorst[i]);
+		// }
+		// for (int i = 0; i < 5; i++) {
+		// 	System.out.println(freqBest[i]);
+		// 	System.out.println(freqWorst[i]);
 		}
 		
 	}
@@ -50,7 +52,7 @@ class Solution {
 /**
  * Class for stockdata.
  */
-class Stockdata {
+class Stockdata implements Comparable<Stockdata>{
 	/**
 	 * { var_description }
 	 */
@@ -93,10 +95,14 @@ class Stockdata {
 	 * @return     { description_of_the_return_value }
 	 */
 	public int compareTo(final Stockdata that) {
-        if (this.getperChange() < that.getperChange()) {
+        if (this.getperChange() > that.getperChange()) {
             return 1;
-        } else if (this.getperChange() > that.getperChange()) {
+        } else if (this.getperChange() < that.getperChange()) {
             return -1;
+        } else if (this.getname().compareTo(that.getname()) > 0) {
+        	return 1;
+        } else if (this.getname().compareTo(that.getname()) < 0) {
+        	return -1;
         }
         return 0;
     }
