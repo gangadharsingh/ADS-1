@@ -19,7 +19,7 @@ public final class Solution {
      * @param      args  The arguments.
      */
     public static void main(final String[] args) {
-        Scanner scan =  new Scanner(System.in);	
+        Scanner scan =  new Scanner(System.in);
         Team[] team = new Team[NUM];
         int size = 0;
         while (scan.hasNextLine()) {
