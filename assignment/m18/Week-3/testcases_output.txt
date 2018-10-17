@@ -1,4 +1,4 @@
-########## Testcase 0: Failed ##########
+########## Testcase 0: Passed ##########
 Expected Output: 
 Merck Ltd 4.83
 ICRA 2.84
@@ -94,7 +94,7 @@ Honeywell Auto -1.08
 TTK Prestige 0.15
 WABCO India 0.33
 Eicher Motors 0.6
-Lakshmi Machine 0.7
+GSK Cons Health 0.84
 
 Tasty Bite Eat 5.23
 Bajaj Finserv 4.64
@@ -110,9 +110,9 @@ Oracle Fin 0.52
 
 Merck Ltd 4.83
 MRF 3.48
-MRF 3.48
-HEG Ltd 2.61
-Schaeffler India 2.57
+3M India 2.56
+Bosch -0.3
+Abbott India -0.46
 
 ICRA -2.84
 Schaeffler India -2.57
@@ -123,14 +123,14 @@ HEG Ltd -1.61
 Merck Ltd 4.83
 ICRA 2.84
 Schaeffler India 2.57
-3M India 2.56
-3M India 2.56
+TTK Prestige 2.15
+Bharat Rasayan 2.0
 
-Eicher Motors -1.6
-Nestle India -1.57
-WABCO India -1.33
-Tasty Bite Eat -1.23
-Sanofi India -1.21
+Bosch 0.3
+Abbott India 0.46
+MRF 0.48
+Oracle Fin 0.52
+Bajaj Finserv 0.64
 
 ICRA 5.84
 Lakshmi Machine 4.7
@@ -140,11 +140,11 @@ TTK Prestige 3.15
 
 Eicher Motors -1.6
 Honeywell Auto -1.08
-Honeywell Auto -1.08
-GSK Cons Health -0.84
-Lakshmi Machine -0.7
+Sanofi India 0.21
+Tasty Bite Eat 0.23
+WABCO India 0.33
 ----------------------------------------
-########## Testcase 1: Failed ##########
+########## Testcase 1: Passed ##########
 Expected Output: 
 Larsen & Toubro 4.11
 Vinati Organics 4.03
@@ -240,13 +240,13 @@ Ceat -0.06
 Nalwa Sons Invst -0.06
 Endurance Technologies Ltd. 1.1
 Fine Organic Industries Ltd. 1.29
-Chola Inv Fin 1.47
+APL Apollo Tube 2.18
 
 Chola Inv Fin 4.47
 Jubilant Food 4.08
 Vinati Organics 4.03
 Fine Organic Industries Ltd. 3.29
-APL Apollo Tube 2.18
+Larsen & Toubro 1.11
 
 Nalwa Sons Invst -0.06
 APL Apollo Tube 0.18
@@ -257,8 +257,8 @@ Endurance Technologies Ltd. 1.1
 Chola Inv Fin 3.47
 Fine Organic Industries Ltd. 3.29
 APL Apollo Tube 2.18
-Fine Organic Industries Ltd. 1.29
 Ceat 1.23
+Vinati Organics 1.03
 
 Larsen & Toubro -4.11
 Endurance Technologies Ltd. -0.1
@@ -276,7 +276,7 @@ Nalwa Sons Invst -2.06
 Fine Organic Industries Ltd. 0.29
 Chola Inv Fin 0.47
 Vinati Organics 1.03
-Vinati Organics 1.03
+Endurance Technologies Ltd. 1.1
 
 Larsen & Toubro 5.11
 Jubilant Food 5.08
@@ -288,7 +288,7 @@ Ceat -1.23
 NIIT Tech 0.21
 Fine Organic Industries Ltd. 0.29
 Vinati Organics 1.03
-Endurance Technologies Ltd. 1.1
+Chola Inv Fin 1.47
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -391,7 +391,7 @@ Honeywell Auto -1.08
 TTK Prestige 0.15
 WABCO India 0.33
 Eicher Motors 0.6
-Lakshmi Machine 0.7
+GSK Cons Health 0.84
 
 Tasty Bite Eat 5.23
 Bajaj Finserv 4.64
@@ -407,9 +407,9 @@ Oracle Fin 0.52
 
 Merck Ltd 4.83
 MRF 3.48
-MRF 3.48
-HEG Ltd 2.61
-Schaeffler India 2.57
+3M India 2.56
+Bosch -0.3
+Abbott India -0.46
 
 ICRA -2.84
 Schaeffler India -2.57
@@ -420,14 +420,14 @@ HEG Ltd -1.61
 Merck Ltd 4.83
 ICRA 2.84
 Schaeffler India 2.57
-3M India 2.56
-3M India 2.56
+TTK Prestige 2.15
+Bharat Rasayan 2.0
 
-Eicher Motors -1.6
-Nestle India -1.57
-WABCO India -1.33
-Tasty Bite Eat -1.23
-Sanofi India -1.21
+Bosch 0.3
+Abbott India 0.46
+MRF 0.48
+Oracle Fin 0.52
+Bajaj Finserv 0.64
 
 ICRA 5.84
 Lakshmi Machine 4.7
@@ -437,9 +437,9 @@ TTK Prestige 3.15
 
 Eicher Motors -1.6
 Honeywell Auto -1.08
-Honeywell Auto -1.08
-GSK Cons Health -0.84
-Lakshmi Machine -0.7
+Sanofi India 0.21
+Tasty Bite Eat 0.23
+WABCO India 0.33
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -542,13 +542,13 @@ Ceat -0.06
 Nalwa Sons Invst -0.06
 Endurance Technologies Ltd. 1.1
 Fine Organic Industries Ltd. 1.29
-Chola Inv Fin 1.47
+APL Apollo Tube 2.18
 
 Chola Inv Fin 4.47
 Jubilant Food 4.08
 Vinati Organics 4.03
 Fine Organic Industries Ltd. 3.29
-APL Apollo Tube 2.18
+Larsen & Toubro 1.11
 
 Nalwa Sons Invst -0.06
 APL Apollo Tube 0.18
@@ -559,8 +559,8 @@ Endurance Technologies Ltd. 1.1
 Chola Inv Fin 3.47
 Fine Organic Industries Ltd. 3.29
 APL Apollo Tube 2.18
-Fine Organic Industries Ltd. 1.29
 Ceat 1.23
+Vinati Organics 1.03
 
 Larsen & Toubro -4.11
 Endurance Technologies Ltd. -0.1
@@ -578,7 +578,7 @@ Nalwa Sons Invst -2.06
 Fine Organic Industries Ltd. 0.29
 Chola Inv Fin 0.47
 Vinati Organics 1.03
-Vinati Organics 1.03
+Endurance Technologies Ltd. 1.1
 
 Larsen & Toubro 5.11
 Jubilant Food 5.08
@@ -590,7 +590,7 @@ Ceat -1.23
 NIIT Tech 0.21
 Fine Organic Industries Ltd. 0.29
 Vinati Organics 1.03
-Endurance Technologies Ltd. 1.1
+Chola Inv Fin 1.47
 ----------------------------------------
 ########## Testcase 4: Failed ##########
 Expected Output: 
@@ -714,7 +714,7 @@ Tasty Bite Eat 5.23
 Nestle India 4.57
 ICRA 3.84
 Lakshmi Machine 3.7
-MRF 3.48
+Bosch 2.3
 
 Bajaj Finserv -4.64
 Schaeffler India -2.57
@@ -724,9 +724,9 @@ Merck Ltd -1.61
 
 Merck Ltd 4.83
 MRF 3.48
-HEG Ltd 2.61
 3M India 2.56
-3M India 2.56
+Bosch -0.3
+Abbott India -0.46
 
 ICRA -2.84
 Schaeffler India -2.57
@@ -737,14 +737,14 @@ HEG Ltd -1.61
 Merck Ltd 4.83
 ICRA 2.84
 Schaeffler India 2.57
-Bosch 2.3
-Tasty Bite Eat 2.23
+TTK Prestige 2.15
+Bharat Rasayan 2.0
 
-Oracle Fin -1.61
-Eicher Motors -1.6
-Eicher Motors -1.6
-Nestle India -1.57
-3M India -1.56
+Bosch 0.3
+Abbott India 0.46
+MRF 0.48
+Oracle Fin 0.52
+Bajaj Finserv 0.64
 
 ICRA 5.84
 Lakshmi Machine 4.7
@@ -753,8 +753,8 @@ Bajaj Finserv 3.64
 TTK Prestige 3.15
 
 Eicher Motors -1.6
-WABCO India -1.33
-WABCO India -1.33
-Tasty Bite Eat -1.23
-Sanofi India -1.21
+Honeywell Auto -1.08
+Sanofi India 0.21
+Tasty Bite Eat 0.23
+WABCO India 0.33
 ----------------------------------------

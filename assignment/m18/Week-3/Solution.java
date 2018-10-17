@@ -16,12 +16,13 @@ class Solution {
 		Scanner scan = new Scanner(System.in);
 		int numStock = Integer.parseInt(scan.nextLine());
 		int run = (2+2+2);
-		MinHeap<Stockdata> minHp = new MinHeap<Stockdata> ();
-		MaxHeap<Stockdata> maxHp = new MaxHeap<Stockdata> ();
+		
 		// Stockdata[] freqBest = new Stockdata[((2+2+1))*numStock];;
 		// Stockdata[] freqWorst = new Stockdata[((2+2+1))*numStock];
 		while(run > 0) {
 			Stockdata stdata;
+			MinHeap<Stockdata> minHp = new MinHeap<Stockdata> ();
+		MaxHeap<Stockdata> maxHp = new MaxHeap<Stockdata> ();
 			for (int i = 0; i < numStock; i++) {
 				String[] testcase = scan.nextLine().split(",");
 				stdata = new Stockdata(testcase[0], Float.parseFloat(testcase[1]));
