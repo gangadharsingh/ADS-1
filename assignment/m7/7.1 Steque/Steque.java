@@ -28,13 +28,21 @@ class Steque {
     public boolean isEmpty() { //complexity is of 1 as it will run only for 1 time.
         return (size == 0);
     }
+    /**
+     * Makes an empty.
+     * Best: O(1)
+     * Avg: O(1)
+     * Worst : O(1)
+     */
     public void makeEmpty() {
         first.next = null;;
         last.next = null;
     }
     /**
      * Gets the size.
-     *
+     * Best: O(1)
+     * Avg: O(1)
+     * Worst : O(1)
      * @return     The size.
      */
     public int getSize() { //complexity is of 1 as it will run only for 1 time.
@@ -42,10 +50,12 @@ class Steque {
     }
     /**
      * pushing at the front.
-     *
+     * Best: O(1)
+     * Avg: O(1)
+     * Worst : O(1)
      * @param      int1  The int 1
      */
-    public void push(final String int1) { //complexity is of 1 as if loop will run only for 1 time.
+    public void push(final String int1) {
         Node oldfirst = first;
         first = new Node();
         first.item = int1;
@@ -57,10 +67,12 @@ class Steque {
     }
     /**
      * pushing at last by enqueue method.
-     *
+     * Best: O(1)
+     * Avg: O(1)
+     * Worst : O(1)
      * @param      item1  The item 1
      */
-    public void enqueue(final String item1) { // complexity is of 1 as if loop will run only for 1 time.
+    public void enqueue(final String item1) {
         if (last == null || first == null) {
             push(item1);
         } else {
@@ -75,8 +87,11 @@ class Steque {
 
     /**
      * popping elements from the end.
+     * Best: O(1)
+     * Avg: O(1)
+     * Worst : O(1)
      */
-    public void pop() { // complexity is of 1 as if loop will run only for 1 time.
+    public void pop() {
         if (first != null) {
             first = first.next;
             size--;
@@ -84,18 +99,20 @@ class Steque {
     }
     /**
      * printing elements of Stqueue.
-     *
+     * Best: O(N)
+     * Avg: O(N)
+     * Worst : O(N)
      * @return     { String form of Stqueue }.
      * 
      */
-    public String print() { // comlexity is N as while loop run for N times.
+    public String print() {
         if (size == 0) {
 
             return "Steque is empty.";
         }
         Node temp = first;
         String str = "";
-        while (temp.next != null) { // it will run for N times.
+        while (temp.next != null) {
             str += temp.item + ", ";
             temp = temp.next;
         }

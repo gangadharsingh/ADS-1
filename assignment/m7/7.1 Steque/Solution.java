@@ -10,7 +10,9 @@ public final class Solution {
 
     /**
      * main function.
-     *
+     * Best: O(N)
+     * Avg: O(N)
+     * Worst : O(N)
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
