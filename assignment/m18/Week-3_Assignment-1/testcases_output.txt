@@ -602,7 +602,7 @@ Chola Inv Fin 1.47
 4
 0
 ----------------------------------------
-########## Testcase 4: Failed ##########
+########## Testcase 4: Passed ##########
 Expected Output: 
 Merck Ltd 4.83
 Schaeffler India 2.57
@@ -698,8 +698,8 @@ Tasty Bite Eat
 Your Output: 
 Merck Ltd 4.83
 Schaeffler India 2.57
-ICRA 2.15
 TTK Prestige 2.15
+ICRA 2.15
 Bharat Rasayan 2.0
 
 Bosch 0.3
@@ -711,8 +711,8 @@ Bajaj Finserv 0.64
 Bajaj Finserv 5.64
 Schaeffler India 4.59
 Sanofi India 4.0
-ICRA 4.0
 Nestle India 4.0
+ICRA 4.0
 
 Merck Ltd -5.83
 Honeywell Auto -1.08
@@ -776,13 +776,15 @@ WABCO India 0.33
 2
 1
 1
-2
-2
-2
-2
-1
-2
-Exception in thread "main" java.lang.IllegalArgumentException: called select() with invalid argument: 14
-	at BinarySearchST.select(BinarySearchST.java:152)
-	at Solution.main(Solution.java:59)
+Abbott India
+Bajaj Finserv
+Bharat Rasayan
+Bosch
+ICRA
+MRF
+Merck Ltd
+Sanofi India
+Schaeffler India
+TTK Prestige
+Tasty Bite Eat
 ----------------------------------------

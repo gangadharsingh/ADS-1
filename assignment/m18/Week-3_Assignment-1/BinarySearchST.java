@@ -81,8 +81,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         int i = rank(key); 
         if (i < n && keys[i].compareTo(key) == 0) return vals[i];
         return null;
-    } 
-
+    }
     /**
      * Returns the number of keys in this symbol table strictly less than {@code key}.
      *

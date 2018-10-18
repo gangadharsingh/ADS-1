@@ -55,9 +55,11 @@ public class Solution {
                     }
                     break;
                 case "intersection":
-                    for (i = 0; i < st; i++) {
-                        if (beststock.get(beststock.select(i)).equals(worststock.get(worststock.select(i)))) {
-                            System.out.println(beststock.get(beststock.select(i)));
+                    for (i = 0; i < beststock.size(); i++) {
+                        for (int j = 0; j < worststock.size(); j++) {
+                            if ((beststock.select(i)).equals(worststock.select(j))) {
+                                System.out.println(beststock.select(i));
+                            }
                         }
                     }
                     break;
@@ -112,6 +114,7 @@ class Stock implements Comparable<Stock> {
         if (this.getchange() > that.getchange()) return 1;
         else if (this.getchange() < that.getchange()) return -1;
         else if ((this.getname().compareTo(that.getname())) > 0) return 1;
+        else if ((this.getname().compareTo(that.getname())) < 0) return -1;
         else return 0;
     }
     /**
