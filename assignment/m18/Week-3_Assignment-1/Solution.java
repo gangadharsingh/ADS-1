@@ -27,6 +27,7 @@ public class Solution {
             for (int j = 0; j < 5; j++) {
                 System.out.println(min.delMin());
             }
+            System.out.println();
         }
         
     }
