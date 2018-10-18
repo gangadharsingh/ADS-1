@@ -9,22 +9,11 @@ public class Solution {
      *
      * @param      args  The arguments
      */
-     public static Scanner s;
-     public static int st;
-     public static BinarySearchST<String, Integer> beststock;
-     public static BinarySearchST<String, Integer> worststock;
-    Solution() {
-        s = new Scanner(System.in);
-        st = Integer.parseInt(s.nextLine());
-        beststock = new BinarySearchST<String, Integer> (st);
-        worststock = new BinarySearchST<String, Integer> (st);
-    }
-    /**
-     * { function_description }
-     *
-     * @param      args  The arguments
-     */
     public static void main(final String[] args) {
+        Scanner s = new Scanner(System.in);
+        int st = Integer.parseInt(s.nextLine());
+        BinarySearchST<String, Integer> beststock = new BinarySearchST<String, Integer> (st);
+        BinarySearchST<String, Integer> worststock = new BinarySearchST<String, Integer> (st);
         for (int i = 0; i < 6; i++) {
             MaxPQ<Stock> max = new MaxPQ<Stock> (st);
             MinPQ<Stock> min = new MinPQ<Stock> (st);
@@ -36,13 +25,13 @@ public class Solution {
             for(int j = 0; j < 5; j++) {
                 Stock empty = max.delMax();
                 System.out.println(empty);
-                putInBST(empty, beststock);
+                beststock = putInBST(empty, beststock);
             }
             System.out.println();
             for (int j = 0; j < 5; j++) {
                 Stock empty = min.delMin();
                 System.out.println(empty);
-                putInBST(empty, worststock);
+                worststock = putInBST(empty, worststock);
             }
             System.out.println();
         }
@@ -52,13 +41,13 @@ public class Solution {
             String[] str = s.nextLine().split(",");
             switch(str[0]) {
                 case "get":
-                    if (str[1].equals("max")) {
+                    if (str[1].equals("maxST")) {
                         if (beststock.contains(str[2])) {
                             System.out.println(beststock.get(str[2]));
                         } else {
                             System.out.println(0);
                         }
-                    } else if (str[1].equals("min")) {
+                    } else if (str[1].equals("minST")) {
                         if (worststock.contains(str[2])) {
                             System.out.println(worststock.get(str[2]));
                         } else {
@@ -73,13 +62,14 @@ public class Solution {
         }
         
     }
-    public static void putInBST(final Stock key, final BinarySearchST<String, Integer> bst) {
+    public static BinarySearchST<String, Integer> putInBST(final Stock key, final BinarySearchST<String, Integer> bst) {
         if (bst.contains(key.getname())) {
             bst.put(key.getname(), bst.get(key.getname()) + 1);
         }
         else {
             bst.put(key.getname(), 1);
         }
+        return bst;
     }
 }
 /**
