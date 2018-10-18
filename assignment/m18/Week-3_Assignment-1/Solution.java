@@ -52,13 +52,13 @@ public class Solution {
             String[] str = s.nextLine().split(",");
             switch(str[0]) {
                 case "get":
-                    if (str[1].equals("maxST")) {
+                    if (str[1].equals("max")) {
                         if (beststock.contains(str[2])) {
                             System.out.println(beststock.get(str[2]));
                         } else {
                             System.out.println(0);
                         }
-                    } else if (str[1].equals("minST")) {
+                    } else if (str[1].equals("min")) {
                         if (worststock.contains(str[2])) {
                             System.out.println(worststock.get(str[2]));
                         } else {
