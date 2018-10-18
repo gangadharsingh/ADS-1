@@ -35,7 +35,6 @@ public class Solution {
             }
             System.out.println();
         }
-        System.out.println();
         int query = Integer.parseInt(s.nextLine());
         for (int i = 0; i < query; i++) {
             String[] str = s.nextLine().split(",");
