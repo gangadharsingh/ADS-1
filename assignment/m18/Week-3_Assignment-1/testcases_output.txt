@@ -776,4 +776,13 @@ WABCO India 0.33
 2
 1
 1
+2
+2
+2
+2
+1
+2
+Exception in thread "main" java.lang.IllegalArgumentException: called select() with invalid argument: 14
+	at BinarySearchST.select(BinarySearchST.java:152)
+	at Solution.main(Solution.java:59)
 ----------------------------------------

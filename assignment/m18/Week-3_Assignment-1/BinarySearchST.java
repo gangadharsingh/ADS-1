@@ -117,13 +117,7 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public void put(Key key, Value val)  {
-        if (key == null) throw new IllegalArgumentException("first argument to put() is null"); 
-
-        if (val == null) {
-            delete(key);
-            return;
-        }
-
+        if (key == null) throw new IllegalArgumentException("first argument to put() is null");
         int i = rank(key);
 
         // key is already in table
@@ -145,88 +139,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
 
         assert check();
     } 
-
-    /**
-     * Removes the specified key and associated value from this symbol table
-     * (if the key is in the symbol table).
-     *
-     * @param  key the key
-     * @throws IllegalArgumentException if {@code key} is {@code null}
-     */
-    public void delete(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to delete() is null"); 
-        if (isEmpty()) return;
-
-        // compute rank
-        int i = rank(key);
-
-        // key not in table
-        if (i == n || keys[i].compareTo(key) != 0) {
-            return;
-        }
-
-        for (int j = i; j < n-1; j++)  {
-            keys[j] = keys[j+1];
-            vals[j] = vals[j+1];
-        }
-
-        n--;
-        keys[n] = null;  // to avoid loitering
-        vals[n] = null;
-
-        // resize if 1/4 full
-        if (n > 0 && n == keys.length/4) resize(keys.length/2);
-
-        assert check();
-    } 
-
-    /**
-     * Removes the smallest key and associated value from this symbol table.
-     *
-     * @throws NoSuchElementException if the symbol table is empty
-     */
-    public void deleteMin() {
-        if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
-        delete(min());
-    }
-
-    /**
-     * Removes the largest key and associated value from this symbol table.
-     *
-     * @throws NoSuchElementException if the symbol table is empty
-     */
-    public void deleteMax() {
-        if (isEmpty()) throw new NoSuchElementException("Symbol table underflow error");
-        delete(max());
-    }
-
-
-   /***************************************************************************
-    *  Ordered symbol table methods.
-    ***************************************************************************/
-
-   /**
-     * Returns the smallest key in this symbol table.
-     *
-     * @return the smallest key in this symbol table
-     * @throws NoSuchElementException if this symbol table is empty
-     */
-    public Key min() {
-        if (isEmpty()) throw new NoSuchElementException("called min() with empty symbol table");
-        return keys[0]; 
-    }
-
-    /**
-     * Returns the largest key in this symbol table.
-     *
-     * @return the largest key in this symbol table
-     * @throws NoSuchElementException if this symbol table is empty
-     */
-    public Key max() {
-        if (isEmpty()) throw new NoSuchElementException("called max() with empty symbol table");
-        return keys[n-1];
-    }
-
     /**
      * Return the kth smallest key in this symbol table.
      *
@@ -241,38 +153,6 @@ class BinarySearchST<Key extends Comparable<Key>, Value> {
         }
         return keys[k];
     }
-
-    /**
-     * Returns the largest key in this symbol table less than or equal to {@code key}.
-     *
-     * @param  key the key
-     * @return the largest key in this symbol table less than or equal to {@code key}
-     * @throws NoSuchElementException if there is no such key
-     * @throws IllegalArgumentException if {@code key} is {@code null}
-     */
-    public Key floor(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to floor() is null"); 
-        int i = rank(key);
-        if (i < n && key.compareTo(keys[i]) == 0) return keys[i];
-        if (i == 0) return null;
-        else return keys[i-1];
-    }
-
-    /**
-     * Returns the smallest key in this symbol table greater than or equal to {@code key}.
-     *
-     * @param  key the key
-     * @return the smallest key in this symbol table greater than or equal to {@code key}
-     * @throws NoSuchElementException if there is no such key
-     * @throws IllegalArgumentException if {@code key} is {@code null}
-     */
-    public Key ceiling(Key key) {
-        if (key == null) throw new IllegalArgumentException("argument to ceiling() is null"); 
-        int i = rank(key);
-        if (i == n) return null; 
-        else return keys[i];
-    }
-
     /**
      * Returns the number of keys in this symbol table in the specified range.
      *

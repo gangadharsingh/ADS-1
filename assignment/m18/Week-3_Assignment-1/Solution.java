@@ -55,7 +55,11 @@ public class Solution {
                     }
                     break;
                 case "intersection":
-
+                    for (i = 0; i < st; i++) {
+                        if (beststock.get(beststock.select(i)).equals(worststock.get(worststock.select(i)))) {
+                            System.out.println(beststock.get(beststock.select(i)));
+                        }
+                    }
                     break;
             }
         }
