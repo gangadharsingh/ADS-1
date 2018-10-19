@@ -1,9 +1,4 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:8:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:66: Line is longer than 80 characters (found 104). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:67: Line is longer than 80 characters (found 108). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:98:64: '+' is not preceded with whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:98:65: '+' is not followed by whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:116:19: Parameter a should be final. [FinalParameters]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:118:15: Parameter a should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 1 errors.
