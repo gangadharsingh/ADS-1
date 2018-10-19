@@ -94,6 +94,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * Best case: O(1)
      * Worst case: O(logN)
      * Average case: O(logN)
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
      */
     public Key floor(final Key key) {
 
@@ -110,6 +113,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
      * Best case: O(1)
      * Worst case: O(logN)
      * Average case: O(logN)
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
      */
     public int rank(final Key key) {
         int lo = 0, hi = n - 1;

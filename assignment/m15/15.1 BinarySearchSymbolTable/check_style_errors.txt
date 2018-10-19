@@ -1,7 +1,2 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m15/15.1 BinarySearchSymbolTable/Solution.java:98: Expected @return tag. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m15/15.1 BinarySearchSymbolTable/Solution.java:98:32: Expected @param tag for 'key'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m15/15.1 BinarySearchSymbolTable/Solution.java:114: Expected @return tag. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m15/15.1 BinarySearchSymbolTable/Solution.java:114:31: Expected @param tag for 'key'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 4 errors.
