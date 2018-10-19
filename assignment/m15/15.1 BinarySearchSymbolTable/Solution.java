@@ -1,24 +1,20 @@
 import java.util.Scanner;
-/**
+/**.
  * Solution class to pass the.
  * commands
  */
 public final class Solution {
-    /**
+    /**.
      * empty constructor.
      */
-    private Solution() {
-
-    }
-    /**
-     * main method to call methods of the.
-     * SymbolTable
+    private Solution() { }
+    /**.
+     * main method
      *
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-        SymbolTable
-        <String, Integer> st = new SymbolTable
+        SymbolTable<String, Integer> st = new SymbolTable
         <String, Integer>();
         Scanner sc = new Scanner(System.in);
         String[] keys = sc.nextLine().split(" ");
@@ -44,10 +40,7 @@ public final class Solution {
                 System.out.println(st.contains(cmd[1]));
                 break;
             case "keys":
-                // for (String s : st.keys()) {
-                // System.out.println(s + " " + st.get(s));
-                // }
-                st.keys();
+                st.print();
                 break;
             case "get":
                 System.out.println(st.get(cmd[1]));
@@ -60,59 +53,47 @@ public final class Solution {
         }
     }
 }
-/**
+/**.
  * class to create a symbol table.
- * it is a generic type.
  *
  * @param      <Key>    The key
  * @param      <Value>  The value
  */
 class SymbolTable<Key extends Comparable<Key>, Value> {
-    /**
-     * initial CAP for the arrays.
-     */
-    private static final int CAP = 2;
-    /**
+    /**.
      * keys array to store keys of the give.
      * SYmbolTable
      */
     private Key[] keys;
-    /**
+    /**.
      * values array to store values of the give.
      * SYmbolTable
      */
     private Value[] vals;
-    /**
+    /**.
      * to track size of the array.
      */
     private int n = 0;
-    /**
+    /**.
      * Constructor to initialize.
      * the SymbolTable.
      */
     SymbolTable() {
-        keys = (Key[]) new Comparable[CAP];
-        vals = (Value[]) new Object[CAP];
+        keys = (Key[]) new Comparable[2];
+        vals = (Value[]) new Object[2];
     }
-    /**
+    /**.
      * method to return max value.
      *complexity O(1)
      * @return     { it return n-1 index of key array }
      */
     public Key max() {
-
         return keys[n - 1];
     }
-    /**
-     * method to send Key object.
-     *befor the pramater Key
-     *complexity O(1)
-     * @param      key   The key
-     *
-     * @return     {if i=0 return null,
-     * or returns i-1 index of the Key
-     * or return the same Key if the
-     * preveious Key is also same.}
+    /**.
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      */
     public Key floor(final Key key) {
 
@@ -125,13 +106,10 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
         return keys[i - 1];
     }
-    /**
-     * returns the index of the @param Key.
-     *complexity O(Logn)
-     * @param      key   The key
-     *
-     * @return returns mid if the lo less than high.
-     * or returns the lo.
+    /**.
+     * Best case: O(1)
+     * Worst case: O(logN)
+     * Average case: O(logN)
      */
     public int rank(final Key key) {
         int lo = 0, hi = n - 1;
@@ -149,26 +127,24 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
         return lo;
     }
-    /**
+    /**.
      * return the first element. or the minimum of the ordered keys.
      *complexity O(1)
      * @return     keys[0];
      */
     public Key min() {
-
         return keys[0];
     }
-    /**
-     *
-     * deletemin is used to delete.
-     *  the min element of the element and it
-     *  calls the delete function.
+    /**.
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
      */
     public void deleteMin() {
 
         delete(min());
     }
-    /**
+    /**.
      * method to check weather.
      *  the element is present or not.
      *
@@ -182,7 +158,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
 
         return get(key) != null;
     }
-    /**
+    /**.
      * get method returns the key element.
      *complexity O(1)
      *
@@ -202,9 +178,9 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         }
         return null;
     }
-    /**
+    /**.
      * put is used to insert the element in the.
-     * SYmbolTable.
+     * SymbolTable.
      * Best case: O(1)
      * Worst case: O(N)
      * Average case: O(N)
@@ -232,10 +208,10 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         vals[i] = val;
         n++;
     }
-    /**
-     * Best case: O(n)
-     * Worst case: O(n)
-     * Average case: O(n)
+    /**.
+     * Best case: O(N)
+     * Worst case: O(N)
+     * Average case: O(N)
      * method to resize the array.
      *
      * @param      ind   The ind
@@ -250,7 +226,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
         vals = tempv;
         keys = tempk;
     }
-    /**
+    /**.
      *
      * returns size of ST.
      *
@@ -259,7 +235,7 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     public int size() {
         return n;
     }
-    /**
+    /**.
      * Determines if empty.
      *
      * @return     True if empty, False otherwise.
@@ -267,9 +243,11 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
     public boolean isEmpty() {
         return size() == 0;
     }
-    /**
+    /**.
      * method to delete the Key.
-     *
+     * Best case: O(1)
+     * Worst case: O(N)
+     * Average case: O(N)
      * @param      key   The key
      */
     public void delete(final Key key) {
@@ -298,13 +276,13 @@ class SymbolTable<Key extends Comparable<Key>, Value> {
             resize(keys.length / 2);
         }
     }
-    /**
+    /**.
      * prints all values.
-     * Best case: O(n)
+     * Best case: O(N)
      * Worst case: O(N)
      * Average case: O(N)
      */
-    void keys() {
+    void print() {
         for (int i = 0; i < n; i++) {
             if (vals[i] != null) {
                 System.out.println(keys[i] + " " + vals[i]);
