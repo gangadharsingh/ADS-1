@@ -1,10 +1,2 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:8:1: File contains tab characters (this is the first instance). [FileTabCharacter]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:25:9: Redundant 'public' modifier. [RedundantModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:32:9: Redundant 'public' modifier. [RedundantModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:66: Line is longer than 80 characters (found 104). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:67: Line is longer than 80 characters (found 108). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:100:62: '4' is a magic number. [MagicNumber]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:122:19: Parameter a should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 7 errors.
