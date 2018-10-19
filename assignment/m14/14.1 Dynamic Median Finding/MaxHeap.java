@@ -34,7 +34,9 @@ class MaxHeap<Key> {
 	}
 	/**.
 	 * { function_description }
-	 *
+	 *  Best case: O(1)
+	 *  worst case :O(1)
+	 *  Average case: O(1)
 	 * @return     { description_of_the_return_value }
 	 */
 	public int getsize() {
@@ -42,7 +44,9 @@ class MaxHeap<Key> {
 	}
 	/**.
 	 * { function_description }
-	 *
+	 *  Best case: O(N)
+	 *  worst case :O(N)
+	 *  Average case: O(N)
 	 * @param      k     { parameter_description }
 	 */
 	public void insertMax(final Key k) {
@@ -54,7 +58,9 @@ class MaxHeap<Key> {
 	}
 	/**.
 	 * { function_description }
-	 *
+	 *  Best case: O(logN)
+	 *  worst case :O(logN)
+	 *  Average case: O(logN)
 	 * @param      ind   The ind
 	 */
 	public void swimMax(final int ind) {
@@ -66,13 +72,15 @@ class MaxHeap<Key> {
 	}
 	/**.
 	 * { function_description }
-	 *
+	 *  Best case: O(1)
+	 *  worst case :O(1)
+	 *  Average case: O(1)
 	 * @param      i     { parameter_description }
 	 * @param      j     { parameter_description }
 	 *
 	 * @return     { description_of_the_return_value }
 	 */
-	public boolean minHP(int i, int j) {
+	public boolean minHP(final int i, final int j) {
 		if (comparator == null) {
 			return  ((Comparable<Key>) hp[i]).compareTo(hp[j]) < 0;
 		} else {
@@ -81,7 +89,9 @@ class MaxHeap<Key> {
 	}
 	/**.
 	 * Gets the maximum.
-	 *
+	 *  Best case: O(1)
+	 *  worst case :O(1)
+	 *  Average case: O(1)
 	 * @return     The maximum.
 	 */
 	public Key getMax() {
@@ -89,7 +99,9 @@ class MaxHeap<Key> {
 	}
 	/**.
 	 * { function_description }
-	 *
+	 *  Best case: O(N)
+	 *  worst case :O(N)
+	 *  Average case: O(N)
 	 * @return     { description_of_the_return_value }
 	 */
 	public Key delMax() {
@@ -104,31 +116,55 @@ class MaxHeap<Key> {
 	}
 	/**.
 	 * { function_description }
-	 *
+	 *  Best case: O(logN)
+	 *  worst case :O(logN)
+	 *  Average case: O(logN)
 	 * @param      a     { parameter_description }
 	 */
-	public void sinkMax(int a) {
-		while (2 * a <= size) {
-			int j = 2 * a;
+	public void sinkMax(final int a) {
+		int b = a;
+		while (2 * b <= size) {
+			int j = 2 * b;
 			if (j < size && minHP(j, j + 1)) {
 				j++;
 			}
-			swap(a, j);
-			a = j;
+			swap(b, j);
+			b = j;
 		}
 	}
-	public void resize(int newsize) {
+	/**.
+	 * { function_description }
+	 *  Best case: O(N)
+	 *  worst case :O(N)
+	 *  Average case: O(N)
+	 * @param      newsize  The newsize
+	 */
+	public void resize(final int newsize) {
 		Key[] temp = (Key[]) new Object[newsize];
 		for (int i = 1; i <= size; i++) {
 			temp[i] = hp[i];
 		}
 		hp = temp;
 	}
-	public void swap(int i, int j) {
+	/**.
+	 * { function_description }
+	 *  Best case: O(1)
+	 *  worst case :O(1)
+	 *  Average case: O(1)
+	 * @param      i     { parameter_description }
+	 * @param      j     { parameter_description }
+	 */
+	public void swap(final int i, final int j) {
 		Key temp = hp[i];
 		hp[i] = hp[j];
 		hp[j] = temp;
 	}
+	/**.
+	 * { function_description }
+	 *  Best case: O(N)
+	 *  worst case :O(N)
+	 *  Average case: O(N)
+	 */
 	public void show() {
 		for (int i = 1; i < size + 1; i++) {
 			System.out.print(hp[i] + " ");
