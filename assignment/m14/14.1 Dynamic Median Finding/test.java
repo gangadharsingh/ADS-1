@@ -1,7 +1,21 @@
 import java.util.*;
 import java.io.*;
+/**.
+ * Class for test.
+ */
 class test{
-	public static void main(String[] args) {
+	/**.
+	 * Constructs the object.
+	 */
+	test() { }
+	/**.
+	 * { function_description }
+	 *  Best case: O(N)
+     *  worst case :O(N)
+     *  Average case: O(N)
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		try{
 			Scanner sc = new Scanner(new File("out.txt"));
 		Scanner sc1 = new Scanner(new File("output001.txt"));
@@ -13,8 +27,7 @@ class test{
 			i++;
 		}
 		}catch(Exception e){
-			System.out.println("hello");
+			System.out.println();
 		}
-		
 	}
 }

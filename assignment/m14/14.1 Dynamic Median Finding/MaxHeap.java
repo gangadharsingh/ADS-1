@@ -4,7 +4,7 @@ import java.util.Comparator;
  *
  * @param      <Key>  The key
  */
-class MaxHeap<Key> {
+public final class MaxHeap<Key> {
 	/**
 	 * { var_description }
 	 */
@@ -19,7 +19,9 @@ class MaxHeap<Key> {
 	public Comparator<Key> comparator;
 	/**
 	 * Constructs the object.
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @param      sz    The size
 	 */
 	public MaxHeap(int sz) {
@@ -27,6 +29,9 @@ class MaxHeap<Key> {
 		size = 0;
 	}
 	/**
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * Constructs the object.
 	 */
 	public MaxHeap() {
@@ -34,7 +39,9 @@ class MaxHeap<Key> {
 	}
 	/**
 	 * { function_description }
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @return     { description_of_the_return_value }
 	 */
 	public int getsize() {
@@ -42,7 +49,9 @@ class MaxHeap<Key> {
 	}
 	/**
 	 * { function_description }
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @param      k     { parameter_description }
 	 */
 	public void insertMax(Key k) {
@@ -54,7 +63,9 @@ class MaxHeap<Key> {
 	}
 	/**
 	 * { function_description }
-	 *
+	 *  Best case: O(logN)
+     *  worst case :O(logN)
+     *  Average case: O(logN)
 	 * @param      ind   The ind
 	 */
 	public void swimMax(int ind) {
@@ -65,7 +76,9 @@ class MaxHeap<Key> {
 	}
 	/**
 	 * { function_description }
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @param      i     { parameter_description }
 	 * @param      j     { parameter_description }
 	 *
@@ -80,7 +93,9 @@ class MaxHeap<Key> {
 	}
 	/**
 	 * Gets the maximum.
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @return     The maximum.
 	 */
 	public Key getMax() {
@@ -88,7 +103,9 @@ class MaxHeap<Key> {
 	}
 	/**
 	 * { function_description }
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @return     { description_of_the_return_value }
 	 */
 	public Key delMax() {
@@ -103,7 +120,9 @@ class MaxHeap<Key> {
 	}
 	/**
 	 * { function_description }
-	 *
+	 *  Best case: O(logN)
+     *  worst case :O(logN)
+     *  Average case: O(logN)
 	 * @param      a     { parameter_description }
 	 */
 	public void sinkMax(int a) {
@@ -116,18 +135,39 @@ class MaxHeap<Key> {
 			a = j;
 		}
 	}
-	public void resize(int newsize) {
+	/**
+	 * { function_description }
+	 *  Best case: O(N)
+     *  worst case :O(N)
+     *  Average case: O(N)
+	 * @param      newsize  The newsize
+	 */
+	public void resize(final int newsize) {
 		Key[] temp = (Key[]) new Object[newsize];
 		for (int i = 1; i <= size; i++) {
 			temp[i] = hp[i];
 		}
 		hp = temp;
 	}
-	public void swap(int i, int j) {
+	/**
+	 * { function_description }
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
+	 * @param      i     { parameter_description }
+	 * @param      j     { parameter_description }
+	 */
+	public void swap(final int i, final int j) {
 		Key temp = hp[i];
 		hp[i] = hp[j];
 		hp[j] = temp;
 	}
+	/**
+	 *  Best case: O(N)
+     *  worst case :O(N)
+     *  Average case: O(N)
+	 * { function_description }
+	 */
 	public void show() {
 		for (int i = 1; i < size + 1; i++) {
 			System.out.print(hp[i] + " ");
