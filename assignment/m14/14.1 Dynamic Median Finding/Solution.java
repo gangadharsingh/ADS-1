@@ -1,21 +1,14 @@
 import java.util.Scanner;
-
 /**
  * Class for solution.
  */
-public final class Solution {
+public class Solution {
     /**
-     * Constructs the object.
-     */
-    private Solution() {
-        //Unused Constructor.
-    }
-    /**
-     * {Main method}.
+     * { function_description }.
      *
      * @param      args  The arguments
      */
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         long token = Integer.parseInt(scan.nextLine());
         MinHeap<Integer> heapMin = new MinHeap<Integer>();
