@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:6: Class Solution should be declared as final. [FinalClass]
 Audit done.
-Checkstyle ends with 1 errors.
