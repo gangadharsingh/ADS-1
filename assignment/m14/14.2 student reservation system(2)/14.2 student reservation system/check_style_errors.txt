@@ -1,10 +1,5 @@
 Starting audit...
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:6:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:17: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:138:13: Parameter a should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:142:33: '3' is a magic number. [MagicNumber]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:143:33: '4' is a magic number. [MagicNumber]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:144:34: '5' is a magic number. [MagicNumber]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:145:17: '6' is a magic number. [MagicNumber]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.2 student reservation system(2)/14.2 student reservation system/Solution.java:21:27: '{' at column 27 should have line break after. [LeftCurly]
 Audit done.
-Checkstyle ends with 7 errors.
+Checkstyle ends with 2 errors.

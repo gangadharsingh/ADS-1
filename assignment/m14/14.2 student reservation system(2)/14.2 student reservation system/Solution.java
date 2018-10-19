@@ -5,6 +5,10 @@ import java.util.Arrays;
  */
 public class Solution {
     /**.
+     * Constructs the object.
+     */
+    Solution() { }
+    /**.
      * { function_description }
      *
      * @param      arr   The arr
@@ -14,7 +18,7 @@ public class Solution {
      */
     static boolean contains(final int[] arr, final int val) {
         for (int n : arr) {
-            if (val == n) return true;
+            if (val == n) { return true; }
         }
         return false;
     }
@@ -135,14 +139,14 @@ class Student {
      *
      * @param      a     { parameter_description }
      */
-    Student(String[] a) {
+    Student(final String[] a) {
         name = a[0];
         dob = a[1];
         s1 = Integer.parseInt(a[2]);
-        s2 = Integer.parseInt(a[3]);
-        s3 = Integer.parseInt(a[4]);
-        tot = Integer.parseInt(a[5]);
-        res = a[6];
+        s2 = Integer.parseInt(a[2 + 1]);
+        s3 = Integer.parseInt(a[2 + 2]);
+        tot = Integer.parseInt(a[2 + 2 + 1]);
+        res = a[2 + 2 + 2];
     }
     /**.
      * { function_description }
