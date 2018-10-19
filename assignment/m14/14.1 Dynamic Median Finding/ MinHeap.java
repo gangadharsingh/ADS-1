@@ -4,19 +4,19 @@ import java.util.Comparator;
  *
  * @param      <Key>  The key.
  */
-class MinHeap<Key> {
+final class MinHeap<Key> {
 	/**
 	 * generic array.
 	 */
-	public Key[] hp;
+	private Key[] hp;
 	/**
 	 * size of array.
 	 */
-	public int size;
+	private int size;
 	/**
 	 * Comparator of generic type.
 	 */
-	public Comparator<Key> comparator;
+	private Comparator<Key> comparator;
 	/**
 	 * Constructs the object.
 	 *
@@ -42,7 +42,9 @@ class MinHeap<Key> {
 	}
 	/**
 	 * inserting Key type element.
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @param      k     generic type.
 	 */
 	public void insert(final Key k) {
@@ -54,24 +56,29 @@ class MinHeap<Key> {
 	}
 	/**
 	 * swimmin up the elements.
-	 *
+	 *  Best case: O(logN)
+     *  worst case :O(logN)
+     *  Average case: O(logN)
 	 * @param      ind   The ind
 	 */
-	public void swim(int ind) {
-		while (ind > 1 && greater(ind / 2, ind)) { //ind is child and ind/2 is parent.
-			swap(ind, ind / 2); //exchange parent with child when parent is less than child.
-			ind = ind / 2;
+	public void swim(final int ind) {
+        int index = ind;
+		while (index > 1 && greater(index / 2, index)) { //index is child and index/2 is parent.
+			swap(index, index / 2); //exchange parent with child when parent is less than child.
+			index = index / 2;
 		}
 	}
 	/**
 	 * comparing two elements.
-	 *
+	 *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
 	 * @param      i     integer value
 	 * @param      j     integer value
 	 *
 	 * @return     boolean.
 	 */
-	public boolean greater(int i, int j) {
+	public boolean greater(final int i, final int j) {
 		if (comparator == null) {
 			return  ((Comparable<Key>) hp[i]).compareTo(hp[j]) > 0;
 		} else {
@@ -121,7 +128,7 @@ class MinHeap<Key> {
 	 *
 	 * @param      newsize  The newsize
 	 */
-	void resize(int newsize) {
+	void resize(final int newsize) {
 		Key[] temp = (Key[]) new Object[newsize];
 		for (int i = 1; i <= size; i++) {
 			temp[i] = hp[i];
@@ -134,7 +141,7 @@ class MinHeap<Key> {
 	 * @param      i     { parameter_description }
 	 * @param      j     { parameter_description }
 	 */
-	void swap(int i, int j) {
+	void swap(final int i, final int j) {
 		Key temp = hp[i];
 		hp[i] = hp[j];
 		hp[j] = temp;
