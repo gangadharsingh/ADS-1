@@ -120,14 +120,14 @@ final class MinHeap<Key> {
 	 * @param      a     { parameter_description }
 	 */
 	void sink(int a) {
-        // int b = a;
+        int b = a;
 		while (2 * a <= size) {
 			int j = 2 * a;
 			if (j < size && greater(j, j + 1)) {
 				j++;
 			}
 			swap(a, j);
-			a = j;
+			b = j;
 		}
 	}
 	/**.
