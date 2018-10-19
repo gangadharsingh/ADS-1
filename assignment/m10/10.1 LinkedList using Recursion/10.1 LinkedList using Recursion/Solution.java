@@ -33,6 +33,9 @@ class LinkedList {
      */
     private int size;
     /**
+    * Best case: O(1)
+    * worst case: O(1)
+    * Average case:  O(1)
      * Constructs the object.
      */
     LinkedList() {
@@ -56,7 +59,9 @@ class LinkedList {
     }
     /**
      * insert at any position having overiding.
-     *
+     * Best case: O(1)
+     * worst case: O(1)
+     * Average case:  O(1)
      * @param      pos    The position
      * @param      first  The first
      * @param      obj    The object
@@ -75,6 +80,9 @@ class LinkedList {
         return first;
     }
     /**
+     * Best case: O(1)
+     * worst case: O(1)
+     * Average case: O(1)
      * reverse.
      */
     public void reverse() {
@@ -82,7 +90,9 @@ class LinkedList {
     }
     /**
      * reverse the node.
-     *
+     * Best case: O(1)
+     * worst case: O(1)
+     * Average case: O(1)
      * @param      previous  The previous.
      * @param      current   The current.
      */
@@ -95,6 +105,9 @@ class LinkedList {
         }
     }
     /**
+     * Best case: O(N)
+     * worst case: O(N)
+     * Average case: O(N)
      * display the node.
      */
     void display() {
@@ -117,7 +130,9 @@ public final class Solution {
     private Solution() { }
     /**
      * main class.
-     *
+     * Best case: O(N)
+     * worst case: O(N)
+     * Average case: O(N)
      * @param      args  The arguments.
      */
     public static void main(final String[] args) {
