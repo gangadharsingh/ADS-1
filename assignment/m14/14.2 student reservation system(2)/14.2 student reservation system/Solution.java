@@ -7,7 +7,7 @@ public class Solution {
     /**.
      * Constructs the object.
      */
-    Solution() { }
+    private Solution() { }
     /**.
      * { function_description }
      *
@@ -18,7 +18,9 @@ public class Solution {
      */
     static boolean contains(final int[] arr, final int val) {
         for (int n : arr) {
-            if (val == n) { return true; }
+            if (val == n) {
+                return true;
+            }
         }
         return false;
     }
