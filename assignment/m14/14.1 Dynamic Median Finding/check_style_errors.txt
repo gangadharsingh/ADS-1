@@ -1,4 +1,2 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m14/14.1 Dynamic Median Finding/ MinHeap.java:118:15: Parameter a should be final. [FinalParameters]
 Audit done.
-Checkstyle ends with 1 errors.

@@ -115,14 +115,15 @@ final class MinHeap<Key> {
      *  Average case: O(logN)
      * @param      a     { parameter_description }
      */
-    void sink(int a) {
-        while (2 * a <= size) {
-            int j = 2 * a;
+    void sink(final int a) {
+        int b = a;
+        while (2 * b <= size) {
+            int j = 2 * b;
             if (j < size && greater(j, j + 1)) {
                 j++;
             }
-            swap(a, j);
-            a = j;
+            swap(b, j);
+            b = j;
         }
     }
     /**.
