@@ -124,6 +124,13 @@ public class  MinPQ<Key> {
 		return isMinHeap(1);
 	}
 
+	/**
+	 * Determines if minimum heap.
+	 *
+	 * @param      k     { parameter_description }
+	 *
+	 * @return     True if minimum heap, False otherwise.
+	 */
 	public boolean isMinHeap(int k) {
 		if (k > n) return true;
 		int left = 2 * k;

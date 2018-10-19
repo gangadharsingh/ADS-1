@@ -1,5 +1,4 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:8:1: File contains tab characters (this is the first instance). [FileTabCharacter]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:11:22: Variable 'pq' must be private and have accessor methods. [VisibilityModifier]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:15:20: Variable 'n' must be private and have accessor methods. [VisibilityModifier]
@@ -23,11 +22,9 @@ Starting audit...
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:117:33: Parameter j should be final. [FinalParameters]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:123:9: Class 'MinPQ' looks like designed for extension (can be subclassed), but the method 'isMinHeap' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MinPQ' final or making the method 'isMinHeap' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:123:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:127:9: Class 'MinPQ' looks like designed for extension (can be subclassed), but the method 'isMinHeap' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'MinPQ' final or making the method 'isMinHeap' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:127:9: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:127:34: Parameter k should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:128: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:131: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:132: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:134:34: Parameter k should be final. [FinalParameters]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:135: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:138: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m13/13.1 isMinHeap/MinPQ.java:139: 'if' construct must use '{}'s. [NeedBraces]
 Audit done.
-Checkstyle ends with 30 errors.
+Checkstyle ends with 27 errors.

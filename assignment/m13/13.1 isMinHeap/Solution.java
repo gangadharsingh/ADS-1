@@ -1,119 +1,96 @@
 import java.util.Scanner;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+/**
+ * Class for minheap.
+ */
+class Minheap {
+    /**
+     * Determines if heap.
+     *  Best case: O(1)
+     *  worst case :O(n)
+     *  Average case: O(n)
+     *
+     * @param      a     { parameter_description }
+     *
+     * @return     True if heap, False otherwise.
+     */
+    public boolean isHeap(final Comparable[] a) {
+        for (int i = 0; i < a.length; i++) {
+            if (2 * i + 1 < a.length && 2 * i + 2 < a.length) {
+                if (a[i].compareTo(a[2 * i + 1]) > 0
+                 || a[i].compareTo(a[2 * i + 2]) > 0) {
+                    return false;
+                }
+            }
+
+        }
+        return true;
+    }
+}
 /**
  * Class for solution.
  */
-public class Solution {
-	/**
-	 * Constructs the object.
-	 */
-	private Solution() { }
-	/**
-	 * compare.
-	 *
-	 * @param      pq    priority queue.
-	 * @param      str   The string.
-	 *
-	 * @return     {compare it}.
-	 */
-	public static boolean compare(String pq, String str) {
-		return pq.equals(str);
-	}
-	/**
-	 * main.
-	 *
-	 * @param      args  The arguments
-	 */
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		String check = scan.nextLine();
-		switch (check) {
-		case "String":
-			int numString = scan.nextInt();
-			scan.nextLine();
-			int count = 0;
-			for (int i = 0; i < numString; i++) {
-				String line = scan.nextLine();
-				String str = "";
-				MinPQ<String> pq = new MinPQ<String>();
-				if (line.length() != 0) {
-					String[] token = line.split(",");
-					for (int j = 0; j < token.length; j++) {
-						pq.insert(token[j]);
-						str += token[j];
-					}
-					System.out.println(compare(pq.show(), str));
-				} else {
-					System.out.println("false");
-				}
-			}
-			break;
-		case "Float":
-			int numFloat = scan.nextInt();
-			scan.nextLine();
-			for (int l = 0; l < numFloat; l++) {
-				String line = scan.nextLine();
-				String str = "";
-				MinPQ<Float> pqFloat = new MinPQ<Float>();
-				if (line.length() != 0) {
-					String[] token = line.split(",");
-					Float[] floatarray = new Float[token.length];
-					for (int k = 0; k< token.length; k++) {
-						floatarray[k] = Float.parseFloat(token[k]);
-						pqFloat.insert(floatarray[k]);
-						str += floatarray[k];
-					}
-					System.out.println(compare(pqFloat.show(), str));
-				} else {
-					System.out.println("false");
-				}
-			}
-			break;
-		case "Double":
-			int numDouble = scan.nextInt();
-			scan.nextLine();
-			for (int l = 0; l < numDouble; l++) {
-				String line = scan.nextLine();
-				String str = "";
-				MinPQ<Double> pqDouble = new MinPQ<Double>();
-				if (line.length() != 0) {
-					String[] token = line.split(",");
-					Double[] Doublearray = new Double[token.length];
-					for (int k = 0; k< token.length; k++) {
-						Doublearray[k] = Double.parseDouble(token[k]);
-						pqDouble.insert(Doublearray[k]);
-						str += Doublearray[k];
-						}
-					System.out.println(compare(pqDouble.show(), str));
-				} else {
-					System.out.println("false");
-				}
-			}
-			break;
-		case "Integer":
-			int numInteger = scan.nextInt();
-			scan.nextLine();
-			for (int l = 0; l < numInteger; l++) {
-				String line = scan.nextLine();
-				String str = "";
-				MinPQ<Integer> pqInteger = new MinPQ<Integer>();
-				if (line.length() != 0) {
-					String[] token = line.split(",");
-					Integer[] integerarray = new Integer[token.length];
-					for (int k = 0; k< token.length; k++) {
-						integerarray[k] = Integer.parseInt(token[k]);
-						pqInteger.insert(integerarray[k]);
-						str += integerarray[k];
-					}
-					System.out.println(compare(pqInteger.show(), str));
-				} else {
-					System.out.println("false");
-				}
-			}
-			break;
-		default:
-			break;
-		}
-	}
+final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
+    /**
+     * main.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
+        int size;
+        Scanner sc = new Scanner(System.in);
+        String type = sc.nextLine();
+        int nooftestcases = sc.nextInt();
+        Minheap m = new Minheap();
+        sc.nextLine();
+        for (int i = 0; i < nooftestcases; i++) {
+            String line = sc.nextLine();
+            if (line.length() == 0) {
+                System.out.println("false");
+            } else {
+                String[] input = line.split(",");
+                switch (type) {
+                case "String":
+                    size  = 0;
+                    String[] stringheap = new String[input.length];
+                    for (int j = 0; j < input.length; j++) {
+                        stringheap[size++] = input[j];
+                    }
+                    System.out.println(m.isHeap(stringheap));
+                    break;
+                case "Integer":
+                    size = 0;
+                    Integer[] intheap = new Integer[input.length];
+                    for (int j = 0; j < input.length; j++) {
+                        intheap[size++] = Integer.parseInt(input[j]);
+                    }
+                    System.out.println(m.isHeap(intheap));
+                    break;
+                case "Float":
+                    size = 0;
+                    Float[] floatheap = new Float[input.length];
+                    for (int j = 0; j < input.length; j++) {
+                        floatheap[size++] = Float.parseFloat(input[j]);
+                    }
+                    System.out.println(m.isHeap(floatheap));
+                    break;
+                case "Double":
+                    size = 0;
+                    Double[] doubleheap = new Double[input.length];
+                    for (int j = 0; j < input.length; j++) {
+                        doubleheap[size++] = Double.parseDouble(input[j]);
+                    }
+                    System.out.println(m.isHeap(doubleheap));
+                    break;
+                default:
+                    break;
+                }
+            }
+        }
+    }
 }
