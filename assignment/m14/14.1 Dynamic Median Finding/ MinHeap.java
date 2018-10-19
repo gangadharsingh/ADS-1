@@ -34,7 +34,9 @@ final class MinHeap<Key> {
     }
     /**.
      * getting size of array.
-     *
+     *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
      * @return     integer.
      */
     public int getsize() {
@@ -42,9 +44,9 @@ final class MinHeap<Key> {
     }
     /**.
      * inserting Key type element.
-     *  Best case: O(1)
-     *  worst case :O(1)
-     *  Average case: O(1)
+     *  Best case: O(N)
+     *  worst case :O(N)
+     *  Average case: O(N)
      * @param      k     generic type.
      */
     public void insert(final Key k) {
@@ -87,7 +89,9 @@ final class MinHeap<Key> {
     }
     /**.
      * deleting minimum.
-     *
+     *  Best case: O(N)
+     *  worst case :O(N)
+     *  Average case: O(N)
      * @return     Key type.
      */
     Key delMin() {
@@ -102,7 +106,9 @@ final class MinHeap<Key> {
     }
     /**.
      * Gets the minimum.
-     *
+     *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
      * @return     The minimum.
      */
     Key getMin() {
@@ -128,7 +134,9 @@ final class MinHeap<Key> {
     }
     /**.
      * { function_description }
-     *
+     *  Best case: O(N)
+     *  worst case :O(N)
+     *  Average case: O(N)
      * @param      newsize  The newsize
      */
     void resize(final int newsize) {
@@ -140,7 +148,9 @@ final class MinHeap<Key> {
     }
     /**.
      * { function_description }
-     *
+     *  Best case: O(1)
+     *  worst case :O(1)
+     *  Average case: O(1)
      * @param      i     { parameter_description }
      * @param      j     { parameter_description }
      */
@@ -151,6 +161,9 @@ final class MinHeap<Key> {
     }
     /**.
      * { function_description }
+     *  Best case: O(N)
+     *  worst case :O(N)
+     *  Average case: O(N)
      */
     void show() {
         for (int i = 1; i < size + 1; i++) {

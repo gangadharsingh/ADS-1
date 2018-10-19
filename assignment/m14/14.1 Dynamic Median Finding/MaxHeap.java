@@ -1,38 +1,38 @@
 import java.util.Comparator;
-/**
+/**.
  * Class for maximum heap.
  *
  * @param      <Key>  The key
  */
 class MaxHeap<Key> {
-	/**
-	 * { var_description }
+	/**.
+	 * { fields }
 	 */
-	public Key[] hp;
-	/**
-	 * { var_description }
+	private Key[] hp;
+	/**.
+	 * { fields }
 	 */
-	public int size;
-	/**
-	 * { var_description }
+	private int size;
+	/**.
+	 * { fields }
 	 */
-	public Comparator<Key> comparator;
-	/**
+	private Comparator<Key> comparator;
+	/**.
 	 * Constructs the object.
 	 *
 	 * @param      sz    The size
 	 */
-	public MaxHeap(int sz) {
+	MaxHeap(final int sz) {
 		hp = (Key[]) new Object[sz + 1];
 		size = 0;
 	}
-	/**
+	/**.
 	 * Constructs the object.
 	 */
-	public MaxHeap() {
+	MaxHeap() {
 		this(1);
 	}
-	/**
+	/**.
 	 * { function_description }
 	 *
 	 * @return     { description_of_the_return_value }
@@ -40,30 +40,31 @@ class MaxHeap<Key> {
 	public int getsize() {
 		return size;
 	}
-	/**
+	/**.
 	 * { function_description }
 	 *
 	 * @param      k     { parameter_description }
 	 */
-	public void insertMax(Key k) {
+	public void insertMax(final Key k) {
 		if (size == hp.length - 1) {
 			resize(2 * hp.length);
 		}
 		hp[++size] = k;
 		swimMax(size);
 	}
-	/**
+	/**.
 	 * { function_description }
 	 *
 	 * @param      ind   The ind
 	 */
-	public void swimMax(int ind) {
-		while (ind > 1 && minHP(ind / 2, ind)) { //ind is child and ind/2 is parent.
-			swap(ind, ind / 2); //exchange parent with child when parent is less than child.
-			ind = ind / 2;
+	public void swimMax(final int ind) {
+		int index = ind;
+		while (index > 1 && minHP(index / 2, index)) { //index is child and index/2 is parent.
+			swap(index, index / 2); //exchange parent with child when parent is less than child.
+			index = index / 2;
 		}
 	}
-	/**
+	/**.
 	 * { function_description }
 	 *
 	 * @param      i     { parameter_description }
@@ -78,7 +79,7 @@ class MaxHeap<Key> {
 			return comparator.compare(hp[i], hp[j]) < 0;
 		}
 	}
-	/**
+	/**.
 	 * Gets the maximum.
 	 *
 	 * @return     The maximum.
@@ -86,7 +87,7 @@ class MaxHeap<Key> {
 	public Key getMax() {
 		return hp[1];
 	}
-	/**
+	/**.
 	 * { function_description }
 	 *
 	 * @return     { description_of_the_return_value }
@@ -101,7 +102,7 @@ class MaxHeap<Key> {
 		}
 		return max;
 	}
-	/**
+	/**.
 	 * { function_description }
 	 *
 	 * @param      a     { parameter_description }
