@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import Priority.MinPQ;
 /**
  * Class for solution.
  */
