@@ -297,31 +297,32 @@ public final class Solution {
             }
             String[] str = l.split(",");
             String sub = str[1] + " " + str[2] + " "  + str[2 + 1];
-            switch (str[0]) {
-            case "put":
-                st.put(sub, Integer.parseInt(str[2 + 2]));
-                break;
-            case "get":
-                System.out.println(st.get(sub));
-                break;
-            case "min":
-            	System.out.println(st.min());
-            	break;
-            case "max":
-            	System.out.println(st.max());
-            	break;
-            case "floor":
-            	System.out.println(st.floor(sub));
-            	break;
-            case "ceiling":
-            	System.out.println(st.ceiling(sub));
-            	break;
-            case "select":
-            	System.out.println(st.select(Integer.parseInt(str[1])));
-            	break;
-            default:
-                break;
-            }
+            System.out.println(sub);
+            // switch (str[0]) {
+            // case "put":
+            //     st.put(sub, Integer.parseInt(str[2 + 2]));
+            //     break;
+            // case "get":
+            //     System.out.println(st.get(sub));
+            //     break;
+            // case "min":
+            // 	System.out.println(st.min());
+            // 	break;
+            // case "max":
+            // 	System.out.println(st.max());
+            // 	break;
+            // case "floor":
+            // 	System.out.println(st.floor(sub));
+            // 	break;
+            // case "ceiling":
+            // 	System.out.println(st.ceiling(sub));
+            // 	break;
+            // case "select":
+            // 	System.out.println(st.select(Integer.parseInt(str[1])));
+            // 	break;
+            // default:
+            //     break;
+            // }
         }
 	}
 }
