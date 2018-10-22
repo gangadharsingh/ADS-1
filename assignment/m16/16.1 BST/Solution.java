@@ -30,7 +30,7 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
          * @param      key   The key
          * @param      val   The value
          */
-        public Node(Key key, Value val) {
+        public Node(final Key key, final Value val) {
             this.key = key;
             this.val = val;
         }
@@ -92,7 +92,7 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
 /**.
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**.
      * Constructs the object.
      */
@@ -104,7 +104,8 @@ public class Solution {
      */
     public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
-        NonrecursiveBST<String, Integer> st = new NonrecursiveBST<String, Integer>();
+        NonrecursiveBST<String, Integer> st = new
+        NonrecursiveBST<String, Integer>();
         while (scan.hasNext()) {
             String l = scan.nextLine();
             if (l.length() == 0) {

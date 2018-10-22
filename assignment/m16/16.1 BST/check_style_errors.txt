@@ -1,10 +1,6 @@
 Starting audit...
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:9: Redundant 'public' modifier. [RedundantModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:21: Parameter key should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:25: 'key' hides a field. [HiddenField]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:30: Parameter val should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:36: 'val' hides a field. [HiddenField]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:95: Class Solution should be declared as final. [FinalClass]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:107: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:31: 'key' hides a field. [HiddenField]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:48: 'val' hides a field. [HiddenField]
 Audit done.
-Checkstyle ends with 7 errors.
+Checkstyle ends with 3 errors.
