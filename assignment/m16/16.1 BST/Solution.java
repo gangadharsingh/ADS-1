@@ -17,11 +17,11 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
         /**.
          * { var_description }
          */
-        private Key key;
+        public Key key;
         /**.
          * { var_description }
          */
-        private Value val;
+        public Value val;
         /**.
          * { var_description }
          */
