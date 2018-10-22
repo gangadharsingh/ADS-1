@@ -1,63 +1,86 @@
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+
+/**
+ * Class for cube sum.
+ */
 class CubeSum implements Comparable<CubeSum> {
-    long sum;
-    long i;
-    long j;
-
-    public CubeSum(long i, long j) {
-        this.sum = i*i*i + j*j*j;
-        this.i = i;
-        this.j = j;
+    /**
+     * sum variable.
+     */
+    private final int sum;
+    /**
+     * int i variable.
+     */
+    private  final int i;
+    /**
+     * int j varibale.
+     */
+    private final int j;
+    /**
+     * Constructs the object.
+     *
+     * @param      in     { parameter_description }
+     * @param      ja    { parameter_description }
+     */
+    CubeSum(final int in, final int ja) {
+        this.sum = in * in * in + ja * ja * ja;
+        this.i = in;
+        this.j = ja;
     }
+    /**
+     * geti method.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int geti() {
+        return this.i;
+    }
+    /**
+     * getj method.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int getj() {
+        return this.j;
+    }
+    /**
+     * getsum method.
+     *
+     * @return     { description_of_the_return_value }
+     */
+    int getsum() {
+        return this.sum;
+    }
+    /**
+     * compareTo method.
+     * Best case: O(1)
+     * Worst case: O(1)
+     * Average case: O(1)
+     * @param      that  The that
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int compareTo(final CubeSum that) {
+        if (this.sum < that.sum) {
+            return -1;
+        }
+        if (this.sum > that.sum) {
+            return +1;
+        }
 
-    public int compareTo(CubeSum that) {
-        if (this.sum < that.sum) return -1;
-        if (this.sum > that.sum) return +1;
         return 0;
     }
-    public long sum() {return sum;}
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return sum + " = " + i + "^3" + " + " + j + "^3";
-    }
-
-}
-
-
-public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int m = sc.nextInt();
-        MinHeap<CubeSum> pq = new MinHeap<CubeSum>();
-        for (int i = 1; i <= 1000; i++) {
-            pq.insert(new CubeSum(i, i));
-        }
-        // int i = 0;
-        CubeSum prev = new CubeSum(0, 0);
-        long sum = 0;
-        // for (k < n; k++) {
-        int p = 1;
-        int k = 0;
-        while (!pq.isEmpty()) {
-            CubeSum c = pq.delMin();
-            if (prev.sum() == c.sum()) {
-                p++;
-                if (p == m)
-                {
-                    sum = c.sum();
-
-                    if (++k == n) break;
-                }
-            }
-            else {
-                p = 1;
-            }
-            prev = c;
-            if (c.j < 1500)
-                pq.insert(new CubeSum(c.i, c.j + 1));
-            // }
-        }
-        System.out.println(sum);
-
     }
 }
