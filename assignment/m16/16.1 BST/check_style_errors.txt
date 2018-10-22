@@ -1,6 +1,5 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:16: Class Node should be declared as final. [FinalClass]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:32: 'key' hides a field. [HiddenField]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m16/16.1 BST/Solution.java:33:49: 'val' hides a field. [HiddenField]
 Audit done.
-Checkstyle ends with 3 errors.
+Checkstyle ends with 2 errors.
