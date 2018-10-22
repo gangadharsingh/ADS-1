@@ -17,11 +17,11 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
         /**.
          * { var_description }
          */
-        public Key key;
+        private Key key;
         /**.
          * { var_description }
          */
-        public Value val;
+        private Value val;
         /**.
          * { var_description }
          */
@@ -34,6 +34,22 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
             this.key = key;
             this.val = val;
         }
+         /**
+          * Gets the property.
+          *
+          * @return     The property.
+          */
+         public Key getKey(){
+          return key;
+         }
+         /**
+          * Gets the property.
+          *
+          * @return     The property.
+          */
+         public Value getValue(){
+          return val;
+         }
     }
     /**.
      * { function_description }
