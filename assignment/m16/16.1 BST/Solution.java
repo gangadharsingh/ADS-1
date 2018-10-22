@@ -30,26 +30,26 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
          * @param      key   The key
          * @param      val   The value
          */
-        public Node(final Key key, final Value val) {
+        private Node(final Key key, final Value val) {
             this.key = key;
             this.val = val;
         }
-         /**
-          * Gets the property.
-          *
-          * @return     The property.
-          */
-         public Key getKey(){
-          return key;
-         }
-         /**
-          * Gets the property.
-          *
-          * @return     The property.
-          */
-         public Value getValue(){
-          return val;
-         }
+        /**
+         * Gets the property.
+         *
+         * @return     The property.
+         */
+        public Key getKey() {
+            return key;
+        }
+        /**
+         * Gets the property.
+         *
+         * @return     The property.
+         */
+        public Value getValue() {
+            return val;
+        }
     }
     /**.
      * { function_description }
