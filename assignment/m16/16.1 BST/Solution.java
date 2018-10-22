@@ -1,23 +1,39 @@
 import java.util.Scanner;
+/**
+ * Class for nonrecursive bst.
+ *
+ * @param      <Key>    The key
+ * @param      <Value>  The value
+ */
 class NonrecursiveBST<Key extends Comparable<Key>, Value> {
+    /**
+     * { var_description }
+     */
     private Node root;
+    /**
+     * Class for node.
+     */
     private class Node {
         private Key key;
         private Value val;
         private Node left, right;
-
         public Node(Key key, Value val) {
             this.key = key;
             this.val = val;
         }
     }
-    public void put(Key key, Value val) {
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     * @param      val   The value
+     */
+    public void put(final Key key, final Value val) {
         Node z = new Node(key, val);
         if (root == null) {
             root = z;
             return;
         }
-
         Node parent = null, x = root;
         while (x != null) {
             parent = x;
@@ -33,8 +49,14 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
         if (cmp < 0) parent.left  = z;
         else         parent.right = z;
     }
-
-    Value get(Key key) {
+    /**
+     * { function_description }
+     *
+     * @param      key   The key
+     *
+     * @return     { description_of_the_return_value }
+     */
+    Value get(final Key key) {
         Node x = root;
         while (x != null) {
             int cmp = key.compareTo(x.key);
@@ -45,8 +67,16 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
         return null;
     }
 }
+/**
+ * Class for solution.
+ */
 public class Solution {
-    public static void main(String[] args) {
+    /**
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         Scanner scan = new Scanner(System.in);
         NonrecursiveBST<String, Integer> st = new NonrecursiveBST<String, Integer>();
         while (scan.hasNext()) {
