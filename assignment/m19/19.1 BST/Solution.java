@@ -303,21 +303,21 @@ public final class Solution {
                 break;
             case "get":
             	sub = str[1] + " " + str[2] + " "  + str[2 + 1];
-                System.out.println(st.get(sub));
+                System.out.print(st.get(sub));
                 break;
             case "min":
-            	System.out.println(st.min());
+            	System.out.print(st.min());
             	break;
             case "max":
-            	System.out.println(st.max());
+            	System.out.print(st.max());
             	break;
             case "floor":
             	sub = str[1] + " " + str[2] + " "  + str[2 + 1];
-            	System.out.println(st.floor(sub));
+            	System.out.print(st.floor(sub));
             	break;
             case "ceiling":
             	sub = str[1] + " " + str[2] + " "  + str[2 + 1];
-            	System.out.println(st.ceiling(sub));
+            	System.out.print(st.ceiling(sub));
             	break;
             case "select":
             	// System.out.println(st.select(Integer.parseInt(str[1])));
@@ -325,6 +325,7 @@ public final class Solution {
             default:
                 break;
             }
+            System.out.println();
         }
 	}
 }
