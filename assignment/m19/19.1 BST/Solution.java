@@ -248,6 +248,13 @@ class BST<Key extends Comparable<Key>, Value> {
 		Node x = select(root, k);
 		return x.key;
 	}
+	private Node select(Node x, int k) {
+		if (x == null) return null;
+		int t = size(x.left);
+		if      (t > k) return select(x.left,  k);
+		else if (t < k) return select(x.right, k - t - 1);
+		else            return x;
+	}
 	public int size(Key lo, Key hi) {
 		if (lo == null) throw new IllegalArgumentException("first argument to size() is null");
 		if (hi == null) throw new IllegalArgumentException("second argument to size() is null");
@@ -274,13 +281,6 @@ class BST<Key extends Comparable<Key>, Value> {
         else if (cmp > 0) return 1 + size(x.left) + rank(key, x.right); 
         else              return size(x.left); 
     }
-	private Node select(Node x, int k) {
-		if (x == null) return null;
-		int t = size(x.left);
-		if      (t > k) return select(x.left,  k);
-		else if (t < k) return select(x.right, k - t - 1);
-		else            return x;
-	}
 }
 
 public final class Solution {
@@ -320,7 +320,7 @@ public final class Solution {
             	System.out.println(st.ceiling(sub));
             	break;
             case "select":
-            	System.out.println(st.select(Integer.parseInt(str[1])));
+            	// System.out.println(st.select(Integer.parseInt(str[1])));
             	break;
             default:
                 break;

@@ -12,9 +12,8 @@ null
 
 null
 
-Exception in thread "main" java.lang.IllegalArgumentException: argument to select() is invalid: 1
-	at BST.select(Solution.java:246)
-	at Solution.main(Solution.java:323)
+
+null
 ----------------------------------------
 ########## Testcase 1: Failed ##########
 Expected Output: 
@@ -37,9 +36,7 @@ null
 
 null
 
-Exception in thread "main" java.lang.IllegalArgumentException: argument to select() is invalid: 2
-	at BST.select(Solution.java:246)
-	at Solution.main(Solution.java:323)
+null
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -58,7 +55,7 @@ Your Output:
 
 null
 null
-Exception in thread "main" java.lang.IllegalArgumentException: argument to select() is invalid: 3
-	at BST.select(Solution.java:246)
-	at Solution.main(Solution.java:323)
+
+
+null
 ----------------------------------------
