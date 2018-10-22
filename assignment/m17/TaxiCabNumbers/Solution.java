@@ -1,64 +1,63 @@
-import java.util.Scanner;public class Solution implements Comparable<Solution> {
-    private final int i;
-    private final int j;
-    private final long sum;   // i^3 + j^3, cached to avoid recomputation
+import java.util.Scanner;
+class CubeSum implements Comparable<CubeSum> {
+    long sum;
+    long i;
+    long j;
 
-    // create a new tuple (i, j, i^3 + j^3)
-    public Solution(int i, int j) {
-        this.sum = (long) i*i*i + (long) j*j*j;
+    public CubeSum(long i, long j) {
+        this.sum = i*i*i + j*j*j;
         this.i = i;
         this.j = j;
     }
 
-    // compare by i^3 + j^3, breaking ties by i
-    public int compareTo(Solution that) {
-        if      (this.sum < that.sum) return -1;
-        else if (this.sum > that.sum) return +1;
-        else if (this.i < that.i)     return -1;
-        else if (this.i > that.i)     return +1;
-        else                          return  0;
+    public int compareTo(CubeSum that) {
+        if (this.sum < that.sum) return -1;
+        if (this.sum > that.sum) return +1;
+        return 0;
     }
-
+    public long sum() {return sum;}
     public String toString() {
-        return i + "^3 + " + j + "^3";
+        return sum + " = " + i + "^3" + " + " + j + "^3";
     }
 
+}
 
+
+public class Solution {
     public static void main(String[] args) {
-        MinHeap<Solution> pq = new MinHeap<Solution>();
-        Scanner s = new Scanner(System.in);
-        String[] str = s.nextLine().split(" ");
-        int a = Integer.parseInt(str[0]);
-        int b = Integer.parseInt(str[1]);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        MinHeap<CubeSum> pq = new MinHeap<CubeSum>();
         for (int i = 1; i <= 1000; i++) {
-            pq.insert(new Solution(i, i));
+            pq.insert(new CubeSum(i, i));
         }
-        int run = 1;
-        int c = 0;
-        Solution prev = new Solution(0, 0);
+        // int i = 0;
+        CubeSum prev = new CubeSum(0, 0);
+        long sum = 0;
+        // for (k < n; k++) {
+        int p = 1;
+        int k = 0;
         while (!pq.isEmpty()) {
-            Solution curr = pq.delMin();
-            if (prev.sum == curr.sum) {
-                run++;
-                if (run == b) {
-                  System.out.println(prev.sum);
-                  break;
+            CubeSum c = pq.delMin();
+            if (prev.sum() == c.sum()) {
+                p++;
+                if (p == m)
+                {
+                    sum = c.sum();
+
+                    if (++k == n) break;
                 }
-                c++;
             }
             else {
-                // if (run > 1) System.out.println();
-                run = 1;
+                p = 1;
             }
-            if (c == a) {
-                break;
-            }
-            prev = curr;
-            if (curr.j < 1000) pq.insert(new Solution(curr.i, curr.j + 1));
-            if (c == a) {
-                break;
-            }
+            prev = c;
+            if (c.j < 1500)
+                pq.insert(new CubeSum(c.i, c.j + 1));
+            // }
         }
-        if (run > 1) System.out.println();
+        System.out.println(sum);
+
     }
 }
