@@ -1,7 +1,9 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:9: Redundant 'public' modifier. [RedundantModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:31: 'key' hides a field. [HiddenField]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:48: 'val' hides a field. [HiddenField]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:63: 'size' hides a field. [HiddenField]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:108:12: Unused @param tag for 'key'. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:109:12: Unused @param tag for 'val'. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:110:12: Unused @param tag for 'size'. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:24: Expected @param tag for 'k'. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:39: Expected @param tag for 'v'. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:52: Expected @param tag for 'sz'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 4 errors.
+Checkstyle ends with 6 errors.
