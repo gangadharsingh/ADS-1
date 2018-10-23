@@ -1,21 +1,7 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:56: Line has trailing spaces. [RegexpSingleline]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:9: Redundant 'public' modifier. [RedundantModifier]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:21: Parameter key should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:25: 'key' hides a field. [HiddenField]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:30: Parameter val should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:36: 'val' hides a field. [HiddenField]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:41: Parameter size should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:45: 'size' hides a field. [HiddenField]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:140: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:194:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:266: Line is longer than 80 characters (found 81). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:310: Line is longer than 80 characters (found 84). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:336: Line is longer than 80 characters (found 84). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:366: Line is longer than 80 characters (found 86). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:448: Line is longer than 80 characters (found 88). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:492: Line is longer than 80 characters (found 88). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:528: Line is longer than 80 characters (found 83). [LineLength]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:531: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:31: 'key' hides a field. [HiddenField]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:48: 'val' hides a field. [HiddenField]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:63: 'size' hides a field. [HiddenField]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 4 errors.

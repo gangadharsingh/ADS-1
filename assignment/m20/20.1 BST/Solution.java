@@ -53,7 +53,7 @@ public final class Solution {
                 break;
             case "deleteMin":
                 st.deleteMin();
-                break; 
+                break;
             case "deleteMax":
                 st.deleteMax();
                 break;
@@ -109,7 +109,7 @@ class BST<Key extends Comparable<Key>, Value> {
          * @param      val   The value
          * @param      size  The size
          */
-        public Node(Key key, Value val, int size) {
+        public Node(final Key key, final Value val, final int size) {
             this.key = key;
             this.val = val;
             this.size = size;
@@ -137,7 +137,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public boolean contains(final Key key) {
         if (key == null) {
-            throw new IllegalArgumentException("argument to contains() is null");
+            throw new IllegalArgumentException(
+                "argument to contains() is null");
         }
         return get(key) != null;
     }
@@ -161,7 +162,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     private Value get(final Node x, final Key key) {
         if (key == null) {
-            throw new IllegalArgumentException("calls get() with a null key");
+            throw new IllegalArgumentException(
+                "calls get() with a null key");
         }
         if (x == null) {
             return null;
@@ -183,7 +185,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public void put(final Key key, final Value val) {
         if (key == null) {
-            throw new IllegalArgumentException("calls put() with a null key");
+            throw new IllegalArgumentException(
+                "calls put() with a null key");
         }
         if (val == null) {
             delete(key);
@@ -191,6 +194,15 @@ class BST<Key extends Comparable<Key>, Value> {
         }
         root = put(root, key, val);
     }
+    /**.
+     * { function_description }
+     *
+     * @param      x     { parameter_description }
+     * @param      key   The key
+     * @param      val   The value
+     *
+     * @return     { description_of_the_return_value }
+     */
     private Node put(final Node x, final Key key, final Value val) {
         if (x == null) {
             return new Node(key, val, 1);
@@ -211,7 +223,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public void deleteMin() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Symbol table underflow");
+            throw new NoSuchElementException(
+                "Symbol table underflow");
         }
         root = deleteMin(root);
     }
@@ -236,7 +249,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public void deleteMax() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Symbol table underflow");
+            throw new NoSuchElementException(
+                "Symbol table underflow");
         }
         root = deleteMax(root);
     }
@@ -263,7 +277,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public void delete(final Key key) {
         if (key == null) {
-            throw new IllegalArgumentException("calls delete() with a null key");
+            throw new IllegalArgumentException(
+                "calls delete() with a null key");
         }
         root = delete(root, key);
     }
@@ -307,7 +322,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public Key min() {
         if (isEmpty()) {
-            throw new NoSuchElementException("calls min() with empty symbol table");
+            throw new NoSuchElementException(
+                "calls min() with empty symbol table");
         }
         return min(root).key;
     }
@@ -333,7 +349,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public Key max() {
         if (isEmpty()) {
-            throw new NoSuchElementException("calls max() with empty symbol table");
+            throw new NoSuchElementException(
+                "calls max() with empty symbol table");
         }
         return max(root).key;
     }
@@ -360,10 +377,12 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public Key floor(final Key key) {
         if (key == null) {
-            throw new IllegalArgumentException("argument to floor() is null");
+            throw new IllegalArgumentException(
+                "argument to floor() is null");
         }
         if (isEmpty()) {
-            throw new NoSuchElementException("calls floor() with empty symbol table");
+            throw new NoSuchElementException(
+                "calls floor() with empty symbol table");
         }
         Node x = floor(root, key);
         if (x == null) {
@@ -442,10 +461,12 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public Key ceiling(final Key key) {
         if (key == null) {
-            throw new IllegalArgumentException("argument to ceiling() is null");
+            throw new IllegalArgumentException(
+                "argument to ceiling() is null");
         }
         if (isEmpty()) {
-            throw new NoSuchElementException("calls ceiling() with empty symbol table");
+            throw new NoSuchElementException(
+                "calls ceiling() with empty symbol table");
         }
         Node x = ceiling(root, key);
         if (x == null) {
@@ -489,7 +510,8 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public Key select(final int k) {
         if (k < 0 || k >= size()) {
-            throw new IllegalArgumentException("argument to select() is invalid: " + k);
+            throw new IllegalArgumentException(
+                "argument to select() is invalid: " + k);
         }
         Node x = select(root, k);
         return x.key;
@@ -525,10 +547,12 @@ class BST<Key extends Comparable<Key>, Value> {
      */
     public int size(final Key lo, final Key hi) {
         if (lo == null) {
-            throw new IllegalArgumentException("first argument to size() is null");
+            throw new IllegalArgumentException(
+                "first argument to size() is null");
         }
         if (hi == null) {
-            throw new IllegalArgumentException("second argument to size() is null");
+            throw new IllegalArgumentException(
+                "second argument to size() is null");
         }
 
         if (lo.compareTo(hi) > 0) {
