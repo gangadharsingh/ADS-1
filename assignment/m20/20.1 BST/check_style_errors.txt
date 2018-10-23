@@ -1,9 +1,5 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:108:12: Unused @param tag for 'key'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:109:12: Unused @param tag for 'val'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:110:12: Unused @param tag for 'size'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:24: Expected @param tag for 'k'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:39: Expected @param tag for 'v'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:52: Expected @param tag for 'sz'. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:111:12: Unused @param tag for 'key'. [JavadocMethod]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:12: Unused @param tag for 'val'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 2 errors.
