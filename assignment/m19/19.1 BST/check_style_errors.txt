@@ -1,2 +1,15 @@
 Starting audit...
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:101:9: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:101:31: 'key' hides a field. [HiddenField]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:101:48: 'val' hides a field. [HiddenField]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:101:63: 'size' hides a field. [HiddenField]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:133: Line is longer than 80 characters (found 81). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:227: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:257: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:291: Line is longer than 80 characters (found 86). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:343: Line is longer than 80 characters (found 88). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:391: Line is longer than 80 characters (found 88). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:429: Line is longer than 80 characters (found 83). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m19/19.1 BST/Solution.java:432: Line is longer than 80 characters (found 84). [LineLength]
 Audit done.
+Checkstyle ends with 12 errors.
