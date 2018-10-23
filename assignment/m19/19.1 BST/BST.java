@@ -265,42 +265,6 @@ class BST<Key extends Comparable<Key>, Value> {
             return x;
         }
     }
-
-    /**.
-     * { method of BST }
-     * Best: logN
-     * Average: logN
-     * Worst: logN
-     * @param      key   The key
-     *
-     * @return     { respective return value }
-     */
-    // public Key floor2(final Key key) {
-    //     return floor2(root, key, null);
-    // }
-
-    // /**.
-    //  * { method of BST }
-    //  *
-    //  * @param      x     { parameter_description }
-    //  * @param      key   The key
-    //  * @param      best  The best
-    //  *
-    //  * @return     { respective return value }
-    //  */
-    // private Key floor2(final Node x, final Key key, final Key best) {
-    //     if (x == null) {
-    //         return best;
-    //     }
-    //     int cmp = key.compareTo(x.key);
-    //     if      (cmp  < 0) {
-    //         return floor2(x.left, key, best);
-    //     } else if (cmp  > 0) {
-    //         return floor2(x.right, key, x.key);
-    //     } else {
-    //         return x.key;
-    //     }
-    // }
     /**.
      * { method of BST }
      * Best: logN
