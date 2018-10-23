@@ -1,5 +1,2 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:111:12: Unused @param tag for 'key'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m20/20.1 BST/Solution.java:112:12: Unused @param tag for 'val'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 2 errors.
