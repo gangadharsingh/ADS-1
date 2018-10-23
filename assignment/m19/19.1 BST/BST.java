@@ -33,14 +33,14 @@ class BST<Key extends Comparable<Key>, Value> {
         /**.
          * Constructs the object.
          *
-         * @param      key   The key
-         * @param      val   The value
-         * @param      size  The size
+         * @param      k     { parameter_description }
+         * @param      v     { parameter_description }
+         * @param      sz    The size
          */
-        public Node(final Key key, final Value val, final int size) {
-            this.key = key;
-            this.val = val;
-            this.size = size;
+        Node(final Key k, final Value v, final int sz) {
+            this.key = k;
+            this.val = v;
+            this.size = sz;
         }
     }
     /**.
