@@ -50,7 +50,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * Determines if empty.
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @return     True if empty, False otherwise.
      */
     public boolean isEmpty() {
@@ -58,7 +60,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @param      key   The key
      *
      * @return     { respective return value }
@@ -72,7 +76,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      key   The key
      *
      * @return     { respective return value }
@@ -82,7 +88,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      * @param      key   The key
      *
@@ -107,7 +115,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      key   The key
      * @param      val   The value
      */
@@ -124,7 +134,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { function_description }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      * @param      key   The key
      * @param      val   The value
@@ -148,6 +160,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
+     * Best: logN
+     * Average: logN
+     * Worst: N
      */
     public void deleteMin() {
         if (isEmpty()) {
@@ -159,7 +174,9 @@ class BST<Key extends Comparable<Key>, Value> {
 
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      *
      * @return     { respective return value }
@@ -174,6 +191,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
+     * Best: logN
+     * Average: logN
+     * Worst: N
      */
     public void deleteMax() {
         if (isEmpty()) {
@@ -185,7 +205,9 @@ class BST<Key extends Comparable<Key>, Value> {
 
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      *
      * @return     { respective return value }
@@ -200,7 +222,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      key   The key
      */
     public void delete(final Key key) {
@@ -212,7 +236,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      * @param      key   The key
      *
@@ -245,7 +271,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @return     { respective return value }
      */
     public Key min() {
@@ -258,7 +286,9 @@ class BST<Key extends Comparable<Key>, Value> {
 
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      *
      * @return     { respective return value }
@@ -272,7 +302,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @return     { respective return value }
      */
     public Key max() {
@@ -284,7 +316,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      *
      * @return     { respective return value }
@@ -298,7 +332,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      key   The key
      *
      * @return     { respective return value }
@@ -322,7 +358,9 @@ class BST<Key extends Comparable<Key>, Value> {
 
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      * @param      key   The key
      *
@@ -346,43 +384,11 @@ class BST<Key extends Comparable<Key>, Value> {
             return x;
         }
     }
-
     /**.
      * { method of BST }
-     *
-     * @param      key   The key
-     *
-     * @return     { respective return value }
-     */
-    public Key floor2(final Key key) {
-        return floor2(root, key, null);
-    }
-
-    /**.
-     * { method of BST }
-     *
-     * @param      x     { parameter_description }
-     * @param      key   The key
-     * @param      best  The best
-     *
-     * @return     { respective return value }
-     */
-    private Key floor2(final Node x, final Key key, final Key best) {
-        if (x == null) {
-            return best;
-        }
-        int cmp = key.compareTo(x.key);
-        if      (cmp  < 0) {
-            return floor2(x.left, key, best);
-        } else if (cmp  > 0) {
-            return floor2(x.right, key, x.key);
-        } else {
-            return x.key;
-        }
-    }
-    /**.
-     * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      key   The key
      *
      * @return     { respective return value }
@@ -405,7 +411,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      * @param      key   The key
      *
@@ -431,7 +439,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      k     { parameter_description }
      *
      * @return     { respective return value }
@@ -446,7 +456,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      x     { parameter_description }
      * @param      k     { parameter_description }
      *
@@ -467,7 +479,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @param      lo    The lower
      * @param      hi    The higher
      *
@@ -494,7 +508,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @return     { respective return value }
      */
     public int size() {
@@ -502,7 +518,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @param      x     { parameter_description }
      *
      * @return     { respective return value }
@@ -516,7 +534,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      key   The key
      *
      * @return     { respective return value }
@@ -529,7 +549,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      key   The key
      * @param      x     { parameter_description }
      *
