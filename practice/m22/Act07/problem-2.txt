@@ -1,0 +1,14 @@
+ M = 5
+ 11 k % M
+					E  A  S   Y   Q   U   T   I   O  N
+Alphabet position:	5  1  19  25  17  21  20  9  15  14
+11k 			 :	55 11 209 275 187 231 220 99 165 154
+11k % M			 :	0  1   4  0    2   1   0   4  0   4
+
+
+Index position:
+0: E, Y, T, O
+1: A, U
+2: Q
+3:
+4: S, I, N
