@@ -22,9 +22,9 @@ Starting audit...
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:62:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:63:5: Missing a Javadoc comment. [JavadocMethod]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:63:29: Parameter args should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:70:11: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:71:11: 'if' is not followed by whitespace. [WhitespaceAround]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:75:16: 'for' is not followed by whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:76:19: 'if' is not followed by whitespace. [WhitespaceAround]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:82:15: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:77:19: 'if' is not followed by whitespace. [WhitespaceAround]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:86:11: 'if' is not followed by whitespace. [WhitespaceAround]
 Audit done.
 Checkstyle ends with 27 errors.

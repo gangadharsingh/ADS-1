@@ -67,23 +67,24 @@ public class Solution {
         String[] mag = s.nextLine().split(" ");
         String[] note = s.nextLine().split(" ");
         int i = 0;
+        boolean flag = false;
         if(Integer.parseInt(num[0]) > Integer.parseInt(num[1])) {
-            boolean flag = false;
             for (String meg: mag) {
                 map.put(meg, 1);
             }
             for(String n: note) {
-                if(n.equals(map.get(n))) {
+                // System.out.println("mapping "+map.get(n));
+                if(map.get(n)) {
                     flag = true;
                 } else {
                     flag = false;
                 }
             }
-            if(flag) {
-                System.out.println("Yes");
-            } else {
-                System.out.println("No");
-            }
+        } else {
+            flag = false;
+        }
+        if(flag) {
+            System.out.println("Yes");
         } else {
             System.out.println("No");
         }
