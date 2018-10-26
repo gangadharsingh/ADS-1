@@ -53,7 +53,7 @@ class HashTable {
                     x.setvalue(x.getValue() - 1);
                     return true;
                 }
-                return true;
+                return false;
             }
         }
         return false;
@@ -67,7 +67,7 @@ public class Solution {
         String[] mag = s.nextLine().split(" ");
         String[] note = s.nextLine().split(" ");
         int i = 0;
-        boolean flag = false;
+        int flag = 0;
         if(Integer.parseInt(num[0]) > Integer.parseInt(num[1])) {
             for (String meg: mag) {
                 map.put(meg, 1);
@@ -75,16 +75,16 @@ public class Solution {
             for(String n: note) {
                 // System.out.println("mapping "+map.get(n));
                 if(map.get(n)) {
-                    flag = true;
+                    flag++;
                 } else {
-                    flag = false;
+                    flag--;
                 }
             }
-        } else {
-            flag = false;
-        }
-        if(flag) {
-            System.out.println("Yes");
+            if(flag == note.length) {
+                System.out.println("Yes");
+            } else {
+                System.out.println("No");
+            }
         } else {
             System.out.println("No");
         }
