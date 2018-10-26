@@ -1,132 +1,82 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-// A node of chains
-class HashNode<K, V> {
-    K key;
-    V value;
-
-    // Reference to next node
-    HashNode<K, V> next;
-
-    // Constructor
-    public HashNode(K key, V value) {
-        this.key = key;
-        this.value = value;
-    }
-}
-
-// Class to represent entire hash table
-class Map<K, V> {
-    // bucketArray is used to store array of chains
-    private ArrayList<HashNode<K, V>> bucketArray;
-
-    // Current capacity of array list
-    private int numBuckets;
-
-    // Current size of array list
-    private int size;
-
-    // Constructor (Initializes capacity, size and
-    // empty chains.
-    public Map() {
-        bucketArray = new ArrayList<>();
-        numBuckets = 10;
-        size = 0;
-
-        // Create empty chains
-        for (int i = 0; i < numBuckets; i++)
-            bucketArray.add(null);
-    }
-
-    public int size() { return size; }
-    public boolean isEmpty() { return size() == 0; }
-
-    // This implements hash function to find index
-    // for a key
-    private int getBucketIndex(K key) {
-        int hashCode = key.hashCode();
-        int index = hashCode % numBuckets;
-        return index;
-    }
-
-    // Returns value for a key
-    public V get(K key) {
-        // Find head of chain for given key
-        int bucketIndex = getBucketIndex(key);
-        HashNode<K, V> head = bucketArray.get(bucketIndex);
-
-        // Search key in chain
-        while (head != null) {
-            if (head.key.equals(key))
-                return head.value;
-            head = head.next;
+import java.util.Arrays;
+class HashTable {
+    class Node {
+        private String key;
+        private Integer val;
+        private Node next;
+        Node(final String k, final Integer v, final Node n) {
+            this.key = k;
+            this.val = v;
+            this.next = n;
         }
-
-        // If key not found
-        return null;
+        Integer getValue() {
+            return this.val;
+        }
+        String getkey() {
+            return this.key;
+        }
+        void setvalue(final Integer v) {
+            this.val = v;
+        }
     }
-
-    // Adds a key value pair to hash
-    public void add(K key, V value) {
-        // Find head of chain for given key
-        int bucketIndex = getBucketIndex(key);
-        HashNode<K, V> head = bucketArray.get(bucketIndex);
-
-        // Check if key is already present
-        while (head != null) {
-            if (head.key.equals(key)) {
-                head.value = value;
+    private Node[] st;
+    private int size = (2 * (5)) * (2 * (5));
+    HashTable() {
+        st = new Node[size];
+    }
+    int hash(final String k) {
+        final Integer num = 0x7fffffff;
+        return (k.hashCode() & num) % size;
+    }
+    public void resize() {
+        st = Arrays.copyOf(st, 2 * size);
+    }
+    public void put(final String k, final Integer v) {
+        int i = hash(k);
+        for (Node x = st[i]; x != null; x = x.next) {
+            if (k.equals(x.getkey())) {
+                x.setvalue(x.getValue() + 1);
                 return;
             }
-            head = head.next;
         }
-
-        // Insert key in chain
-        size++;
-        head = bucketArray.get(bucketIndex);
-        HashNode<K, V> newNode = new HashNode<K, V>(key, value);
-        newNode.next = head;
-        bucketArray.set(bucketIndex, newNode);
-
-        // If load factor goes beyond threshold, then
-        // double hash table size
-        if ((1.0 * size) / numBuckets >= 0.7) {
-            ArrayList<HashNode<K, V>> temp = bucketArray;
-            bucketArray = new ArrayList<>();
-            numBuckets = 2 * numBuckets;
-            size = 0;
-            for (int i = 0; i < numBuckets; i++)
-                bucketArray.add(null);
-
-            for (HashNode<K, V> headNode : temp) {
-                while (headNode != null) {
-                    add(headNode.key, headNode.value);
-                    headNode = headNode.next;
+        if (i >= st.length) {
+            resize();
+        }
+        st[i] = new Node(k, v, st[i]);
+    }
+    public boolean get(final String k) {
+        int i = hash(k);
+        for (Node x = st[i]; x != null; x = x.next) {
+            if (k.equals(x.getkey())) {
+                if (x.getValue() > 0) {
+                    x.setvalue(x.getValue() - 1);
+                    return true;
                 }
+                return true;
             }
         }
+        return false;
     }
 }
 public class Solution {
     public static void main(String[] args) {
-        Map<String, Integer>map = new Map<>();
+        HashTable map = new HashTable();
         Scanner s = new Scanner(System.in);
         String[] num = s.nextLine().split(" ");
         String[] mag = s.nextLine().split(" ");
         String[] note = s.nextLine().split(" ");
         int i = 0;
         if(Integer.parseInt(num[0]) > Integer.parseInt(num[1])) {
-            // for(String m: mag) {
-            //     map.add(m, i++);
-            // }
-            // i = 0;
             boolean flag = false;
+            for (String meg: mag) {
+                map.put(meg, 1);
+            }
             for(String n: note) {
-                for(String m: mag) {
-                    if(n.equals(m))
-                        flag = true;
-                    else
-                        flag = false;
+                if(n.equals(map.get(n))) {
+                    flag = true;
+                } else {
+                    flag = false;
                 }
             }
             if(flag) {
@@ -137,12 +87,5 @@ public class Solution {
         } else {
             System.out.println("No");
         }
-        // map.add("this", 1b;
-
-        // System.out.println(map.get("this"));
-        // System.out.println(map.remove("this"));
-        // System.out.println(map.remove("this"));
-        // System.out.println(map.size());
-        // System.out.println(map.isEmpty());
     }
 }
