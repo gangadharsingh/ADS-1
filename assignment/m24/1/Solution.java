@@ -3,20 +3,20 @@ import java.util.Arrays;
 class HashTable {
     class Node {
         private String key;
-        private String val;
+        private Student val;
         private Node next;
-        Node(final String k, final String v, final Node n) {
+        Node(final String k, final Student v, final Node n) {
             this.key = k;
             this.val = v;
             this.next = n;
         }
-        String getValue() {
+        Student getValue() {
             return this.val;
         }
         String getkey() {
             return this.key;
         }
-        void setvalue(final String v) {
+        void setvalue(final Student v) {
             this.val = v;
         }
     }
@@ -32,11 +32,11 @@ class HashTable {
     public void resize() {
         st = Arrays.copyOf(st, 2 * size);
     }
-    public void put(final String k, final String v) {
+    public void put(final String k, final Student v) {
         int i = hash(k);
         for (Node x = st[i]; x != null; x = x.next) {
             if (k.equals(x.getkey())) {
-                x.setvalue(x.getValue() + 1);
+                x.setvalue(x.getValue());
                 return;
             }
         }
@@ -45,14 +45,14 @@ class HashTable {
         }
         st[i] = new Node(k, v, st[i]);
     }
-    public String get(final String k) {
+    public Student get(final String k) {
         int i = hash(k);
         for (Node x = st[i]; x != null; x = x.next) {
             if (k.equals(x.getkey())) {
                 return x.getValue();
             }
         }
-        return "Student doesn't exists...";
+        return null;
     }
 }
 public class Solution {
@@ -62,19 +62,22 @@ public class Solution {
         int n = Integer.parseInt(s.nextLine());
         Student[] stud = new Student[n];
         for (int i = 0; i < n; i++) {
-            String[] detail = s.nextLine().split(".");
-            // stud[i] = new Student(detail);
-            String format = detail[1]+","+detail[2];
-            map.put(detail[0], format);
+            String[] detail = s.nextLine().split(",");
+            stud[i] = new Student(detail);
+            // String format = detail[1]+","+detail[2];
+            map.put(detail[0], stud[i]);
         }
         int q = Integer.parseInt(s.nextLine());
         for (int i = 0; i < q; i++) {
             String[] query = s.nextLine().split(" ");
-            String[] str = (map.get(query[1])).split(".");
-            if(query[2].equals("1"))
-                System.out.println(str[0]);
-            else
-                System.out.println(str[1]);
+            if(map.get(query[1]) == null) {
+                System.out.println("Student doesn't exists...");
+            } else {
+                if(query[2].equals("1"))
+                    System.out.println(map.get(query[1]).getname());
+                else
+                    System.out.println(map.get(query[1]).gettotmarks());
+            }
         }
     }
 }
