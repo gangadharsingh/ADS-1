@@ -1,5 +1,4 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:160:70: '}' at column 70 should have line break before. [RightCurly]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:162:74: '}' at column 74 should have line break before. [RightCurly]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:161:13: '}' at column 13 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 Audit done.
-Checkstyle ends with 2 errors.
+Checkstyle ends with 1 errors.

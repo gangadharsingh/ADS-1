@@ -156,10 +156,12 @@ public final class Solution {
             if (map.get(query[1]) == null) {
                 System.out.println("Student doesn't exists...");
             } else {
-                if (query[2].equals("1")) {
-                    System.out.println(map.get(query[1]).getname()); }
-                else {
-                    System.out.println(map.get(query[1]).gettotmarks()); }
+            if (query[2].equals("1")) {
+                System.out.println(map.get(query[1]).getname());
+            }
+            else {
+                System.out.println(map.get(query[1]).gettotmarks());
+            }
             }
         }
     }
