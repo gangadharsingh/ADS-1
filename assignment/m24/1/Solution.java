@@ -48,12 +48,13 @@ class HashTable {
     public Student get(final String k) {
         int i = hash(k);
         Node x = null;
+        Student stud = null;
         for (x = st[i]; x != null; x = x.next) {
             if (k.equals(x.getkey())) {
-                return x.getValue();
+                stud = x.getValue();
             }
         }
-        return null;
+        return stud;
     }
 }
 public class Solution {
