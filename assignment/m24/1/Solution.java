@@ -36,7 +36,8 @@ class HashTable {
         int i = hash(k);
         for (Node x = st[i]; x != null; x = x.next) {
             if (k.equals(x.getkey())) {
-                x.setvalue(x.getValue());
+                x.setvalue(v);
+                // x.next = new Node(k, v, st[i]);
                 return;
             }
         }
@@ -50,11 +51,18 @@ class HashTable {
         Node x = null;
         Student stud = null;
         for (x = st[i]; x != null; x = x.next) {
+            // System.out.println(x.getValue().getname());
             if (k.equals(x.getkey())) {
                 stud = x.getValue();
             }
         }
         return stud;
+    }
+    void show(String k) {
+        int i = hash(k);
+        for (Node x = st[i]; x != null; x = x.next) {
+            System.out.println(x.getValue().getname());
+        }   
     }
 }
 public class Solution {
@@ -66,9 +74,12 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             String[] detail = s.nextLine().split(",");
             stud[i] = new Student(detail);
-            // String format = detail[1]+","+detail[2];
             map.put(detail[0], stud[i]);
         }
+        // for (int i = 0; i < n; i++) {
+        //     System.out.println(stud[i].getname());
+        //     map.show(stud[i].getroll());
+        // }
         int q = Integer.parseInt(s.nextLine());
         for (int i = 0; i < q; i++) {
             String[] query = s.nextLine().split(" ");
