@@ -64,7 +64,7 @@ class HashTable {
     /**.
      * { var_description }
      */
-    private int size = (2 * (5)) * (2 * (5));
+    private int size = (2 * (2 + 2 + 1)) * (2 * (2 + 2 + 1));
     /**.
      * Constructs the object.
      */
@@ -130,7 +130,7 @@ class HashTable {
 /**.
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**.
      * Constructs the object.
      */
@@ -156,10 +156,12 @@ public class Solution {
             if (map.get(query[1]) == null) {
                 System.out.println("Student doesn't exists...");
             } else {
-                if (query[2].equals("1"))
+                if (query[2].equals("1")) {
                     System.out.println(map.get(query[1]).getname());
-                else
+                }
+                else {
                     System.out.println(map.get(query[1]).gettotmarks());
+                }
             }
         }
     }

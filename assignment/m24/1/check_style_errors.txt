@@ -1,9 +1,5 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:67:30: '5' is a magic number. [MagicNumber]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:67:42: '5' is a magic number. [MagicNumber]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:133: Class Solution should be declared as final. [FinalClass]
 [ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:143:29: Parameter args should be final. [FinalParameters]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:159: 'if' construct must use '{}'s. [NeedBraces]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:161: 'else' construct must use '{}'s. [NeedBraces]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m24/1/Solution.java:161:17: '}' at column 17 should be on the same line as the next part of a multi-block statement (one that directly contains multiple blocks: if/else-if/else, do/while or try/catch/finally). [RightCurly]
 Audit done.
-Checkstyle ends with 6 errors.
+Checkstyle ends with 2 errors.
