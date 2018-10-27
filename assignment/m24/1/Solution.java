@@ -3,20 +3,20 @@ import java.util.Arrays;
 class HashTable {
     class Node {
         private String key;
-        private Double val;
+        private String val;
         private Node next;
-        Node(final String k, final Double v, final Node n) {
+        Node(final String k, final String v, final Node n) {
             this.key = k;
             this.val = v;
             this.next = n;
         }
-        Double getValue() {
+        String getValue() {
             return this.val;
         }
         String getkey() {
             return this.key;
         }
-        void setvalue(final Double v) {
+        void setvalue(final String v) {
             this.val = v;
         }
     }
@@ -32,7 +32,7 @@ class HashTable {
     public void resize() {
         st = Arrays.copyOf(st, 2 * size);
     }
-    public void put(final String k, final Double v) {
+    public void put(final String k, final String v) {
         int i = hash(k);
         for (Node x = st[i]; x != null; x = x.next) {
             if (k.equals(x.getkey())) {
@@ -45,18 +45,14 @@ class HashTable {
         }
         st[i] = new Node(k, v, st[i]);
     }
-    public boolean get(final String k) {
+    public String get(final String k) {
         int i = hash(k);
         for (Node x = st[i]; x != null; x = x.next) {
             if (k.equals(x.getkey())) {
-                if (x.getValue() > 0) {
-                    x.setvalue(x.getValue() - 1);
-                    return true;
-                }
-                return false;
+                return x.getValue();
             }
         }
-        return false;
+        return "Student doesn't exists...";
     }
 }
 public class Solution {
@@ -68,7 +64,14 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             String[] detail = s.nextLine().split(",");
             // stud[i] = new Student(detail);
-            map.put(detail[0], Double.parseDouble(detail[2]));
+            String format = detail[1]+" "+detail[2];
+            map.put(detail[0], format);
+        }
+        int q = Integer.parseInt(s.nextLine());
+        for (int i = 0; i < q; i++) {
+            String[] query = s.nextLine().split(" ");
+            String[] str = (map.get(query[1])).split(" ");
+            System.out.println(str[0]);
         }
     }
 }
