@@ -158,8 +158,7 @@ public final class Solution {
             } else {
             if (query[2].equals("1")) {
                 System.out.println(map.get(query[1]).getname());
-            }
-            else {
+            } else {
                 System.out.println(map.get(query[1]).gettotmarks());
             }
             }
