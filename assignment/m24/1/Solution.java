@@ -47,7 +47,8 @@ class HashTable {
     }
     public Student get(final String k) {
         int i = hash(k);
-        for (Node x = st[i]; x != null; x = x.next) {
+        Node x = null;
+        for (x = st[i]; x != null; x = x.next) {
             if (k.equals(x.getkey())) {
                 return x.getValue();
             }
@@ -85,6 +86,7 @@ class Student{
     private String roll;
     private String name;
     private double totmarks;
+    Student() { }
     Student(String[] detail) {
         roll = detail[0];
         name = detail[1];
