@@ -46,7 +46,7 @@ Your Output:
 65.7
 11.2
 45.4
-Caines
+99.3
 ----------------------------------------
 ########## Testcase 2: Failed ##########
 Expected Output: 
@@ -79,12 +79,10 @@ Wayne
 John
 65.7
 Hank
-Cadbury
-Jeannette
-doesn't
-doesn't
-doesn't
-Student
+13.3
+Jeannette Caines
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:77)
 ----------------------------------------
 ########## Testcase 3: Failed ##########
 Expected Output: 
@@ -589,504 +587,378 @@ Robert Macfarlane
 John Hale
 53.79
 Your Output: 
-Hale
-Michael
-Jagger
-Bradley
-Hale
-Madhur
-MacDonald
-Ruth
-MacCracken
-Hale
-Hackford
-Richard
-Kady
-Kate
-Charles
-Laura
-H.
-Debra
-Jacobs
-Jackson
-Macaulay
-MacCallum
-Macdonald
-Jaff
-Habershaw
-Kathryn
-Brad
-Gerry
-Kathryn
-Haas
-T.
-Simon
-Carla
-MacBride
-Habersberger
-L.
-MacDonald
-Sammy
-Macaulay
-Jackson
-Taylor
-Michael
-Taylor
-Holmes
-Katharina
-Hagerty
-Gracie
-David
-Michael
-MacDonald
-Chuck
-Hackman
-Sophie
-Hackford
-Bush
-Katharina
-Hagey
-Colin
-Jablonski
-Margaret
-Bethany
-Aparna
-Pamela
+7.213
+Michael Hale
+59.62
+Bradley Jackson
+57.53
+Madhur Jaffrey
+86.65
+Ruth H. Jacobs
+90.69
+74.62
+62.17
+Richard Jacoby
+Kady MacDonald Denton
+Kate Jacoby
+Charles B. Macdonald
+Laura Holmes Haddad
+36.40
+Debra W. Haffner
+98.13
+17.86
+21.24
+76.56
+50.75
+63.33
+35.14
+Kathryn Jacobi
+Brad Haddin
+Gerry Hadden
+Kathryn Ma
+30.97
+T. T. Macan
+Simon Jacobson
+Carla Jablonski
+24.51
+99.46
+27.87
+84.78
+Sammy Hagar
+87.26
+53.48
+Taylor Hackford
+Michael Hale
+Taylor Hackford
+36.24
+Katharina Hagena
+35.60
+Gracie MacGregor
+David Halberstam
+Michael Haag
+51.43
+Chuck Hagel
+87.16
+Sophie Jaff
+62.17
+6.627
+Katharina Hagena
+92.85
+Colin Jack
+88.48
+Margaret Peterson Haddix
+Bethany Hagen
+Aparna Jain
+Pamela Haag
 H3CZ
-MacDuffie
-Olivia
-Jacobs
-James
-Hagerty
-Halbrook
-Debra
-H.
-Tracey
-Steve
-MacGregor
-Yossi
-Nafisa
-David
-Mary
-Roger
-Steph
-Ian
-Jackson
-Jaffee
-Guru
-Hague
-Jacobs
-Carrington
-Marie
-B.
-MacDougall
-Tony
-MacGregor
-Cynthia
-A.
-Carla
-Michael
-Macdonald
-Haksar
-Jackson
-David
-John
-Jackman
-Jackson
-Ann-Marie
-Jane
-Haddon
-Amanda
-Shaili
-G.
-Peter
-Dana
-Catherine
-John
-MacDonald
-Namita
-David
-Richard
-Halberstam
-Jacoby
-Peter
-Kellie
-Andrew
-Howard
-Bernie
-Mac
-Hall
-Jacoby
-Al
-Tessa
-A.N.D
-Mary
-Marie
-Steph
-Jackson
-Bradley
-Michele
-Namita
-Tracey
-Macaulay
-Haigh
-Olivia
-Shane
-Don
-Jackman
-Hackett
-Thomas
-Haggard
-Mick
-Sarah
-Jaffrey
-Hales-Dutton
-MacDonald
-Jacobi
-Nafisa
-Katharina
-Nasim
-M
-Haien
-Betty
-Jessie
-Andrew
-F.
-Robert
-Jaffee
-Macdonald
-Jacoby
-Daniel
-W.
-Kristin
-M
-O.M.D.
-Hafen
-William
-Taylor
-Debra
-Jaffee
-Heather
-Hale
-Kathleen
-Terrence
-Jacoby
-Andrew
-Julie
-Hall
-Kinley
-Jackson
-Namita
-Hagey
-Heather
-Michael
-Dana
-Hafen
-A.
-Hale
-Mary
-J
-Jain
-Kevin
-Simon
-MacBird
-Sheila
-Curran
-Jackson
-Sara
-Andrew
-Macaulay
-John
-Jackson
-Heather
-Gene
-B.
-Kennell
-Hage
-Mary
-Carla
-Marie
-Sophie
-MacBird
-Joie
-Emma
-Jackson
-Jeremy
-Ma
-G.
-Olivia
-David
-B.
-Rachel
-Ruth
-Dana
-Bonnie
-Al
-M
-Lynn
-Carrington
-Maccoby
-Cynthia
-Jack
-Haefeli
-Haag
-Marylin
-Maccoby
-Jackson
-Halder
-Macdonald
-Haggard
-Jackman
-Gene
-MacDonald
-MacGregor
-Marilyn
-Araminta
-Haddon
-David
-Jackson
-MacAllister
-Keach
-Araminta
-Hackman
-Hall
-Marilyn
-Bethany
-Sara
-Haag
-Hach
-Jackman
-Mabey
-Haas
-Kathleen
-Laura
-Jessie
-MacDonald
-David
-Haining
-Jackson
-Jackson
-John
-Jaishankar
-Gene
-Holmes
-Hagel
-Halder
-Mary
-Nate
-Hale
-William
-MacCallum
-MacGregor
-Ruby
-Hale
-Saskia
-Hale
-Jacoby
-Tracey
-Hagen
-MacGregor
-Jacobson
-Auston
-Bruce
-Holmes
-Haksar
-Rawi
-Jo
-Cynthia
-Richard
-Andrew
-Daniel
-Jacobs
-Macfarlane
-Jacoby
-Jackson
-Jacobs
-Graham
-Vicky
-Yossi
-Holmes
-Margaret
-Hagel
-MacDonald
-Hackford
-Jacobovici
-MacDonald
-Halbrook
-Ellen
-Catherine
-Peter
-Annie
-David
-Mac
-Read
-Student
-Jaeger
-Hage
-Jaffee
-MacDonald
-Haefeli
-Ann-Marie
-F.
-Ellie
-Michael
-Jaffrey
-Ruby
-David
-Jabar
-Jackson
-MacAllister
-Jennifer
-Jackson
-Maas
-Maas
-Kevin
-Hale
-Katharina
-Ma
-Jaishankar
-Margaret
-Carla
-C.
-Kate
-Sylvie
-Tony
-Saskia
-Kellie
-Steve
-H.
-John
-Korey
-Peterson
-Betty
-Hagerty
-Dana
-doesn't
-Elaine
-Bonnie
-Haksar
-C.
-John
-William
-Marilyn
-Jagger
-Simon
-Hadley
-David
-Myla
-Halberstam
-Guru
-June
-Macaulay
-Jeannette
-Hagedorn
-Jaff
-Miller
-Jackson
-Emma
-Jain
-Jaffee
-Kathryn
-Jacobson
-Halder
-Adele
-Baby
-Jacoby
-Hagena
-Jain
-Colin
-MacAllister
-Andrew
-Jaeger
-Carla
-MacFarlane-Barrow
-Carla
-Jackson
-Haisman
-Shelley
-Richard
-Norm
-Jackson
-Haden-Guest
-David
-Hailes
-Nathan
-Haining
-James
-Kady
-Catherine
-MacDonald
-Kate
-Roger
-Jaff
-Jacobson
-Colin
-David
-James
-Richard
-Jackson
-Jackson
-Madhur
-Hagen
-Haig
-MacFarlane-Barrow
-Jane
-Bonnie
-MacDonald
-Heather
-Hadley
-Chuck
-MacCracken
-Hach
-John
-David
-Todd
-doesn't
-Mary
-Catherine
-Kinley
-Hainsworth
-Daniel
-Laura
-Joshilyn
-Halbrook
-Hainsworth
-Kathryn
-Macdonald
-John
-Hall
-A.N.D
-Jaffe
-Marie
-Jacoby
-Keach
-Jackson
-D.
-Hales-Dutton
-Macgregor
-Kristin
-Jackson
-Richard
-Derek
-Jerome
-Curran
-D.
-Jacobs
-David
-Bradley
-Hall
-Hale
-Ma
-William
-Daniel
-T.
-L.
-JACKSON
-Fiona
-Macaulay
-JACKSON
-Elaine
-Robert
-John
-MacGregor
+18.28
+Olivia Mace
+45.32
+68.00
+35.60
+79.87
+Debra W. Haffner
+40.95
+Tracey Jackson
+Steve Hagen
+79.49
+Yossi Klein Halevi
+Nafisa Haji
+David Haig
+Mary Downing Hahn
+Roger Lea MacBride
+Steph Jagger
+Ian Jackman
+17.20
+35.74
+Guru Jagat
+4.893
+74.05
+Carrington MacDuffie
+35.81
+66.20
+72.20
+Tony Macaulay
+74.64
+Cynthia Jabar
+24.84
+Carla Hall
+Michael Hale
+72.19
+54.45
+53.48
+David Jacobs
+John Hornor Jacobs
+17.50
+53.48
+Ann-Marie MacDonald
+Jane MacDougall
+71.85
+Amanda Hall
+Shaili Jain M.D.
+43.91
+Peter Jackson
+Dana C. Jack
+Catherine Macaulay
+John Hornor Jacobs
+86.65
+Namita Jain
+David Halberstam
+Richard Jackson
+46.81
+45.39
+Peter Jackson
+Kellie Hailes
+Andrew Macdonald
+Howard Jacobson
+Bernie Mac
+10.42
+11.09
+45.39
+Al Jaffee
+Tessa Hadley
+A.N.D Haksar
+Mary MacCracken
+35.81
+Steph Jagger
+17.86
+Bradley Jackson
+Michele Jaffe
+Namita Jain
+Tracey Jackson
+87.26
+48.84
+Olivia Mace
+Shane Jacobson
+Don Hagen
+17.50
+3.391
+Thomas Hackett
+55.34
+Mick Jackson
+Sarah Jacoby
+11.58
+39.78
+14.77
+8.360
+Nafisa Haji
+Katharina Hagena
+Nasim Marie Jafry
+M MacCallum
+69.73
+Betty MacDonald
+Jessie Haas
+Andrew Macdonald
+87.60
+Robert Jackson
+35.74
+72.19
+48.67
+Daniel Hahn
+1.603
+Kristin Halbrook
+M MacCallum
+59.63
+15.56
+William Hague
+Taylor Hackford
+Debra W. Haffner
+35.74
+Heather Hach
+7.213
+Kathleen Hale
+Terrence J
+45.39
+Andrew Jacobson
+Julie Mac
+3.876
+Kinley MacGregor
+17.55
+Namita Jain
+92.85
+Heather Hach
+Michael Hale
+Dana C. Jack
+15.56
+24.84
+7.213
+Mary MacCracken
+93.95
+99.90
+Kevin MacAllister
+Simon Jacobson
+8.108
+Sheila Hale
+5.410
+65.06
+Sara MacDonald
+Andrew Macdonald
+87.26
+John W. Jacobs M.D.
+52.12
+Heather Hach
+Gene Hackman
+76.93
+Kennell Jackson
+40.10
+Mary MacCracken
+Carla Hall
+35.81
+Sophie Jaff
+26.54
+Joie Jager-Hyman
+Emma Jackson
+17.20
+Jeremy Jackson
+50.88
+43.91
+Olivia Mace
+David H. Hackworth
+96.83
+Rachel Jacobs
+Ruth H. Jacobs
+Dana Jacobi
+Bonnie MacBird
+Al Jaffee
+M MacCallum
+Lynn F. Jacobs
+Carrington MacDuffie
+82.63
+Cynthia Jabar
+24.34
+48.77
+90.74
+Marylin Hafner
+82.63
+84.43
+79.38
+72.19
+55.34
+17.50
+Gene Hackman
+26.33
+53.79
+Marilyn Hagerty
+Araminta Hall
+71.85
+David Jacobs
+79.58
+28.06
+Keach Hagey
+Araminta Hall
+87.16
+48.28
+Marilyn Hagerty
+Bethany Hagen
+Sara MacDonald
+10.31
+83.43
+17.50
+79.09
+30.97
+Kathleen Hale
+Laura Holmes Haddad
+Jessie Haas
+14.77
+David Haig
+11.63
+63.57
+89.61
+John Jacobs
+15.89
+Gene Hackman
+36.24
+19.32
+79.38
+Mary MacCracken
+Nate Jackson
+74.62
+William Hague
+76.56
+79.49
+Ruby Jackson
+7.213
+Saskia Maarleveld
+74.62
+45.39
+Tracey Jackson
+42.81
+79.49
+28.71
+Auston Habershaw
+Bruce Hale
+36.24
+54.45
+Rawi Hage
+Jo Jackson King
+Cynthia Jabar
+Richard Jacoby
+Andrew Macdonald
+Daniel Hahn
+24.40
+91.38
+45.39
+7.065
+74.05
+54.82
+Vicky Hales-Dutton
+Yossi Klein Halevi
+36.24
+Margaret Peterson Haddix
+19.32
+14.77
+62.17
+85.84
+75.00
+79.87
+Ellen Jackson
+Catherine Macaulay
+Peter Haining
+Annie Maccoby
+David Macfarlane
+10.42
+88.39
+Student doesn't exists...
+8.759
+40.10
+35.74
+51.43
+48.77
+Ann-Marie MacDonald
+87.60
+Ellie Macdonald
+Michael Hague
+11.58
+Ruby Jackson
+David Haig
+28.69
+53.48
+90.91
+Jennifer Haigh
+43.06
+92.00
+92.00
+Kevin MacAllister
+57.53
+Katharina Hagena
+50.88
+15.89
+Margaret Read MacDonald
+Carla Jablonski
+61.60
+Kate Jacoby
+Sylvie Haisman
+Tony Macaulay
+Saskia Maarleveld
+Kellie Hailes
+Steve Hagen
+H. JACKSON
+John Hale
+Korey Jackson
+3.336
+Betty Halbreich
+35.60
+Dana C. Jack
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 1
+	at Solution.main(Solution.java:77)
 ----------------------------------------

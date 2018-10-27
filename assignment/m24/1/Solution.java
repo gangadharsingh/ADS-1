@@ -64,13 +64,13 @@ public class Solution {
         for (int i = 0; i < n; i++) {
             String[] detail = s.nextLine().split(",");
             // stud[i] = new Student(detail);
-            String format = detail[1]+" "+detail[2];
+            String format = detail[1]+","+detail[2];
             map.put(detail[0], format);
         }
         int q = Integer.parseInt(s.nextLine());
         for (int i = 0; i < q; i++) {
             String[] query = s.nextLine().split(" ");
-            String[] str = (map.get(query[1])).split(" ");
+            String[] str = (map.get(query[1])).split(",");
             if(query[2].equals("1"))
                 System.out.println(str[0]);
             else
