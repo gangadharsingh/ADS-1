@@ -71,7 +71,10 @@ public class Solution {
         for (int i = 0; i < q; i++) {
             String[] query = s.nextLine().split(" ");
             String[] str = (map.get(query[1])).split(" ");
-            System.out.println(str[0]);
+            if(query[2].equals("1"))
+                System.out.println(str[0]);
+            else
+                System.out.println(str[1]);
         }
     }
 }
