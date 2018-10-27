@@ -140,7 +140,7 @@ public final class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         HashTable map = new HashTable();
         Scanner s = new Scanner(System.in);
         int n = Integer.parseInt(s.nextLine());
@@ -157,11 +157,9 @@ public final class Solution {
                 System.out.println("Student doesn't exists...");
             } else {
                 if (query[2].equals("1")) {
-                    System.out.println(map.get(query[1]).getname());
-                }
+                    System.out.println(map.get(query[1]).getname()); }
                 else {
-                    System.out.println(map.get(query[1]).gettotmarks());
-                }
+                    System.out.println(map.get(query[1]).gettotmarks()); }
             }
         }
     }
