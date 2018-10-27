@@ -53,7 +53,9 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { function_description }
-     *
+     * Best: (logN)
+     * Average: (logN)
+     * Worst: (N)
      * @param      key   The key
      * @param      val   The value
      */
@@ -85,7 +87,9 @@ class NonrecursiveBST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { function_description }
-     *
+     * Best: (logN)
+     * Average: (logN)
+     * Worst: (N)
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
@@ -115,7 +119,9 @@ public final class Solution {
     private Solution() { }
     /**.
      * { function_description }
-     *
+     * Best: (logN)
+     * Average: (logN)
+     * Worst: (N)
      * @param      args  The arguments
      */
     public static void main(final String[] args) {

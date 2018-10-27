@@ -1,8 +1,21 @@
+/**
+ * Class for mergesort.
+ */
 public class Mergesort {
-
+    /**
+     * Constructs the object.
+     */
     public Mergesort() { }
-
-    public static void mergesort(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     * @param      aux   The auxiliary
+     * @param      lo    The lower
+     * @param      mid   The middle
+     * @param      hi    The higher
+     */
+    public static void mergesort(final Comparable[] a, final Comparable[] aux, final int lo, final int mid, final int hi) {
         // System.out.println(lo+"::"+mid+"::"+hi);
         for (int k = lo; k <= hi; k++) {
             aux[k] = a[k]; 
@@ -20,37 +33,79 @@ public class Mergesort {
 
     }
 
-    public static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     * @param      aux   The auxiliary
+     * @param      lo    The lower
+     * @param      hi    The higher
+     */
+    public static void sort(final Comparable[] a, final Comparable[] aux, final int lo, final int hi) {
         if (hi <= lo) return;
         int mid = lo + (hi - lo) / 2;
         sort(a, aux, lo, mid);
         sort(a, aux, mid + 1, hi);
         mergesort(a, aux, lo, mid, hi);
     }
-    public static void sort(Comparable[] a) {
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     */
+    public static void sort(final Comparable[] a) {
         Comparable[] aux = new Comparable[a.length];
         sort(a, aux, 0, a.length-1);
         assert isSorted(a);
     }
-
-
-    
-    public static boolean less(Comparable v, Comparable w) {
+    /**
+     * { function_description }
+     *
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public static boolean less(final Comparable v, final Comparable w) {
         return v.compareTo(w) > 0;
     }
         
-    public static boolean isSorted(Comparable[] a) {
+    /**
+     * Determines if sorted.
+     *
+     * @param      a     { parameter_description }
+     *
+     * @return     True if sorted, False otherwise.
+     */
+    public static boolean isSorted(final Comparable[] a) {
         return isSorted(a, 0, a.length - 1);
     }
 
-    public static boolean isSorted(Comparable[] a, int lo, int hi) {
+    /**
+     * Determines if sorted.
+     *
+     * @param      a     { parameter_description }
+     * @param      lo    The lower
+     * @param      hi    The higher
+     *
+     * @return     True if sorted, False otherwise.
+     */
+    public static boolean isSorted(final Comparable[] a, final int lo, final int hi) {
         for (int i = lo + 1; i <= hi; i++)
             if (less(a[i], a[i-1])) return false;
         return true;
     }
-
-
-    public static void mergesort(Comparable[] a, int[] index, int[] aux, int lo, int mid, int hi) {
+    /**
+     * { function_description }
+     *
+     * @param      a      { parameter_description }
+     * @param      index  The index
+     * @param      aux    The auxiliary
+     * @param      lo     The lower
+     * @param      mid    The middle
+     * @param      hi     The higher
+     */
+    public static void mergesort(final Comparable[] a, final int[] index, final int[] aux, final int lo, final int mid, final int hi) {
 
         for (int k = lo; k <= hi; k++) {
             aux[k] = index[k]; 
@@ -65,8 +120,14 @@ public class Mergesort {
         }
     }
 
-   
-    public static int[] indexSort(Comparable[] a) {
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public static int[] indexSort(final Comparable[] a) {
         int n = a.length;
         int[] index = new int[n];
         for (int i = 0; i < n; i++)
@@ -77,7 +138,16 @@ public class Mergesort {
         return index;
     }
 
-    public static void sort(Comparable[] a, int[] index, int[] aux, int lo, int hi) {
+    /**
+     * { function_description }
+     *
+     * @param      a      { parameter_description }
+     * @param      index  The index
+     * @param      aux    The auxiliary
+     * @param      lo     The lower
+     * @param      hi     The higher
+     */
+    public static void sort(final Comparable[] a, final int[] index, final int[] aux, final int lo, final int hi) {
         if (hi <= lo) return;
         int mid = lo + (hi - lo) / 2;
         sort(a, index, aux, lo, mid);
@@ -85,7 +155,12 @@ public class Mergesort {
         mergesort(a, index, aux, lo, mid, hi);
     }
 
-    public static void show(Comparable[] a) {
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     */
+    public static void show(final Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i]+" ");
         }

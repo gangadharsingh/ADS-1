@@ -1,7 +1,21 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-class Solution {
-	public static void main(String[] args) {
+
+ /**
+  * Class for solution.
+  */
+ public class Solution {
+ 	/**
+ 	 * Constructs the object.
+ 	 */
+ 	private Solution() { }
+
+	/**
+	 * { function_description }
+	 *
+	 * @param      args  The arguments
+	 */
+	public static void main(final String[] args) {
 		Scanner scan = new Scanner(System.in);
 		int noOfStudqual = scan.nextInt();
 		int noOfVac = scan.nextInt();
@@ -29,15 +43,45 @@ class Solution {
 	}
 }
 class Student implements Comparable<Student>{
-	public String studname;
-	public String dob;
-	public String sub1mark;
-	public String sub2mark;
-	public String sub3mark;
-	public String totalmark;
-	public String resCast;
-	String[] date;
-	public Student(String[] inp) {
+	/**
+	 * { var_description }
+	 */
+	private String studname;
+	/**
+	 * { var_description }
+	 */
+	private String dob;
+	/**
+	 * { var_description }
+	 */
+	private String sub1mark;
+	/**
+	 * { var_description }
+	 */
+	private String sub2mark;
+	/**
+	 * { var_description }
+	 */
+	private String sub3mark;
+	/**
+	 * { var_description }
+	 */
+	private String totalmark;
+	/**
+	 * { var_description }
+	 */
+	private String resCast;
+	/**
+	 * { var_description }
+	 */
+	private String[] date;
+
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      inp   The inp
+	 */
+	public Student(final String[] inp) {
 		studname = inp[0];
 		dob = inp[1];
 		sub1mark = inp[2];
@@ -47,6 +91,13 @@ class Student implements Comparable<Student>{
 		resCast = inp[6];
 		date = dob.split("-");
 	}
+	/**
+	 * { function_description }
+	 *
+	 * @param      stud  The stud
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public int compareTo(Student stud) {
 		if (Integer.parseInt(this.totalmark) > Integer.parseInt(stud.totalmark)) {
 			return 1;
@@ -69,54 +120,76 @@ class Student implements Comparable<Student>{
 		}
 	}
 
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String getstudname(){
 	  return studname;
 	 }
-	 public void setstudname(String studname){
-	  this.studname = studname;
-	 }
+
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String getdob(){
 	  return dob;
 	 }
-	 public void setdob(String dob){
-	  this.dob = dob;
-	 }
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String[] getdate(){
 	  return date;
 	 }
-	 public void setdate(String[] date){
-	  this.date = date;
-	 }
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String getsub1mark(){
 	  return sub1mark;
 	 }
-	 public void setsub1mark(String sub1mark){
-	  this.sub1mark = sub1mark;
-	 }
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String getsub2mark(){
 	  return sub2mark;
 	 }
-	 public void setsub2mark(String sub2mark){
-	  this.sub2mark = sub2mark;
-	 }
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String getsub3mark(){
 	  return sub3mark;
 	 }
-	 public void setsub3mark(String sub3mark){
-	  this.sub3mark = sub3mark;
-	 }
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String gettotalmark(){
 	  return totalmark;
 	 }
-	 public void settotalmark(String totalmark){
-	  this.totalmark = totalmark;
-	 }
+	 /**
+	  * { function_description }
+	  *
+	  * @return     { description_of_the_return_value }
+	  */
 	 public String getresCast(){
 	  return resCast;
 	 }
-	 public void setresCast(String resCast){
-	  this.resCast = resCast;
-	 }
+	/**
+	 * { function_description }
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public String print() {
 		return getstudname() + "," + gettotalmark() + ","+getresCast();
 	}

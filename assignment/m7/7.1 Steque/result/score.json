@@ -1,1 +1,1 @@
-{"user_id": "gangadharsingh", "problem_id": "ads1_m7_a1", "score": "2/2", "check_style_score": "1/1"}
+{"score": {"sample": {"0": {"passed": true, "execution_time": 0.19366884231567383}, "1": {"passed": true, "execution_time": 0.1851029396057129}}}, "user_id": "gangadharsingh", "problem_id": "ads1_m7_a1", "message": "ERROR: Hidden Testcases server unreachable.", "check_style_score": "0/1", "version": "1"}

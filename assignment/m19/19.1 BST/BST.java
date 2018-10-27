@@ -367,7 +367,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     *
+     * Best: logN
+     * Average: logN
+     * Worst: N
      * @param      lo    The lower
      * @param      hi    The higher
      *
@@ -394,9 +396,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     * Best: logN
-     * Average: logN
-     * Worst: N
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @return     { respective return value }
      */
     public int size() {
@@ -404,9 +406,9 @@ class BST<Key extends Comparable<Key>, Value> {
     }
     /**.
      * { method of BST }
-     * Best: logN
-     * Average: logN
-     * Worst: N
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @param      x     { parameter_description }
      *
      * @return     { respective return value }

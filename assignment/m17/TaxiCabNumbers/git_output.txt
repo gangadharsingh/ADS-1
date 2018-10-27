@@ -1,0 +1,11 @@
+[master 8d0bba2] "taxi_cab_numbers: 5/5 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 10 files changed, 162 insertions(+), 729 deletions(-)
+ copy assignment/m17/TaxiCabNumbers/{Solution.java =>  MinHeap.java} (66%)
+ mode change 100755 => 100644
+ create mode 100644 assignment/m17/TaxiCabNumbers/MinHeap$HeapIterator.class
+ rewrite assignment/m17/TaxiCabNumbers/MinHeap.class (97%)
+ delete mode 100644 assignment/m17/TaxiCabNumbers/MinPQ.class
+ rewrite assignment/m17/TaxiCabNumbers/Solution.java (70%)
+ rewrite assignment/m17/TaxiCabNumbers/check_style_errors.txt (99%)
+ delete mode 100644 assignment/m17/TaxiCabNumbers/untitled.java
+fatal: could not read Username for 'https://github.com': Input/output error

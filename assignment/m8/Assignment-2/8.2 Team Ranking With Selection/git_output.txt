@@ -1,0 +1,5 @@
+[master dc2f64a] "ads1_m8_a2: 6/6 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 2 files changed, 83 insertions(+), 18 deletions(-)
+To https://github.com/gangadharsingh/ADS-1.git
+   a002d27..dc2f64a  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.

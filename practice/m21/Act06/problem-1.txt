@@ -1,0 +1,10 @@
+Ans:
+i) It's not Red Black BST because it violates the rule of Red Black BST and that is number of black node should be same in either side of parent node, i.e left and right side of the parent node.
+	On the left side the number of black links is zero but
+	on the right link it is 2.
+
+ii) As above stated reason, the number of black links are not same in either left or right links.
+
+iii) It can be either BST or Red Black BST as the number of black links are same on left and right side. And it also not violates any rule of Red Black BST, it is legal Red Black BST.
+
+iv) It follow all three rules of Red Black BST which is red links should be left leaned, number of black links from root to null is same and no two nodes has two red links.

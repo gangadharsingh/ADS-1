@@ -1,0 +1,4 @@
+[master 810e5b5] "ads1_m14_a1: 4/4 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ rewrite assignment/m14/14.1 Dynamic Median Finding/result/score.json (100%)
+fatal: unable to access 'https://github.com/gangadharsingh/ADS-1.git/': Could not resolve proxy: http

@@ -1,61 +1,52 @@
 import java.util.Scanner;
 import java.util.Arrays;
-class HashTable {
+class HashTable<Key, Value> {
+    int keyCount;
+    int size;
+    Node[] node = (Node[]) new Object[size];
     class Node {
-        private String key;
-        private Integer val;
-        private Node next;
-        Node(final String k, final Integer v, final Node n) {
-            this.key = k;
-            this.val = v;
-            this.next = n;
+        Key key;
+        Value value;
+        Node next;
+        Node(Key k, Value v) {
+            key = k;
+            value = v;
+            next = null;
         }
-        Integer getValue() {
-            return this.val;
+        public Key getkey() {
+            return key;
         }
-        String getkey() {
-            return this.key;
+        public Value getvalue() {
+            return value;
         }
-        void setvalue(final Integer v) {
-            this.val = v;
+        public void setvalue(Value v) {
+            value = v;
         }
     }
-    private Node[] st;
-    private int size = (2 * (5)) * (2 * (5));
-    HashTable() {
-        st = new Node[size];
+    private int hash(Key k) {
+        return (k.hashCode() & 0x7fffffff) % size;
     }
-    int hash(final String k) {
-        final Integer num = 0x7fffffff;
-        return (k.hashCode() & num) % size;
-    }
-    public void resize() {
-        st = Arrays.copyOf(st, 2 * size);
-    }
-    public void put(final String k, final Integer v) {
+    public void put(Key k, Value v) {
         int i = hash(k);
-        for (Node x = st[i]; x != null; x = x.next) {
-            if (k.equals(x.getkey())) {
-                x.setvalue(x.getValue() + 1);
-                return;
+        for (Node nod = node[i]; nod != null; nod = nod.next) {
+            if (k.equals(nod.key)) {
+                nod.value = v;
+            } else {
+                node[i] = new Node(k, v);
             }
         }
-        if (i >= st.length) {
-            resize();
-        }
-        st[i] = new Node(k, v, st[i]);
     }
-    public boolean get(final String k) {
-        int i = hash(k);
-        for (Node x = st[i]; x != null; x = x.next) {
-            if (k.equals(x.getkey())) {
-                if (x.getValue() > 0) {
-                    x.setvalue(x.getValue() - 1);
+    public boolean get(Key key) {
+        int i = hash(key);
+        for (Node x = node[i]; x != null; x = x.next)
+            if (key.equals(x.key)) {
+                if(x.getvalue().compareTo(0) < 0) {
+                    x.setvalue(x.setvalue(value));
                     return true;
+                }else {
+                    return false;
                 }
-                return false;
             }
-        }
         return false;
     }
 }
@@ -68,19 +59,19 @@ public class Solution {
         String[] note = s.nextLine().split(" ");
         int i = 0;
         int flag = 0;
-        if(Integer.parseInt(num[0]) > Integer.parseInt(num[1])) {
-            for (String meg: mag) {
+        if (Integer.parseInt(num[0]) > Integer.parseInt(num[1])) {
+            for (String meg : mag) {
                 map.put(meg, 1);
             }
-            for(String n: note) {
+            for (String n : note) {
                 // System.out.println("mapping "+map.get(n));
-                if(map.get(n)) {
+                if (map.get(n)) {
                     flag++;
                 } else {
                     flag--;
                 }
             }
-            if(flag == note.length) {
+            if (flag == note.length) {
                 System.out.println("Yes");
             } else {
                 System.out.println("No");

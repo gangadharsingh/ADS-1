@@ -1,0 +1,6 @@
+[master 61afcca] "ads1_m15_a1: 5/5 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 3 files changed, 8 insertions(+), 7 deletions(-)
+ rewrite assignment/m15/15.1 BinarySearchSymbolTable/check_style_errors.txt (95%)
+To https://github.com/gangadharsingh/ADS-1.git
+   bcefe7b..61afcca  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.

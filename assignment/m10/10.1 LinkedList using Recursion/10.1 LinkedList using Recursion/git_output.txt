@@ -1,0 +1,5 @@
+[master 6946852] "ads1_m10_a1: 3/3 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 3 files changed, 18 insertions(+), 3 deletions(-)
+To https://github.com/gangadharsingh/ADS-1.git
+   5dcf275..6946852  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
