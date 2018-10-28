@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Arrays;
-/**
+/**.
  * Class for hash table.
  */
 class HashTable {
@@ -71,7 +71,7 @@ class HashTable {
     HashTable() {
         st = new Node[s];
     }
-    /**
+    /**.
      * hash.
      *
      * @param      k     { parameter_description }
@@ -82,13 +82,13 @@ class HashTable {
         final Integer num = 0x7fffffff;
         return (k.hashCode() & num) % s;
     }
-    /**
+    /**.
      * resizes.
      */
     public void resize() {
         st = Arrays.copyOf(st, 2 * s);
     }
-    /**
+    /**.
      * put.
      * Best case: O(k)
      * Average case: O(K)
@@ -109,7 +109,7 @@ class HashTable {
         }
         st[i] = new Node(k, v, st[i]);
     }
-    /**
+    /**.
      * get.
      * Best case: O(k)
      * Average case: O(K)
@@ -132,8 +132,16 @@ class HashTable {
         return false;
     }
 }
-public class Solution {
-    public static void main(String[] args) {
+/**.
+ * { item_description }
+ */
+public final class Solution {
+    /**.
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         HashTable map = new HashTable();
         Scanner s = new Scanner(System.in);
         String[] num = s.nextLine().split(" ");

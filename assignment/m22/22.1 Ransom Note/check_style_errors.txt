@@ -1,8 +1,4 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:135: Missing a Javadoc comment. [JavadocType]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:135:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:136:5: Missing a Javadoc comment. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:136:29: Parameter args should be final. [FinalParameters]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m22/22.1 Ransom Note/Solution.java:138:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
 Audit done.
-Checkstyle ends with 5 errors.
+Checkstyle ends with 1 errors.
