@@ -1,37 +1,37 @@
-/**
+/**.
  * Class for linear probing hash st.
  *
  * @param      <Key>    The key
  * @param      <Value>  The value
  */
 public class LinearProbingHashST<Key, Value> {
-	/**
-	 * capacity.
-	 */
+    /**.
+     * capacity.
+     */
     private static final int INIT_CAPACITY = 1;
-    /**
+    /**.
      * n var.
      */
     private int n;           // number of key-value pairs in the symbol table
-    /**
+    /**.
      * m var.
      */
     private int m;           // size of linear probing table
-    /**
+    /**.
      * key[] keys.
      */
     private Key[] keys;      // the keys
-    /**
+    /**.
      * value[] vals.
      */
     private Value[] vals;    // the values
-    /**
+    /**.
      * Initializes an empty symbol table.
      */
     public LinearProbingHashST() {
         this(INIT_CAPACITY);
     }
-    /**
+    /**.
      * Initializes an empty symbol table with the specified initial capacity.
      *
      * @param capacity the initial capacity
@@ -42,7 +42,7 @@ public class LinearProbingHashST<Key, Value> {
         keys = (Key[])   new Object[m];
         vals = (Value[]) new Object[m];
     }
-    /**
+    /**.
      * Returns the number of key-value pairs in this symbol table.
      *
      * @return the number of key-value pairs in this symbol table
@@ -50,7 +50,7 @@ public class LinearProbingHashST<Key, Value> {
     public int size() {
         return n;
     }
-    /**
+    /**.
      * Returns true if this symbol table is empty.
      *
      * @return {@code true} if this symbol table is empty;
@@ -59,7 +59,7 @@ public class LinearProbingHashST<Key, Value> {
     public boolean isEmpty() {
         return size() == 0;
     }
-    /**
+    /**.
      * Returns true if this symbol table contains the specified key.
      *time complexity - O(n).
      * @param  key the key
@@ -75,7 +75,7 @@ public class LinearProbingHashST<Key, Value> {
     private int hash(Key key) {
         // return (key.hashCode() & 0x7fffffff) % m;
         String s = (String)key;
-        return ((int)s.charAt(0) * 11) % m;
+        return ((int)s.charAt(0) * (2 * 2 * 2 + 2 + 1)) % m;
     }
     // resizes the hash table to the given capacity by re-hashing all of the keys
     //time complexity - O(n).
@@ -91,8 +91,8 @@ public class LinearProbingHashST<Key, Value> {
         m    = temp.m;
     }
 
-    /**
-     * Inserts the specified key-value pair into the symbol table, overwriting the old 
+    /**.
+     * Inserts the specified key-value pair into the symbol table, overwriting the old
      * value with the new value if the symbol table already contains the specified key.
      * Deletes the specified key (and its associated value) from this symbol table
      * if the specified value is {@code null}.
@@ -110,7 +110,7 @@ public class LinearProbingHashST<Key, Value> {
         }
 
         // double table size if 50% full
-        if (n >= m/2) resize(2*m);
+        if (n >= m / 2) resize(2 * m);
 
         int i;
         for (i = hash(key); keys[i] != null; i = (i + 1) % m) {
@@ -124,7 +124,7 @@ public class LinearProbingHashST<Key, Value> {
         n++;
     }
 
-    /**
+    /**.
      * Returns the value associated with the specified key.
      * @param key the key
      * time complexity - O(n).
@@ -140,9 +140,9 @@ public class LinearProbingHashST<Key, Value> {
         return null;
     }
 
-    /**
-     * Removes the specified key and its associated value from this symbol table     
-     * (if the key is in this symbol table).    
+    /**.
+     * Removes the specified key and its associated value from this symbol table
+     * (if the key is in this symbol table).
      *time complexity - O(n).
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -177,12 +177,12 @@ public class LinearProbingHashST<Key, Value> {
         n--;
 
         // halves size of array if it's 12.5% full or less
-        if (n > 0 && n <= m/8) resize(m/2);
+        if (n > 0 && n <= m / (2 * 2 * 2)) resize(m / 2);
 
         assert check();
     }
 
-    /**
+    /**.
      * Returns all keys in this symbol table as an {@code Iterable}.
      * To iterate over all of the keys in the symbol table named {@code st},
      * use the foreach notation: {@code for (Key key : st.keys())}.
@@ -201,7 +201,7 @@ public class LinearProbingHashST<Key, Value> {
     private boolean check() {
 
         // check that hash table is at most 50% full
-        if (m < 2*n) {
+        if (m < 2 * n) {
             System.err.println("Hash table size m = " + m + "; array size n = " + n);
             return false;
         }

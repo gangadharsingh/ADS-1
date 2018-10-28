@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
+/**.
  *  The {@code Queue} class represents a first-in-first-out (FIFO)
  *  queue of generic items.
  *  It supports the usual <em>enqueue</em> and <em>dequeue</em>
@@ -35,7 +35,7 @@ public class Queue<Item> implements Iterable<Item> {
         private Node<Item> next;
     }
 
-    /**
+    /**.
      * Initializes an empty queue.
      */
     public Queue() {
@@ -44,7 +44,7 @@ public class Queue<Item> implements Iterable<Item> {
         n = 0;
     }
 
-    /**
+    /**.
      * Returns true if this queue is empty.
      *
      * @return {@code true} if this queue is empty; {@code false} otherwise
@@ -53,7 +53,7 @@ public class Queue<Item> implements Iterable<Item> {
         return first == null;
     }
 
-    /**
+    /**.
      * Returns the number of items in this queue.
      *
      * @return the number of items in this queue
@@ -62,7 +62,7 @@ public class Queue<Item> implements Iterable<Item> {
         return n;
     }
 
-    /**
+    /**.
      * Returns the item least recently added to this queue.
      *
      * @return the item least recently added to this queue
@@ -73,7 +73,7 @@ public class Queue<Item> implements Iterable<Item> {
         return first.item;
     }
 
-    /**
+    /**.
      * Adds the item to this queue.
      *
      * @param  item the item to add
@@ -88,7 +88,7 @@ public class Queue<Item> implements Iterable<Item> {
         n++;
     }
 
-    /**
+    /**.
      * Removes and returns the item on this queue that was least recently added.
      *
      * @return the item on this queue that was least recently added
@@ -103,7 +103,7 @@ public class Queue<Item> implements Iterable<Item> {
         return item;
     }
 
-    /**
+    /**.
      * Returns a string representation of this queue.
      *
      * @return the sequence of items in FIFO order, separated by spaces
@@ -115,15 +115,15 @@ public class Queue<Item> implements Iterable<Item> {
             s.append(' ');
         }
         return s.toString();
-    } 
+    }
 
-    /**
+    /**.
      * Returns an iterator that iterates over the items in this queue in FIFO order.
      *
      * @return an iterator that iterates over the items in this queue in FIFO order
      */
     public Iterator<Item> iterator()  {
-        return new ListIterator<Item>(first);  
+        return new ListIterator<Item>(first);
     }
 
     // an iterator, doesn't implement remove() since it's optional
@@ -140,7 +140,7 @@ public class Queue<Item> implements Iterable<Item> {
         public Item next() {
             if (!hasNext()) throw new NoSuchElementException();
             Item item = current.item;
-            current = current.next; 
+            current = current.next;
             return item;
         }
     }
