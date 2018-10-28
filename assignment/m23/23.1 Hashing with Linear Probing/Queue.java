@@ -1,8 +1,8 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
- /**.
- * @param      <Item>  the generic type of an item in this queue
- */
+/**.
+* @param      <Item>  the generic type of an item in this queue
+*/
 public class Queue<Item> implements Iterable<Item> {
     /**.
      * { var_description }
@@ -77,15 +77,14 @@ public class Queue<Item> implements Iterable<Item> {
      *
      * @param  item the item to add
      */
-    public void enqueue(Item item) {
+    public void enqueue(final Item item) {
         Node<Item> oldlast = last;
         last = new Node<Item>();
         last.item = item;
         last.next = null;
         if (isEmpty()) {
             first = last;
-        }
-        else {          
+        } else {
             oldlast.next = last;
         }
         n++;
@@ -105,7 +104,7 @@ public class Queue<Item> implements Iterable<Item> {
         first = first.next;
         n--;
         if (isEmpty()) {
-        last = null;   // to avoid loitering
+            last = null;   // to avoid loitering
         }
         return item;
     }
@@ -125,9 +124,8 @@ public class Queue<Item> implements Iterable<Item> {
     }
 
     /**.
-     * Returns an iterator that iterates over the items in this queue in FIFO order.
      *
-     * @return an iterator that iterates over the items in this queue in FIFO order
+     * @return an iterator that iterates over the items
      */
     public Iterator<Item> iterator()  {
         return new ListIterator<Item>(first);
@@ -147,19 +145,23 @@ public class Queue<Item> implements Iterable<Item> {
          *
          * @param      first  The first
          */
-        public ListIterator(Node<Item> first) {
-            current = first;
+        ListIterator(final Node<Item> f) {
+            current = f;
         }
         /**.
          * Determines if it has next.
          *
          * @return     True if has next, False otherwise.
          */
-        public boolean hasNext()  { return current != null;                     }
+        public boolean hasNext() {
+            return current != null;
+        }
         /**.
          * { function_description }
          */
-        public void remove()      { throw new UnsupportedOperationException();  }
+        public void remove() {
+            throw new UnsupportedOperationException();
+        }
 
         /**.
          * { function_description }
