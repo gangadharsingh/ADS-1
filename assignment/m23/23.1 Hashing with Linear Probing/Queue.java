@@ -143,7 +143,7 @@ public class Queue<Item> implements Iterable<Item> {
         /**.
          * Constructs the object.
          *
-         * @param      first  The first
+         * @param      f     { parameter_description }
          */
         ListIterator(final Node<Item> f) {
             current = f;

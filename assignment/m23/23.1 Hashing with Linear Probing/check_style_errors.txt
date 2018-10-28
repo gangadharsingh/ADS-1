@@ -1,5 +1,2 @@
 Starting audit...
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/Queue.java:146:12: Unused @param tag for 'first'. [JavadocMethod]
-[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/Queue.java:148:39: Expected @param tag for 'f'. [JavadocMethod]
 Audit done.
-Checkstyle ends with 2 errors.
