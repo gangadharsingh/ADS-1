@@ -36,7 +36,7 @@ public class LinearProbingHashST<Key, Value> {
      *
      * @param capacity the initial capacity
      */
-    public LinearProbingHashST(final int capacity) {
+    LinearProbingHashST(final int capacity) {
         m = capacity;
         n = 0;
         keys = (Key[])   new Object[m];
@@ -69,7 +69,7 @@ public class LinearProbingHashST<Key, Value> {
      */
     public boolean contains(final Key key) {
         if (key == null) throw new IllegalArgumentException(
-            "argument to contains() is null");
+                "argument to contains() is null");
         return get(key) != null;
     }
     /**.
@@ -90,7 +90,7 @@ public class LinearProbingHashST<Key, Value> {
      * @param      capacity  The capacity
      */
     private void resize(final int capacity) {
-        LinearProbingHashST<Key, Value> temp = new 
+        LinearProbingHashST<Key, Value> temp = new
         LinearProbingHashST<Key, Value>(capacity);
         for (int i = 0; i < m; i++) {
             if (keys[i] != null) {
@@ -102,10 +102,6 @@ public class LinearProbingHashST<Key, Value> {
         m    = temp.m;
     }
     /**.
-     * Inserts the specified key-value pair into the symbol table, overwriting the old
-     * value with the new value if the symbol table already contains the specified key.
-     * Deletes the specified key (and its associated value) from this symbol table
-     * if the specified value is {@code null}.
      *time complexity - O(n).
      * @param  key the key
      * @param  val the value
@@ -163,7 +159,7 @@ public class LinearProbingHashST<Key, Value> {
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
-    public void delete(Key key) {
+    public void delete(final Key key) {
         if (key == null) {
             throw new IllegalArgumentException("argument to delete() is null");
         }
