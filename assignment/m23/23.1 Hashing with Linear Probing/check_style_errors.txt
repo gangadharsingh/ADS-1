@@ -1,2 +1,14 @@
 Starting audit...
 Audit done.
+Starting audit...
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/LinearProbingHashST.java:71: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/LinearProbingHashST.java:84:28: 'typecast' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/LinearProbingHashST.java:85:22: 'typecast' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/LinearProbingHashST.java:112: Line is longer than 80 characters (found 82). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/LinearProbingHashST.java:121: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/LinearProbingHashST.java:228: Line is longer than 80 characters (found 85). [LineLength]
+[ERROR] /home/gsingh/Documents/MSIT/cspp2_20186074/ADS-1/assignment/m23/23.1 Hashing with Linear Probing/LinearProbingHashST.java:237: Line is longer than 80 characters (found 104). [LineLength]
+Audit done.
+Checkstyle ends with 7 errors.
+Starting audit...
+Audit done.
