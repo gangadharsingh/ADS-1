@@ -68,8 +68,10 @@ public class LinearProbingHashST<Key, Value> {
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
     public boolean contains(final Key key) {
-        if (key == null) throw new IllegalArgumentException(
+        if (key == null) {
+            throw new IllegalArgumentException(
                 "argument to contains() is null");
+        }
         return get(key) != null;
     }
     /**.
@@ -81,8 +83,8 @@ public class LinearProbingHashST<Key, Value> {
      */
     private int hash(final Key key) {
         // return (key.hashCode() & 0x7fffffff) % m;
-        String s = (String)key;
-        return ((int)s.charAt(0) * (2 * 2 * 2 + 2 + 1)) % m;
+        String s = (String) key;
+        return ((int) s.charAt(0) * (2 * 2 * 2 + 2 + 1)) % m;
     }
     /**.
      * { function_description }
@@ -109,7 +111,8 @@ public class LinearProbingHashST<Key, Value> {
      */
     public void put(final Key key, final Value val) {
         if (key == null) {
-            throw new IllegalArgumentException("first argument to put() is null");
+            throw new IllegalArgumentException(
+                "first argument to put() is null");
         }
 
         if (val == null) {
@@ -118,7 +121,9 @@ public class LinearProbingHashST<Key, Value> {
         }
 
         // double table size if 50% full
-        if (n >= m / 2) resize(2 * m);
+        if (n >= m / 2) {
+            resize(2 * m);
+        }
 
         int i;
         for (i = hash(key); keys[i] != null; i = (i + 1) % m) {
@@ -225,7 +230,8 @@ public class LinearProbingHashST<Key, Value> {
 
         // check that hash table is at most 50% full
         if (m < 2 * n) {
-            System.err.println("Hash table size m = " + m + "; array size n = " + n);
+            System.err.println("Hash table size m = " + m
+                               + "; array size n = " + n);
             return false;
         }
 
@@ -234,7 +240,8 @@ public class LinearProbingHashST<Key, Value> {
             if (keys[i] == null) {
                 continue;
             } else if (get(keys[i]) != vals[i]) {
-                System.err.println("get[" + keys[i] + "] = " + get(keys[i]) + "; vals[i] = " + vals[i]);
+                System.err.println("get[" + keys[i] + "] = "
+                                   + get(keys[i]) + "; vals[i] = " + vals[i]);
                 return false;
             }
         }
