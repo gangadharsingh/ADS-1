@@ -52,7 +52,9 @@ public class LinearProbingHashST<Key, Value> {
     }
     /**.
      * Returns true if this symbol table is empty.
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @return {@code true} if this symbol table is empty;
      *         {@code false} otherwise
      */
@@ -76,7 +78,9 @@ public class LinearProbingHashST<Key, Value> {
     }
     /**.
      * { function_description }
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: 1
      * @param      key   The key
      *
      * @return     { description_of_the_return_value }
@@ -88,7 +92,9 @@ public class LinearProbingHashST<Key, Value> {
     }
     /**.
      * { function_description }
-     *time complexity - O(n).
+     *  Best: 1
+     * Average: 1
+     * Worst: N
      * @param      capacity  The capacity
      */
     private void resize(final int capacity) {
@@ -104,7 +110,9 @@ public class LinearProbingHashST<Key, Value> {
         m    = temp.m;
     }
     /**.
-     *time complexity - O(n).
+     * Best: 1
+     * Average: 1
+     * Worst: N
      * @param  key the key
      * @param  val the value
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -140,7 +148,9 @@ public class LinearProbingHashST<Key, Value> {
     /**.
      * Returns the value associated with the specified key.
      * @param key the key
-     * time complexity - O(n).
+     *  Best: 1
+     * Average: 1
+     * Worst: N
      * @return the value associated with {@code key};
      *         {@code null} if no such value
      * @throws IllegalArgumentException if {@code key} is {@code null}
@@ -160,7 +170,9 @@ public class LinearProbingHashST<Key, Value> {
     /**.
      * Removes the specified key and its associated value from this symbol table
      * (if the key is in this symbol table).
-     *time complexity - O(n).
+     *  Best: 1
+     * Average: 1
+     * Worst: N
      * @param  key the key
      * @throws IllegalArgumentException if {@code key} is {@code null}
      */
@@ -206,10 +218,9 @@ public class LinearProbingHashST<Key, Value> {
     }
 
     /**.
-     * Returns all keys in this symbol table as an {@code Iterable}.
-     * To iterate over all of the keys in the symbol table named {@code st},
-     * use the foreach notation: {@code for (Key key : st.keys())}.
-     *time complexity - O(n).
+     * Best: 1
+     * Average: 1
+     * Worst: N
      * @return all keys in this symbol table
      */
     public Iterable<Key> keys() {
@@ -223,7 +234,9 @@ public class LinearProbingHashST<Key, Value> {
     }
     /**.
      * { function_description }
-     *
+     * Best: 1
+     * Average: 1
+     * Worst: N
      * @return     { description_of_the_return_value }
      */
     private boolean check() {
